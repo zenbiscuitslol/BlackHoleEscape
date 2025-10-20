@@ -280,179 +280,105 @@ class BlackHoleEscape:
     
     def _calculate_circle_progress(self, completed_projects: List[Dict], current_level: float) -> Dict:
         """
-        Circle calculation based on milestone projects per circle (campus-specific).
-        We consider a circle 'reached' iff all its milestone projects are completed.
-        Matching is done on project slug or name (normalized, case-insensitive) and
-        includes common aliases for 42 project names.
+        Determine circle by scanning completed project *names* until the first match.
+        Priority: Circle 7 > 6 > 5 > 4 > 3 > 2 > 1 (via the if/elif chain per project).
+        After the circle is set, we compute which milestones are missing for the *next* circle.
         """
 
+        import re
 
-        # --- helpers -------------------------------------------------------------
-        def _norm(s: str) -> str:
-            # normalize: lower, strip, collapse spaces, remove punctuation-ish
-            import re
+        # ---------- helpers ----------
+        def norm_name(s: str) -> str:
             s = (s or "").lower().strip()
             s = s.replace("&", "and")
-            s = re.sub(r"[\s/_\-]+", " ", s)   # treat -, _, / as spaces
-            s = re.sub(r"[^a-z0-9 ]+", "", s)  # drop other punctuation
-            s = re.sub(r"\s+", " ", s)         # collapse spaces
-            return s
+            s = re.sub(r"^42cursus[\s\-_:]+", "", s)
+            s = re.sub(r"[\s/_\-]+", " ", s)
+            s = re.sub(r"[^a-z0-9 ]+", "", s)
+            return re.sub(r"\s+", " ", s).strip()
 
-        def _any_alias_done(aliases: set, completed_keys: set) -> bool:
-            # true if any alias for this milestone is in completed set
-            return any(a in completed_keys for a in aliases)
+        # Canonical, readable labels for each circle's milestone projects (by *name*)
+        # Add/remove aliases as your campus requires.
+        CIRCLE_MILESTONES = {
+            1: [["libft"]],
+            2: [["get next line", "get_next_line"], ["ft printf", "printf"], ["born2beroot"]],
+            3: [["pipex"], ["minitalk"], ["push swap", "push_swap"], ["fractol", "fract-ol", "fractal"], ["so long", "solong"]],
+            4: [["minishell"], ["philosophers", "philo"]],
+            5: [["cpp module 00"], ["cpp module 01"], ["cpp module 02"], ["cpp module 03"], ["cpp module 04"],
+                ["cub3d", "cube32"], ["minitok"], ["netpractice"], ["minirt"]],
+            6: [["irc", "ft irc"], ["webserv", "websurf"], ["cpp module 05"], ["cpp module 06"],
+                ["cpp module 07"], ["cpp module 08"], ["cpp module 09"], ["inception"]],
+            7: [["transcendence", "ft transcendence", "ft_transcendence", "transendence"]],
+        }
 
-        # Build a normalized set of the user's completed project keys
-        completed_keys = set()
-        for p in completed_projects or []:
-            slug = _norm(p.get("slug", ""))
-            name = _norm(p.get("name", ""))
-            if slug:
-                completed_keys.add(slug)
-            if name:
-                completed_keys.add(name)
+        # Build a quick lookup of normalized completed names
+        completed_names = {norm_name(p.get("name", "")) for p in (completed_projects or [])}
 
-        # --- milestone map (edit to fit your campus exactly) ---------------------
-        # Each milestone is a set of aliases (any of which counts as satisfying it).
-        MILESTONE_CIRCLES = [
-            (1, [
-                {"libft", "lib ft"},
-            ]),
-            (2, [
-                {"getnextline", "get next line", "get_next_line"},
-                {"printf", "ft printf", "ft_printf"},
-                {"born2beroot", "born 2 be root"},
-            ]),
-            (3, [
-                {"pipex"},
-                {"minitalk", "minitoc"},
-                {"push swap", "push_swap"},
-                {"fractal", "fractol", "fract ol", "fract-ol"},
-                {"solong", "so long", "so_long"},
-                {"fdf", "f2f"},
-            ]),
-            (4, [
-                {"minishell"},
-                {"philosophers", "philo"},
-            ]),
-            (5, [
-                {"cpp00", "cpp01", "cpp02", "cpp03", "cpp04"},
-                {"cub3d", "cube32", "cub 3d"},
-                {"minitok", "minitalk"},
-                {"netpractice", "net practice"},
-            ]),
-            (6, [
-                {"irc", "ft irc"},
-                {"webserv", "web surf", "websurf"},
-                {"cpp05", "cpp06", "cpp07", "cpp08", "cpp09"},
-                {"inception"},
-            ]),
-            (7, [
-                {"transcendence", "ft transcendence", "ft_transcendence", "transendence"},
-            ]),
-        ]
-
-        # --- compute circles -----------------------------------------------------
-        current_circle = 0
-        next_circle = None
-
-        for circle_num, milestones in MILESTONE_CIRCLES:
-            all_done = all(_any_alias_done(aliases, completed_keys) for aliases in milestones)
-            if all_done:
-                current_circle = circle_num
-            else:
-                next_circle = circle_num
-                break
-
-        if next_circle is None and current_circle == MILESTONE_CIRCLES[-1][0]:
-            projects_to_next_circle = 0
-            missing_next = []
-        else:
-            missing_next = []
-            if next_circle is not None:
-                for cnum, milestones in MILESTONE_CIRCLES:
-                    if cnum == next_circle:
-                        for aliases in milestones:
-                            if not _any_alias_done(aliases, completed_keys):
-                                canonical = sorted(list(aliases))[0]
-                                missing_next.append(canonical.replace(" ", "_"))
-                        break
-            projects_to_next_circle = len(missing_next)
-
-        safe_level = current_level if current_level is not None else 0.0
-        level_progress = round((safe_level % 1) * 100, 1)
-
-        #----------------------------------------------------------------------------
-
-        # Default values
+        # ---------- priority scan (your final block logic, but robust) ----------
         current_circle = 0
         next_circle = 1
-        project = None
+        level_progress = round(((current_level or 0.0) % 1) * 100, 1)
 
-        # Iterate through all completed projects
-        for p in completed_projects:
-            project_name = p.get("name", "").lower().strip()
+        # Iterate through completed projects; stop at first match (priority is enforced inside the if/elif chain)
+        for p in completed_projects or []:
+            project_name = norm_name(p.get("name", ""))
 
             # Circle 7
-            if project_name in ["transcendence", "ft transcendence", "ft_transcendence", "transendence"]:
-                current_circle = 7
-                next_circle = None
-                project = project_name
+            if project_name in {"transcendence", "ft transcendence", "ft_transcendence", "transendence"}:
+                current_circle, next_circle = 7, None
                 break
 
             # Circle 6
-            elif project_name in [
+            elif project_name in {
                 "irc", "ft irc", "webserv", "websurf",
                 "cpp module 05", "cpp module 06", "cpp module 07", "cpp module 08", "cpp module 09",
                 "inception"
-            ]:
-                current_circle = 6
-                next_circle = 7
-                project = project_name
+            }:
+                current_circle, next_circle = 6, 7
                 break
 
             # Circle 5
-            elif project_name in [
+            elif project_name in {
                 "cpp module 00", "cpp module 01", "cpp module 02", "cpp module 03", "cpp module 04",
                 "cub3d", "cube32", "minitok", "netpractice", "minirt"
-            ]:
-                current_circle = 5
-                next_circle = 6
-                project = project_name
+            }:
+                current_circle, next_circle = 5, 6
                 break
 
             # Circle 4
-            elif project_name in ["minishell", "philosophers", "philo"]:
-                current_circle = 4
-                next_circle = 5
-                project = project_name
+            elif project_name in {"minishell", "philosophers", "philo"}:
+                current_circle, next_circle = 4, 5
                 break
 
             # Circle 3
-            elif project_name in [
+            elif project_name in {
                 "pipex", "minitalk", "push swap", "push_swap",
                 "fractol", "fract-ol", "fractal", "solong", "so long"
-            ]:
-                current_circle = 3
-                next_circle = 4
-                project = project_name
+            }:
+                current_circle, next_circle = 3, 4
                 break
 
             # Circle 2
-            elif project_name in ["get next line", "get_next_line", "ft printf", "printf", "born2beroot"]:
-                current_circle = 2
-                next_circle = 3
-                project = project_name
+            elif project_name in {"get next line", "get_next_line", "ft printf", "printf", "born2beroot"}:
+                current_circle, next_circle = 2, 3
                 break
 
             # Circle 1
-            elif project_name in ["libft"]:
-                current_circle = 1
-                next_circle = 2
-                project = project_name
+            elif project_name in {"libft"}:
+                current_circle, next_circle = 1, 2
                 break
+        # else: remain at defaults (0 -> 1)
 
-        # return block
+        # ---------- compute "missing for next circle" ----------
+        missing_next = []
+        if next_circle is not None and next_circle in CIRCLE_MILESTONES:
+            for alias_group in CIRCLE_MILESTONES[next_circle]:
+                # normalized match — satisfied if ANY alias is present among completed names
+                if not any(norm_name(a) in completed_names for a in alias_group):
+                    # pick the first alias as the display label (use underscores to keep it simple)
+                    missing_next.append(norm_name(alias_group[0]).replace(" ", "_"))
+
+        projects_to_next_circle = len(missing_next)
+
         return {
             "current_circle": current_circle,
             "next_circle": next_circle,
@@ -461,6 +387,7 @@ class BlackHoleEscape:
             "level_to_next_circle": None,
             "level_progress": level_progress,
         }
+
 
     
     def _calculate_risk_level(self, days_until_blackhole: Optional[int], current_level: float) -> str:
