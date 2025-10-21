@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>42 Heilbronn - Smart Black Hole Prevention Timetable</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/main.css') }}" />
+        <script src="{{ url_for('static', filename='js/app.js') }}"
+            defer></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+
+                <div class="login-block">
+                    <label for="loginInputMain">Enter your 42 login:</label>
+                    <input id="loginInputMain" placeholder="e.g., mohrahma" />
+                    <button id="loginGo">Get My Data</button>
+                </div>
+
+                <pre id="apiOut"></pre>
+
+                <div class="logo">
+                    <i class="fas fa-user-astronaut"></i>
+                    <h1>Smart Black Hole Prevention Timetable</h1>
+                </div>
+                <p class="subtitle">AI-powered suggestions and customization to
+                    avoid getting Blackholed at 42 Heilbronn</p>
+            </header>
+
+            <section class="intro">
+                <h2><i class="fas fa-robot"></i> Smart Activity Suggestions</h2>
+                <p>This timetable provides intelligent suggestions based on your
+                    preferences, but you have full control to
+                    customize everything.</p>
+
+                <div class="blackhole-definition">
+                    <p><strong>How it works:</strong> The system analyzes your
+                        preferences and goals to suggest optimal
+                        activities, but you can always accept, modify, or ignore
+                        these suggestions.</p>
+                </div>
+
+                <p>Look for the <span style="color: var(--warning)">yellow
+                        dots</span> on activities to see our suggestions!
+                </p>
+            </section>
+
+            <div class="timetable-container">
+                <main class="timetable">
+                    <div class="timetable-header">
+                        <h2><i class="fas fa-calendar-week"></i> Your
+                            Personalized Schedule</h2>
+                        <div class="week-navigation">
+                            <button id="prev-week"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <span id="current-week">Week of October 16,
+                                2023</span>
+                            <button id="next-week"><i
+                                    class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <table id="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+
+                    <div class="suggestions-panel">
+                        <h4><i class="fas fa-lightbulb"></i> Smart
+                            Suggestions</h4>
+                        <div id="suggestions-list">
+                            <!-- Suggestions will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="ai-suggestion">
+                        <h4><i class="fas fa-robot"></i> AI Recommendation</h4>
+                        <p id="ai-recommendation">Based on your current
+                            schedule, I recommend adding more short breaks
+                            between coding sessions to maintain focus and
+                            prevent burnout.</p>
+                    </div>
+                </main>
+
+                <aside class="sidebar">
+                    <div class="card">
+                        <h3><i class="fas fa-chart-line"></i> Weekly Stats</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <div class="stat-value productivity">78%</div>
+                                <div class="stat-label">Productivity</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value balance">85%</div>
+                                <div class="stat-label">Work-Life Balance</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value wellness-score">82%</div>
+                                <div class="stat-label">Wellness Score</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value social-health">76%</div>
+                                <div class="stat-label">Social Health</div>
+                            </div>
+                        </div>
+                        <button class="customize-btn" id="customize-schedule"><i
+                                class="fas fa-sliders-h"></i> Customize
+                            Your Schedule</button>
+                    </div>
+
+                    <div class="card">
+                        <h3><i class="fas fa-lightbulb"></i> Black Hole
+                            Prevention Tips</h3>
+                        <ul class="tips-list">
+                            <li><i class="fas fa-clock"></i> Use the Pomodoro
+                                Technique (25min work, 5min break)</li>
+                            <li><i class="fas fa-utensils"></i> Never skip meals
+                                - schedule them like meetings</li>
+                            <li><i class="fas fa-dumbbell"></i> Take short walks
+                                every 2 hours</li>
+                            <li><i class="fas fa-users"></i> Schedule at least
+                                one social activity daily</li>
+                            <li><i class="fas fa-bed"></i> Maintain consistent
+                                sleep schedule</li>
+                            <li><i class="fas fa-eye"></i> Follow the 20-20-20
+                                rule for eye strain</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3><i class="fas fa-link"></i> Campus Resources</h3>
+                        <ul class="resources-list">
+                            <li><i class="fas fa-heart"></i> <a href="#">Student
+                                    Wellness Center</a></li>
+                            <li><i class="fas fa-utensils"></i> <a
+                                    href="#">Campus Dining Schedule</a></li>
+                            <li><i class="fas fa-dumbbell"></i> <a
+                                    href="#">Fitness Center Hours</a></li>
+                            <li><i class="fas fa-users"></i> <a href="#">Student
+                                    Clubs & Events</a></li>
+                            <li><i class="fas fa-hands-helping"></i> <a
+                                    href="#">Peer Support Network</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+            <footer>
+                <p>42 Heilbronn Smart Black Hole Prevention Initiative |
+                    AI-Powered Suggestions with Full Customization</p>
+                <p>Remember: The most productive coders are those who maintain
+                    balance in their lives.</p>
+            </footer>
+        </div>
+
+        <!-- Customization Modal -->
+        <div class="modal" id="customization-modal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-modal">&times;</span>
+
+                <div class="modal-header">
+                    <h2><i class="fas fa-edit"></i> Customize Your Schedule</h2>
+                    <p>Personalize your weekly timetable and activity
+                        suggestions</p>
+                </div>
+
+                <form class="customization-form" id="customization-form">
+                    <div class="form-group">
+                        <label for="student-name">Your Name</label>
+                        <input type="text" id="student-name"
+                            placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="focus-area">Primary Focus Area</label>
+                        <select id="focus-area">
+                            <option value="coding">Coding Projects</option>
+                            <option value="algorithms">Algorithms</option>
+                            <option value="web-dev">Web Development</option>
+                            <option value="systems">Systems Programming</option>
+                            <option value="ai-ml">AI/ML</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="current-project">Current Project</label>
+                        <input type="text" id="current-project"
+                            placeholder="What project are you working on?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sleep-pattern">Sleep Pattern
+                            Preference</label>
+                        <select id="sleep-pattern">
+                            <option value="early-bird">Early Bird (6-7 AM wake
+                                up)</option>
+                            <option value="balanced">Balanced (7-8 AM wake
+                                up)</option>
+                            <option value="night-owl">Night Owl (8-9 AM wake
+                                up)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="social-preference">Social Activity
+                            Preference</label>
+                        <select id="social-preference">
+                            <option value="high">High (Daily social
+                                activities)</option>
+                            <option value="medium">Medium (3-4 times per
+                                week)</option>
+                            <option value="low">Low (1-2 times per
+                                week)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exercise-frequency">Exercise
+                            Frequency</label>
+                        <select id="exercise-frequency">
+                            <option value="daily">Daily</option>
+                            <option value="3-4-times">3-4 times per
+                                week</option>
+                            <option value="1-2-times">1-2 times per
+                                week</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="break-style">Preferred Break Style</label>
+                        <select id="break-style">
+                            <option value="pomodoro">Pomodoro (25min work, 5min
+                                break)</option>
+                            <option value="52-17">52/17 (52min work, 17min
+                                break)</option>
+                            <option value="90-min">90-minute blocks</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="study-environment">Preferred Study
+                            Environment</label>
+                        <select id="study-environment">
+                            <option value="campus">On Campus</option>
+                            <option value="home">At Home</option>
+                            <option value="mixed">Mixed (Campus & Home)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suggestions-preference">Activity
+                            Suggestions</label>
+                        <select id="suggestions-preference">
+                            <option value="frequent">Frequent (Many
+                                suggestions)</option>
+                            <option value="moderate">Moderate (Balanced
+                                suggestions)</option>
+                            <option value="minimal">Minimal (Few
+                                suggestions)</option>
+                            <option value="none">None (No suggestions)</option>
+                        </select>
+                    </div>
+
+                    <div class="time-slots">
+                        <h3>Customize Time Slots</h3>
+                        <p>Edit activities for each time slot and day. Yellow
+                            dots indicate our suggestions.</p>
+
+                        <div class="days-header">
+                            <div class="time-label">Time</div>
+                            <div class="day-label">Monday</div>
+                            <div class="day-label">Tuesday</div>
+                            <div class="day-label">Wednesday</div>
+                            <div class="day-label">Thursday</div>
+                            <div class="day-label">Friday</div>
+                            <div class="day-label">Saturday</div>
+                            <div class="day-label">Sunday</div>
+                        </div>
+
+                        <div id="time-slots-container">
+                            <!-- Time slots will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary"
+                            id="reset-schedule">Reset to Default</button>
+                        <button type="button" class="btn btn-secondary"
+                            id="generate-suggestions">Generate New
+                            Suggestions</button>
+                        <button type="submit" class="btn btn-primary">Save
+                            Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+</html>
