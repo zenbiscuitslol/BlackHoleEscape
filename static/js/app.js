@@ -185,12 +185,17 @@ function updateStats() {
     
     const level = status.level || status.user_level || 0;
     const daysRemaining = status.days_until_blackhole || 0;
-    const circleInfo = status.circle_info?.circle_name || 'Unknown';
+    
+    // Get current circle from circle_info
+    const circleInfo = status.circle_info || {};
+    const currentCircle = circleInfo.current_circle || 0;
+    const circleDisplay = `${currentCircle}/7`;
+    
     const projectsRemaining = escapePlan.projects_remaining_current || 0;
     
     document.getElementById('userLevel').textContent = level.toFixed(1);
     document.getElementById('daysRemaining').textContent = Math.max(0, daysRemaining);
-    document.getElementById('circleInfo').textContent = circleInfo;
+    document.getElementById('circleInfo').textContent = circleDisplay;
 
     // Determine escape status based on actual data
     let status_text = 'At Risk';
