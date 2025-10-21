@@ -1,21 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>42 Heilbronn - Smart Black Hole Prevention Timetable</title>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet"
-            href="{{ url_for('static', filename='css/main.css') }}" />
-        <script src="{{ url_for('static', filename='js/app.js') }}"
-            defer></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 - Black Hole Escape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
 
-    </head>
+<body>
+    <!-- Dynamic background -->
+    <div class="background-animation"></div>
 
-    <body>
-        <div class="container">
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal modal-login active">
+        <div class="modal-content login-content">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>42 Black Hole Escape</h1>
+                    <p>Smart Prevention Planner</p>
+                </div>
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="intraLogin">Enter your 42 Intra Login</label>
+                        <input type="text" id="intraLogin" placeholder="e.g., mohrahma" required>
+                        <div class="input-error" id="loginError"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-arrow-right"></i> Get My Data
+                    </button>
+                    <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Fetching your data...</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="mainContainer" class="container hidden">
+        <header class="app-header">
+            <div class="header-top">
+                <button id="logoutBtn" class="btn btn-small">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+            <div class="header-content">
+                <h1 id="userGreeting">Welcome</h1>
+                <p id="userStatus">Loading your escape plan...</p>
+            </div>
+        </header>
+
+        <!-- Main Content with Tabs -->
+        <div class="content-wrapper">
+            <nav class="tab-navigation">
+                <button class="tab-btn active" data-tab="dashboard">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </button>
+                <button class="tab-btn" data-tab="schedule">
+                    <i class="fas fa-calendar-week"></i> Schedule
+                </button>
+                <button class="tab-btn" data-tab="sources">
+                    <i class="fas fa-book"></i> Project Sources
+                </button>
+                <button class="tab-btn" data-tab="tips">
+                    <i class="fas fa-lightbulb"></i> Tips & Resources
+                </button>
+            </nav>
+
+            <!-- Dashboard Tab -->
+            <section id="dashboard" class="tab-content active">
+                <div class="dashboard-grid">
+                    <!-- Stats Cards -->
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-label">Current Level</div>
+                                <div class="stat-value" id="userLevel">-</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-hourglass-end"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-label">Days to Black Hole</div>
+                                <div class="stat-value danger" id="daysRemaining">-</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-label">Escape Status</div>
+                                <div class="stat-value" id="escapeStatus">-</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-ring"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-label">Current Circle</div>
+                                <div class="stat-value" id="circleInfo">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Analysis -->
+                    <div class="risk-analysis">
+                        <h2>Risk Level Analysis</h2>
+                        <div class="risk-meter">
+                            <div class="risk-bar">
+                                <div class="risk-fill" id="riskFill"></div>
+                            </div>
+                            <div class="risk-label">
+                                <span>Low</span>
+                                <span id="riskLevel">--</span>
+                                <span>High</span>
+                            </div>
+                        </div>
+                        <div class="risk-description" id="riskDescription">
+                            Analyzing your data...
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="recommendations-box">
+                        <h2>Smart Recommendations</h2>
+                        <div class="recommendations-list" id="recommendationsList">
+                            <p class="loading-text">Loading recommendations...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Schedule Tab -->
+            <section id="schedule" class="tab-content">
+                <div class="schedule-container">
+                    <div class="schedule-header">
+                        <h2>Your Personalized Schedule</h2>
+                        <div class="week-nav">
+                            <button id="prevWeek" class="nav-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span id="weekDisplay">This Week</span>
+                            <button id="nextWeek" class="nav-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calendar-view">
+                        <div class="time-column">
+                            <div class="time-header">Time</div>
+                            <div class="time-slots" id="timeSlots"></div>
+                        </div>
+                        <div class="days-container" id="daysContainer"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Sources Tab -->
+            <section id="sources" class="tab-content">
+                <div class="sources-container">
+                    <h2>Project Sources to Complete Escape</h2>
+                    <div class="projects-grid" id="projectsGrid">
+                        <p class="loading-text">Loading projects...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips & Resources Tab -->
+            <section id="tips" class="tab-content">
+                <div class="tips-container">
+                    <div class="tips-grid">
+                        <div class="tips-card">
+                            <h3><i class="fas fa-clock"></i> Time Management</h3>
+                            <ul>
+                                <li>Use Pomodoro Technique: 25min work, 5min break</li>
+                                <li>Schedule focused blocks for different project types</li>
+                                <li>Take strategic breaks to maintain focus</li>
+                                <li>Plan your week on Sunday evening</li>
+                            </ul>
+                        </div>
+                        <div class="tips-card">
+                            <h3><i class="fas fa-utensils"></i> Health & Wellness</h3>
+                            <ul>
+                                <li>Never skip meals - schedule them like meetings</li>
+                                <li>Drink water regularly throughout the day</li>
+                                <li>Take walks every 2-3 hours</li>
+                                <li>Maintain consistent sleep schedule (6-8 hours)</li>
+                            </ul>
+                        </div>
+                        <div class="tips-card">
+                            <h3><i class="fas fa-users"></i> Social Balance</h3>
+                            <ul>
+                                <li>Schedule at least one social activity daily</li>
+                                <li>Join campus clubs and events</li>
+                                <li>Collaborate with peers on projects</li>
+                                <li>Take breaks with friends and classmates</li>
+                            </ul>
+                        </div>
+                        <div class="tips-card">
+                            <h3><i class="fas fa-fire"></i> Prevention Tips</h3>
+                            <ul>
+                                <li>Monitor your cursus progression regularly</li>
+                                <li>Complete projects before deadlines</li>
+                                <li>Participate in group projects</li>
+                                <li>Utilize peer learning opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resources-section">
+                        <h3>Campus Resources</h3>
+                        <div class="resources-list">
+                            <div class="resource-item">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <strong>Student Wellness Center</strong>
+                                    <p>Mental health and physical wellness support</p>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <i class="fas fa-book"></i>
+                                <div>
+                                    <strong>Library & Study Spaces</strong>
+                                    <p>Quiet areas for focused study</p>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <i class="fas fa-dumbbell"></i>
+                                <div>
+                                    <strong>Fitness Center</strong>
+                                    <p>Exercise facilities and classes</p>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Peer Support Network</strong>
+                                    <p>Connect with other students</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About This Tool</h4>
+                    <p>42 Black Hole Escape is an intelligent prevention planner designed to help students maintain progress and avoid the Black Hole through smart scheduling and data-driven recommendations.</p>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-section">
+                    <h4>Key Principle</h4>
+                    <p><strong>Balance is the key to success.</strong> Combining focused project work with wellness, social activities, and strategic breaks creates the foundation for sustained progress.</p>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-section">
+                    <h4>Remember</h4>
+                    <ul class="footer-tips">
+                        <li>Monitor your progress regularly</li>
+                        <li>Take care of your physical and mental health</li>
+                        <li>Maintain meaningful connections with peers</li>
+                        <li>Celebrate your achievements</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 42 Black Hole Escape | Made with <i class="fas fa-heart"></i> for 42 Students</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Archive: Original HTML structure below for reference
+    <!--
             <header>
 
                 <div class="login-block">
@@ -81,7 +354,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Table rows will be populated by JavaScript -->
+
                         </tbody>
                     </table>
 
@@ -89,7 +362,7 @@
                         <h4><i class="fas fa-lightbulb"></i> Smart
                             Suggestions</h4>
                         <div id="suggestions-list">
-                            <!-- Suggestions will be populated by JavaScript -->
+
                         </div>
                     </div>
 
@@ -173,7 +446,7 @@
             </footer>
         </div>
 
-        <!-- Customization Modal -->
+
         <div class="modal" id="customization-modal">
             <div class="modal-content">
                 <span class="close-modal" id="close-modal">&times;</span>
@@ -298,7 +571,7 @@
                         </div>
 
                         <div id="time-slots-container">
-                            <!-- Time slots will be populated by JavaScript -->
+
                         </div>
                     </div>
 
@@ -317,4 +590,4 @@
 
     </body>
 
-</html>
+</html> 

@@ -29,9 +29,21 @@ def create_app():
         """
         GET /api/escape/<login>
         Returns the computed Black Hole status and circle info for a 42 intra login.
+        Returns 404 if user is not found.
+        Returns 400 if there's an error processing the request.
         """
-        result = bhe.generate_escape_plan(login)
-        return jsonify(result)
+        try:
+            result = bhe.generate_escape_plan(login)
+            
+            # Check if there was an error in the result
+            if result.get("status", {}).get("error"):
+                error_msg = result["status"]["error"]
+                return jsonify({"error": error_msg}), 404
+            
+            return jsonify(result), 200
+        except Exception as e:
+            print(f"❌ Error processing escape plan for {login}: {e}")
+            return jsonify({"error": str(e)}), 500
 
     @app.post("/api/circle")
     def circle():

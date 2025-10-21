@@ -857,47 +857,49 @@ class BlackHoleEscape:
         
         return remaining
     
-    def _calculate_risk_level(self, days_until_blackhole: Optional[int], current_level: float, circle_info: Dict, system_type: str) -> str:
-        """Calculate risk level based on black hole date and progress"""
+    def _calculate_risk_level(self, days_until_blackhole: Optional[int], current_level: float, circle_info: Dict, system_type: str) -> float:
+        """Calculate risk level based on black hole date and progress (returns 0-1 float)"""
         if days_until_blackhole is None:
-            return "UNKNOWN"
+            return 0.5  # Default to medium risk if unknown
         
-        safe_days = days_until_blackhole
+        safe_days = max(0, days_until_blackhole)  # Ensure non-negative
         safe_level = current_level if current_level is not None else 0
         current_circle = circle_info.get("current_circle", 0)
         is_on_track = circle_info.get("is_on_track", False)
         
         # Different risk thresholds for different systems
         if system_type == "pace":
-            # Pace system has much longer timelines
+            # Pace system has much longer timelines (e.g., 365+ days)
             if safe_days <= 0:
-                return "BLACK_HOLED"
+                return 1.0  # Black holed = maximum risk
             elif safe_days <= 90:  # 3 months in pace system is critical
-                return "CRITICAL"
+                return 0.95
             elif safe_days <= 180:  # 6 months in pace system is high
-                return "HIGH"
+                return 0.80
             elif safe_days <= 270:  # 9 months in pace system is medium
-                return "MEDIUM"
+                return 0.60
             elif safe_days <= 365 and not is_on_track:  # 1 year in pace system
-                return "LOW"
+                return 0.40
             else:
-                return "SAFE"
+                return 0.15
         else:
-            # Old black hole system (shorter timelines)
+            # Old black hole system (shorter timelines, typically 70-90 days)
             if safe_days <= 0:
-                return "BLACK_HOLED"
+                return 1.0  # Black holed = maximum risk
+            elif safe_days <= 15:
+                return 0.95  # Critical: less than 2 weeks
             elif safe_days <= 30:
-                return "CRITICAL"
+                return 0.85  # Very high: less than 1 month
             elif safe_days <= 60:
-                return "HIGH"
+                return 0.70  # High: 1-2 months
             elif safe_days <= 90:
-                return "MEDIUM"
+                return 0.50  # Medium: 2-3 months
             elif safe_days <= 180 and not is_on_track:
-                return "LOW"
+                return 0.35  # Low: 3-6 months but off track
             elif safe_level < 3.0 and current_circle <= 2 and safe_days <= 270:
-                return "LOW"
+                return 0.30  # Low: Early stage with time
             else:
-                return "SAFE"
+                return 0.10  # Safe: plenty of time
     
     def generate_escape_plan(self, login: str) -> Dict:
         """

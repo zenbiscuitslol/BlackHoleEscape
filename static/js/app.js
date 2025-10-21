@@ -1,820 +1,728 @@
 "use strict";
 
-document.getElementById("loginGo").addEventListener("click", async () => {
-  const login = document.getElementById("loginInputMain").value.trim();
-  if (!login) {
-    alert("Please enter your intra name!");
-    return;
-  }
+// Global state
+let currentUser = null;
+let userData = null;
+let currentWeekOffset = 0;
 
-  const res = await fetch(`/api/escape/${encodeURIComponent(login)}`);
-  if (!res.ok) {
-    document.getElementById("apiOut").textContent = "Error fetching data!";
-    return;
-  }
-  const json = await res.json();
-  document.getElementById("apiOut").textContent = JSON.stringify(json, null, 2);
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    checkForCachedUser();
 });
 
-// (Optional) allow Enter key to submit
-document.getElementById("loginInputMain").addEventListener("keydown", (e) => {
-  if (e.key === "Enter") document.getElementById("loginGo").click();
-});
+// Setup event listeners
+function setupEventListeners() {
+    // Login form
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', handleLogin);
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Week navigation
-  const weekDisplay = document.getElementById("current-week");
-  const prevWeekBtn = document.getElementById("prev-week");
-  const nextWeekBtn = document.getElementById("next-week");
+    // Clear error when typing in input
+    const intraLoginInput = document.getElementById('intraLogin');
+    intraLoginInput.addEventListener('input', () => {
+        if (intraLoginInput.classList.contains('error')) {
+            hideLoginError();
+        }
+    });
 
-  let currentWeek = 0;
+    // Tab navigation
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', switchTab);
+    });
 
-  function updateWeekDisplay() {
-    const baseDate = new Date();
-    baseDate.setDate(baseDate.getDate() + currentWeek * 7);
+    // Logout button
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('click', logout);
 
-    const startOfWeek = new Date(baseDate);
-    startOfWeek.setDate(baseDate.getDate() - baseDate.getDay() + 1);
+    // Week navigation
+    document.getElementById('prevWeek').addEventListener('click', () => {
+        currentWeekOffset--;
+        updateWeekDisplay();
+    });
 
-    const options = { month: "long", day: "numeric", year: "numeric" };
-    weekDisplay.textContent = `Week of ${startOfWeek.toLocaleDateString("en-US", options)}`;
-  }
+    document.getElementById('nextWeek').addEventListener('click', () => {
+        currentWeekOffset++;
+        updateWeekDisplay();
+    });
+}
 
-  prevWeekBtn.addEventListener("click", function() {
-    currentWeek--;
-    updateWeekDisplay();
-  });
+// Check for cached user session
+function checkForCachedUser() {
+    const cached = sessionStorage.getItem('currentUser');
+    if (cached) {
+        currentUser = JSON.parse(cached);
+        const cachedData = sessionStorage.getItem('userData');
+        if (cachedData) {
+            userData = JSON.parse(cachedData);
+            showMainContent();
+            populateUI();
+        }
+    }
+}
 
-  nextWeekBtn.addEventListener("click", function() {
-    currentWeek++;
-    updateWeekDisplay();
-  });
-
-  // Initialize week display
-  updateWeekDisplay();
-
-  // Default schedule data
-  const defaultSchedule = {
-    studentName: "",
-    focusArea: "coding",
-    currentProject: "",
-    sleepPattern: "balanced",
-    socialPreference: "medium",
-    exerciseFrequency: "3-4-times",
-    breakStyle: "pomodoro",
-    studyEnvironment: "campus",
-    suggestionsPreference: "moderate",
-    timeSlots: [
-      {
-        time: "7:00 - 8:00",
-        days: [
-          { type: "wellness", text: "Morning Exercise & Breakfast", suggested: false },
-          { type: "wellness", text: "Morning Exercise & Breakfast", suggested: false },
-          { type: "wellness", text: "Morning Exercise & Breakfast", suggested: false },
-          { type: "wellness", text: "Morning Exercise & Breakfast", suggested: false },
-          { type: "wellness", text: "Morning Exercise & Breakfast", suggested: false },
-          { type: "wellness", text: "Sleep In & Light Breakfast", suggested: false },
-          { type: "wellness", text: "Sleep In & Light Breakfast", suggested: false },
-        ],
-      },
-      {
-        time: "8:00 - 10:00",
-        days: [
-          { type: "coding", text: "Project Work Session 1", suggested: false },
-          { type: "coding", text: "Project Work Session 1", suggested: false },
-          { type: "coding", text: "Project Work Session 1", suggested: false },
-          { type: "coding", text: "Project Work Session 1", suggested: false },
-          { type: "coding", text: "Project Work Session 1", suggested: false },
-          { type: "wellness", text: "Outdoor Activity", suggested: true },
-          { type: "wellness", text: "Personal Time", suggested: false },
-        ],
-      },
-      {
-        time: "10:00 - 10:30",
-        days: [
-          { type: "break", text: "Coffee Break & Snack", suggested: false },
-          { type: "break", text: "Coffee Break & Snack", suggested: false },
-          { type: "break", text: "Coffee Break & Snack", suggested: false },
-          { type: "break", text: "Coffee Break & Snack", suggested: false },
-          { type: "break", text: "Coffee Break & Snack", suggested: false },
-          { type: "break", text: "Coffee & Relax", suggested: false },
-          { type: "break", text: "Coffee & Relax", suggested: false },
-        ],
-      },
-      {
-        time: "10:30 - 12:30",
-        days: [
-          { type: "coding", text: "Project Work Session 2", suggested: false },
-          { type: "coding", text: "Project Work Session 2", suggested: false },
-          { type: "learning", text: "Peer Learning Session", suggested: true },
-          { type: "coding", text: "Project Work Session 2", suggested: false },
-          { type: "coding", text: "Project Work Session 2", suggested: false },
-          { type: "social", text: "Social Activity", suggested: true },
-          { type: "learning", text: "Skill Development", suggested: false },
-        ],
-      },
-      {
-        time: "12:30 - 13:30",
-        days: [
-          { type: "break", text: "Lunch Break", suggested: false },
-          { type: "break", text: "Lunch Break", suggested: false },
-          { type: "break", text: "Lunch Break", suggested: false },
-          { type: "break", text: "Lunch Break", suggested: false },
-          { type: "break", text: "Lunch Break", suggested: false },
-          { type: "break", text: "Lunch Out", suggested: true },
-          { type: "break", text: "Lunch & Relax", suggested: false },
-        ],
-      },
-      {
-        time: "13:30 - 15:30",
-        days: [
-          { type: "coding", text: "Project Work Session 3", suggested: false },
-          { type: "coding", text: "Project Work Session 3", suggested: false },
-          { type: "coding", text: "Project Work Session 3", suggested: false },
-          { type: "coding", text: "Project Work Session 3", suggested: false },
-          { type: "coding", text: "Project Work Session 3", suggested: false },
-          { type: "social", text: "Explore Heilbronn", suggested: true },
-          { type: "learning", text: "Online Course", suggested: false },
-        ],
-      },
-      {
-        time: "15:30 - 16:00",
-        days: [
-          { type: "break", text: "Afternoon Break", suggested: false },
-          { type: "break", text: "Afternoon Break", suggested: false },
-          { type: "break", text: "Afternoon Break", suggested: false },
-          { type: "break", text: "Afternoon Break", suggested: false },
-          { type: "break", text: "Afternoon Break", suggested: false },
-          { type: "break", text: "Snack Break", suggested: false },
-          { type: "break", text: "Snack Break", suggested: false },
-        ],
-      },
-      {
-        time: "16:00 - 18:00",
-        days: [
-          { type: "learning", text: "Code Review & Debugging", suggested: false },
-          { type: "learning", text: "New Technology Exploration", suggested: true },
-          { type: "social", text: "Peer Programming", suggested: true },
-          { type: "learning", text: "Algorithm Practice", suggested: false },
-          { type: "social", text: "Project Collaboration", suggested: true },
-          { type: "wellness", text: "Fitness & Exercise", suggested: false },
-          { type: "wellness", text: "Meditation & Reflection", suggested: true },
-        ],
-      },
-      {
-        time: "18:00 - 19:30",
-        days: [
-          { type: "break", text: "Dinner Break", suggested: false },
-          { type: "break", text: "Dinner Break", suggested: false },
-          { type: "break", text: "Dinner Break", suggested: false },
-          { type: "break", text: "Dinner Break", suggested: false },
-          { type: "social", text: "Social Dinner", suggested: true },
-          { type: "social", text: "Dinner with Friends", suggested: true },
-          { type: "break", text: "Dinner & Plan Week", suggested: false },
-        ],
-      },
-      {
-        time: "19:30 - 21:00",
-        days: [
-          { type: "learning", text: "Light Study Session", suggested: false },
-          { type: "learning", text: "Light Study Session", suggested: false },
-          { type: "social", text: "42 Events/Workshops", suggested: true },
-          { type: "learning", text: "Light Study Session", suggested: false },
-          { type: "social", text: "Movie/Games Night", suggested: true },
-          { type: "social", text: "Evening Social", suggested: true },
-          { type: "learning", text: "Weekly Review", suggested: false },
-        ],
-      },
-      {
-        time: "21:00 - 22:30",
-        days: [
-          { type: "wellness", text: "Wind Down & Relax", suggested: false },
-          { type: "wellness", text: "Wind Down & Relax", suggested: false },
-          { type: "wellness", text: "Wind Down & Relax", suggested: false },
-          { type: "wellness", text: "Wind Down & Relax", suggested: false },
-          { type: "social", text: "Social Time", suggested: true },
-          { type: "social", text: "Social Time", suggested: true },
-          { type: "wellness", text: "Prepare for Week", suggested: false },
-        ],
-      },
-    ],
-    suggestions: [
-      { text: "Add a 15-minute walk after lunch to improve digestion and focus", accepted: false },
-      { text: "Schedule a peer programming session on Wednesday afternoon", accepted: false },
-      { text: "Try the 52/17 work-break pattern for better productivity", accepted: false },
-    ],
-  };
-
-  // Load schedule from localStorage or use default
-  let currentSchedule = JSON.parse(localStorage.getItem("blackHoleSchedule")) || defaultSchedule;
-
-  // Enhanced AI Suggestion Engine
-  class PersonalizedAISuggestions {
-    constructor(userProfile, scheduleData) {
-      this.userProfile = userProfile;
-      this.scheduleData = scheduleData;
+// Handle login
+async function handleLogin(e) {
+    e.preventDefault();
+    const intraLogin = document.getElementById('intraLogin').value.trim();
+    
+    if (!intraLogin) {
+        showLoginError('Please enter your 42 intra login');
+        return;
     }
 
-    generatePersonalizedSuggestions() {
-      const suggestions = [];
-      const analysis = this.analyzeSchedule();
+    showLoadingSpinner(true);
+    hideLoginError();
 
-      suggestions.push(...this.generateCodingSuggestions(analysis));
-      suggestions.push(...this.generateWellnessSuggestions(analysis));
-      suggestions.push(...this.generateSocialSuggestions(analysis));
-      suggestions.push(...this.generateProductivitySuggestions(analysis));
-      suggestions.push(...this.generateGoalBasedSuggestions(analysis));
-
-      return this.filterSuggestions(suggestions);
-    }
-
-    analyzeSchedule() {
-      const analysis = {
-        codingHours: 0,
-        breakHours: 0,
-        socialHours: 0,
-        learningHours: 0,
-        wellnessHours: 0,
-        consecutiveCoding: 0,
-        maxConsecutiveCoding: 0,
-        lateNightSessions: 0,
-        mealConsistency: 0,
-      };
-
-      let currentConsecutive = 0;
-
-      this.scheduleData.timeSlots.forEach(slot => {
-        const duration = this.getSlotDuration(slot.time);
-
-        slot.days.forEach(day => {
-          switch (day.type) {
-            case "coding":
-              analysis.codingHours += duration;
-              currentConsecutive++;
-              analysis.maxConsecutiveCoding = Math.max(analysis.maxConsecutiveCoding, currentConsecutive);
-              break;
-            case "break":
-              analysis.breakHours += duration;
-              currentConsecutive = 0;
-              if (this.isMealSlot(slot.time)) analysis.mealConsistency++;
-              break;
-            case "social":
-              analysis.socialHours += duration;
-              currentConsecutive = 0;
-              break;
-            case "learning":
-              analysis.learningHours += duration;
-              currentConsecutive = 0;
-              break;
-            case "wellness":
-              analysis.wellnessHours += duration;
-              currentConsecutive = 0;
-              break;
-          }
-
-          if (this.isLateNightSlot(slot.time) && day.type === "coding") {
-            analysis.lateNightSessions++;
-          }
-        });
-      });
-
-      analysis.balanceScore = this.calculateBalanceScore(analysis);
-      return analysis;
-    }
-
-    generateCodingSuggestions(analysis) {
-      const suggestions = [];
-      const userFocus = this.userProfile.focusArea;
-      const currentProject = this.userProfile.currentProject;
-
-      if (analysis.maxConsecutiveCoding > 3) {
-        suggestions.push({
-          text:
-            `You have ${analysis.maxConsecutiveCoding} consecutive coding sessions. Add more breaks to maintain focus.`,
-          priority: "high",
-          category: "productivity",
-        });
-      }
-
-      if (analysis.codingHours > 35) {
-        suggestions.push({
-          text: `You're scheduling ${
-            analysis.codingHours.toFixed(1)
-          } coding hours. That's intensive! Balance with adequate rest.`,
-          priority: "medium",
-          category: "wellness",
-        });
-      }
-
-      if (analysis.lateNightSessions > 2) {
-        suggestions.push({
-          text:
-            `You have ${analysis.lateNightSessions} late-night coding sessions. Move these to daytime for better sleep.`,
-          priority: "high",
-          category: "wellness",
-        });
-      }
-
-      if (currentProject && userFocus === "web-dev") {
-        suggestions.push({
-          text: `For ${currentProject}, schedule frontend/backend separation days to maintain context.`,
-          priority: "low",
-          category: "coding",
-        });
-      }
-
-      return suggestions;
-    }
-
-    generateWellnessSuggestions(analysis) {
-      const suggestions = [];
-      const sleepPattern = this.userProfile.sleepPattern;
-      const exerciseFreq = this.userProfile.exerciseFrequency;
-
-      if (analysis.mealConsistency < 10) {
-        suggestions.push({
-          text: `You're missing ${
-            14 - analysis.mealConsistency
-          } scheduled meals. Consistent nutrition is key for energy.`,
-          priority: "medium",
-          category: "wellness",
-        });
-      }
-
-      if (analysis.wellnessHours < 5) {
-        suggestions.push({
-          text: `Add more wellness activities. You have only ${analysis.wellnessHours.toFixed(1)} hours scheduled.`,
-          priority: "medium",
-          category: "wellness",
-        });
-      }
-
-      if (sleepPattern === "night-owl" && analysis.lateNightSessions > 3) {
-        suggestions.push({
-          text: "As a night owl with many late sessions, maintain consistent wake-up times.",
-          priority: "medium",
-          category: "wellness",
-        });
-      }
-
-      return suggestions;
-    }
-
-    generateSocialSuggestions(analysis) {
-      const suggestions = [];
-      const socialPref = this.userProfile.socialPreference;
-
-      if (socialPref === "low" && analysis.socialHours < 2) {
-        suggestions.push({
-          text: "Even with low social preference, schedule 2-3 hours weekly for mental health.",
-          priority: "low",
-          category: "social",
-        });
-      }
-
-      if (socialPref === "high" && analysis.socialHours < 8) {
-        suggestions.push({
-          text: `You prefer high social activity but only have ${analysis.socialHours.toFixed(1)} hours scheduled.`,
-          priority: "medium",
-          category: "social",
-        });
-      }
-
-      return suggestions;
-    }
-
-    generateProductivitySuggestions(analysis) {
-      const suggestions = [];
-      const breakStyle = this.userProfile.breakStyle;
-
-      if (analysis.breakHours < 10 && analysis.codingHours > 20) {
-        suggestions.push({
-          text: `High coding (${analysis.codingHours.toFixed(1)}h) with low breaks (${
-            analysis.breakHours.toFixed(1)
-          }h). Try the 52/17 rule.`,
-          priority: "high",
-          category: "productivity",
-        });
-      }
-
-      if (breakStyle === "pomodoro" && analysis.maxConsecutiveCoding > 4) {
-        suggestions.push({
-          text: "You use Pomodoro but have long coding blocks. Maintain 25-minute focused sessions.",
-          priority: "medium",
-          category: "productivity",
-        });
-      }
-
-      return suggestions;
-    }
-
-    generateGoalBasedSuggestions(analysis) {
-      const suggestions = [];
-      const focusArea = this.userProfile.focusArea;
-
-      switch (focusArea) {
-        case "web-dev":
-          suggestions.push({
-            text: "For web development, schedule design review sessions separate from coding.",
-            priority: "low",
-            category: "learning",
-          });
-          break;
-        case "algorithms":
-          suggestions.push({
-            text: "Algorithm practice is most effective in daily 1-2 hour sessions.",
-            priority: "medium",
-            category: "learning",
-          });
-          break;
-        case "ai-ml":
-          suggestions.push({
-            text: "Schedule separate blocks for AI/ML implementation vs. research.",
-            priority: "medium",
-            category: "learning",
-          });
-          break;
-      }
-
-      if (analysis.balanceScore < 0.6) {
-        suggestions.push({
-          text: `Your balance score is low (${
-            (analysis.balanceScore * 100).toFixed(0)
-          }%). Distribute activities more evenly.`,
-          priority: "high",
-          category: "wellness",
-        });
-      }
-
-      return suggestions;
-    }
-
-    filterSuggestions(suggestions) {
-      const uniqueSuggestions = suggestions.filter((s, i, self) => i === self.findIndex(t => t.text === s.text));
-
-      uniqueSuggestions.sort((a, b) => {
-        const priorityOrder = { high: 3, medium: 2, low: 1 };
-        return priorityOrder[b.priority] - priorityOrder[a.priority];
-      });
-
-      return uniqueSuggestions.slice(0, 5);
-    }
-
-    getSlotDuration(timeString) {
-      const [start, end] = timeString.split(" - ");
-      const startTime = this.parseTime(start);
-      const endTime = this.parseTime(end);
-      return (endTime - startTime) / (1000 * 60 * 60);
-    }
-
-    parseTime(timeString) {
-      const time = timeString.trim();
-      let [hours, minutes] = time.split(":").map(Number);
-      return new Date().setHours(hours, minutes || 0, 0, 0);
-    }
-
-    isLateNightSlot(timeString) {
-      const [start] = timeString.split(" - ");
-      const time = this.parseTime(start);
-      const hours = new Date(time).getHours();
-      return hours >= 22 || hours <= 2;
-    }
-
-    isMealSlot(timeString) {
-      const mealTimes = ["7:00", "8:00", "12:00", "13:00", "18:00", "19:00"];
-      return mealTimes.some(mealTime => timeString.includes(mealTime));
-    }
-
-    calculateBalanceScore(analysis) {
-      const totalHours = analysis.codingHours + analysis.breakHours + analysis.socialHours
-        + analysis.learningHours + analysis.wellnessHours;
-
-      if (totalHours === 0) return 0;
-
-      const idealRatios = {
-        coding: 0.4,
-        break: 0.2,
-        social: 0.15,
-        learning: 0.15,
-        wellness: 0.1,
-      };
-
-      const actualRatios = {
-        coding: analysis.codingHours / totalHours,
-        break: analysis.breakHours / totalHours,
-        social: analysis.socialHours / totalHours,
-        learning: analysis.learningHours / totalHours,
-        wellness: analysis.wellnessHours / totalHours,
-      };
-
-      let similarity = 0;
-      for (const category in idealRatios) {
-        similarity += 1 - Math.abs(idealRatios[category] - actualRatios[category]);
-      }
-
-      return similarity / Object.keys(idealRatios).length;
-    }
-  }
-
-  // Enhanced AI recommendation function
-  function updateAIRecommendation() {
-    const aiEngine = new PersonalizedAISuggestions(currentSchedule, currentSchedule);
-    const analysis = aiEngine.analyzeSchedule();
-
-    let recommendation = "";
-    const userName = currentSchedule.studentName ? ` ${currentSchedule.studentName}` : "";
-
-    if (analysis.balanceScore < 0.5) {
-      recommendation = `Hi${userName}! Your schedule shows significant imbalance. `;
-
-      if (analysis.codingHours > analysis.socialHours * 3) {
-        recommendation += "You're heavily focused on coding with minimal social time. ";
-      }
-
-      if (analysis.consecutiveCoding > 4) {
-        recommendation += "Long coding sessions without breaks can lead to burnout. ";
-      }
-
-      recommendation += "Try distributing activities more evenly throughout your week.";
-    } else if (analysis.balanceScore > 0.8) {
-      recommendation =
-        `Excellent balance${userName}! Your schedule shows great distribution between work, breaks, and wellness. Keep maintaining this healthy routine!`;
-    } else {
-      recommendation = `Good schedule structure${userName}! `;
-
-      if (currentSchedule.focusArea === "web-dev") {
-        recommendation +=
-          "As a web development student, consider scheduling design review sessions separately from coding.";
-      } else if (currentSchedule.focusArea === "algorithms") {
-        recommendation +=
-          "For algorithm practice, daily shorter sessions are more effective than occasional long ones.";
-      } else {
-        recommendation += "Check the suggestions panel for personalized tips to optimize your schedule.";
-      }
-    }
-
-    document.getElementById("ai-recommendation").textContent = recommendation;
-  }
-
-  // Function to generate personalized suggestions
-  function generatePersonalizedSuggestions() {
-    const aiEngine = new PersonalizedAISuggestions(currentSchedule, currentSchedule);
-    const personalizedSuggestions = aiEngine.generatePersonalizedSuggestions();
-
-    // Convert to the format expected by our system
-    currentSchedule.suggestions = personalizedSuggestions.map(suggestion => ({
-      text: suggestion.text,
-      accepted: false,
-    }));
-
-    populateSuggestionsList();
-    updateAIRecommendation();
-  }
-
-  // Populate the timetable with schedule data
-  function populateTimetable() {
-    const tbody = document.querySelector("#schedule-table tbody");
-    tbody.innerHTML = "";
-
-    currentSchedule.timeSlots.forEach(slot => {
-      const row = document.createElement("tr");
-
-      // Time header cell
-      const timeCell = document.createElement("td");
-      timeCell.className = "time-header";
-      timeCell.textContent = slot.time;
-      row.appendChild(timeCell);
-
-      // Day cells
-      slot.days.forEach(day => {
-        const dayCell = document.createElement("td");
-        const activityDiv = document.createElement("div");
-        activityDiv.className = `activity ${day.type}`;
-        activityDiv.textContent = day.text;
-        activityDiv.dataset.type = day.type;
-
-        // Add suggestion indicator if this is a suggested activity
-        if (day.suggested) {
-          const indicator = document.createElement("div");
-          indicator.className = "suggestion-indicator";
-          activityDiv.appendChild(indicator);
+    try {
+        const response = await fetch(`/api/escape/${encodeURIComponent(intraLogin)}`);
+        
+        // Handle HTTP errors from backend
+        if (!response.ok) {
+            showLoadingSpinner(false);
+            
+            if (response.status === 404) {
+                showLoginError('❌ Invalid login. This user does not exist in the 42 database. Please try again.');
+            } else if (response.status === 500) {
+                showLoginError('❌ Server error. Please try again later.');
+            } else {
+                showLoginError('❌ Error fetching data. Please check your login and try again.');
+            }
+            return;
         }
 
-        dayCell.appendChild(activityDiv);
-        row.appendChild(dayCell);
-      });
+        const apiResponse = await response.json();
+        
+        // Check if response contains an error field (shouldn't happen with 200 status, but just in case)
+        if (apiResponse.error) {
+            showLoadingSpinner(false);
+            showLoginError(`❌ Invalid login: ${apiResponse.error}`);
+            return;
+        }
 
-      tbody.appendChild(row);
-    });
+        // Validate that we have the expected data structure
+        if (!apiResponse.status) {
+            showLoadingSpinner(false);
+            showLoginError('❌ Invalid response from server. Please try again.');
+            return;
+        }
 
-    // Populate suggestions list
-    populateSuggestionsList();
+        // Check if user is blackholed (warning but still allow access)
+        if (apiResponse.status.is_blackholed) {
+            showLoginError('⚠️ Warning: You are currently in the Black Hole. Please contact administration.');
+        }
 
-    // Update AI recommendation
-    updateAIRecommendation();
-  }
+        userData = apiResponse;
+        currentUser = intraLogin;
 
-  // Populate suggestions list
-  function populateSuggestionsList() {
-    const suggestionsList = document.getElementById("suggestions-list");
-    suggestionsList.innerHTML = "";
+        // Cache in session storage
+        sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+        sessionStorage.setItem('userData', JSON.stringify(userData));
 
-    currentSchedule.suggestions.forEach((suggestion, index) => {
-      if (!suggestion.accepted) {
-        const suggestionItem = document.createElement("div");
-        suggestionItem.className = "suggestion-item";
+        // Clear any error messages
+        hideLoginError();
 
-        const suggestionText = document.createElement("div");
-        suggestionText.className = "suggestion-text";
-        suggestionText.textContent = suggestion.text;
-
-        const suggestionActions = document.createElement("div");
-        suggestionActions.className = "suggestion-actions";
-
-        const acceptBtn = document.createElement("button");
-        acceptBtn.className = "suggestion-btn accept";
-        acceptBtn.innerHTML = "<i class=\"fas fa-check\"></i>";
-        acceptBtn.title = "Accept suggestion";
-        acceptBtn.addEventListener("click", function() {
-          acceptSuggestion(index);
-        });
-
-        const ignoreBtn = document.createElement("button");
-        ignoreBtn.className = "suggestion-btn ignore";
-        ignoreBtn.innerHTML = "<i class=\"fas fa-times\"></i>";
-        ignoreBtn.title = "Ignore suggestion";
-        ignoreBtn.addEventListener("click", function() {
-          ignoreSuggestion(index);
-        });
-
-        suggestionActions.appendChild(acceptBtn);
-        suggestionActions.appendChild(ignoreBtn);
-
-        suggestionItem.appendChild(suggestionText);
-        suggestionItem.appendChild(suggestionActions);
-
-        suggestionsList.appendChild(suggestionItem);
-      }
-    });
-
-    // If no suggestions, show a message
-    if (suggestionsList.children.length === 0) {
-      suggestionsList.innerHTML =
-        "<p style=\"text-align: center; color: #adb5bd; padding: 20px;\">No active suggestions. Your schedule looks great!</p>";
+        // Show main content with animation
+        showMainContent();
+        populateUI();
+    } catch (error) {
+        console.error('Login error:', error);
+        showLoadingSpinner(false);
+        showLoginError('❌ Network error. Please check your connection and try again.');
     }
-  }
+}
 
-  // Accept a suggestion
-  function acceptSuggestion(index) {
-    currentSchedule.suggestions[index].accepted = true;
-    localStorage.setItem("blackHoleSchedule", JSON.stringify(currentSchedule));
-    populateSuggestionsList();
+// Show main content with smooth transition
+function showMainContent() {
+    const loginModal = document.getElementById('loginModal');
+    const mainContainer = document.getElementById('mainContainer');
 
-    // In a real app, we would implement the suggestion here
-    alert("Suggestion accepted! We would implement this change in your schedule.");
-  }
+    loginModal.classList.remove('active');
+    setTimeout(() => {
+        loginModal.style.display = 'none';
+        mainContainer.classList.remove('hidden');
+    }, 300);
+}
 
-  // Ignore a suggestion
-  function ignoreSuggestion(index) {
-    currentSchedule.suggestions.splice(index, 1);
-    localStorage.setItem("blackHoleSchedule", JSON.stringify(currentSchedule));
-    populateSuggestionsList();
-  }
+// Populate UI with user data
+function populateUI() {
+    if (!userData) return;
 
-  // Populate the customization form
-  function populateCustomizationForm() {
-    document.getElementById("student-name").value = currentSchedule.studentName;
-    document.getElementById("focus-area").value = currentSchedule.focusArea;
-    document.getElementById("current-project").value = currentSchedule.currentProject;
-    document.getElementById("sleep-pattern").value = currentSchedule.sleepPattern;
-    document.getElementById("social-preference").value = currentSchedule.socialPreference;
-    document.getElementById("exercise-frequency").value = currentSchedule.exerciseFrequency;
-    document.getElementById("break-style").value = currentSchedule.breakStyle;
-    document.getElementById("study-environment").value = currentSchedule.studyEnvironment;
-    document.getElementById("suggestions-preference").value = currentSchedule.suggestionsPreference;
+    // Extract status and escape plan from the nested structure
+    const status = userData.status || {};
+    const escapePlan = userData.escape_plan || {};
 
-    const timeSlotsContainer = document.getElementById("time-slots-container");
-    timeSlotsContainer.innerHTML = "";
+    // Update greeting
+    const greeting = document.getElementById('userGreeting');
+    const username = status.user_name || status.user_login || 'User';
+    greeting.textContent = `Welcome, ${username}`;
 
-    currentSchedule.timeSlots.forEach((slot, slotIndex) => {
-      const timeSlotDiv = document.createElement("div");
-      timeSlotDiv.className = "time-slot";
+    // Update status
+    const statusEl = document.getElementById('userStatus');
+    const daysLeft = status.days_until_blackhole || 0;
+    if (daysLeft > 0) {
+        statusEl.textContent = `You have ${daysLeft} days to escape the Black Hole`;
+    } else if (status.is_blackholed) {
+        statusEl.textContent = '⚠️ You are currently in the Black Hole';
+    } else {
+        statusEl.textContent = 'No Black Hole deadline - You are safe!';
+    }
 
-      // Time label
-      const timeLabel = document.createElement("div");
-      timeLabel.className = "time-label";
-      timeLabel.textContent = slot.time;
-      timeSlotDiv.appendChild(timeLabel);
+    // Update stats
+    updateStats();
+    updateRiskAnalysis();
+    updateRecommendations();
+    populateSchedule();
+    populateProjects();
 
-      // Day inputs
-      slot.days.forEach((day, dayIndex) => {
-        const select = document.createElement("select");
-        select.className = "activity-edit";
-        select.dataset.slotIndex = slotIndex;
-        select.dataset.dayIndex = dayIndex;
+    showLoadingSpinner(false);
+}
 
-        const options = [
-          { value: "coding", text: "Coding" },
-          { value: "break", text: "Break" },
-          { value: "social", text: "Social" },
-          { value: "learning", text: "Learning" },
-          { value: "wellness", text: "Wellness" },
+// Update statistics cards
+function updateStats() {
+    const status = userData.status || {};
+    const escapePlan = userData.escape_plan || {};
+    
+    const level = status.level || status.user_level || 0;
+    const daysRemaining = status.days_until_blackhole || 0;
+    const circleInfo = status.circle_info?.circle_name || 'Unknown';
+    const projectsRemaining = escapePlan.projects_remaining_current || 0;
+    
+    document.getElementById('userLevel').textContent = level.toFixed(1);
+    document.getElementById('daysRemaining').textContent = Math.max(0, daysRemaining);
+    document.getElementById('circleInfo').textContent = circleInfo;
+
+    // Determine escape status based on actual data
+    let status_text = 'At Risk';
+    if (status.is_blackholed) {
+        status_text = '🔴 In Black Hole';
+    } else if (daysRemaining > 60) {
+        status_text = '🟢 Safe';
+    } else if (daysRemaining > 30) {
+        status_text = '🟡 Caution';
+    }
+    
+    const statusEl = document.getElementById('escapeStatus');
+    statusEl.textContent = status_text;
+}
+
+// Update risk analysis
+function updateRiskAnalysis() {
+    const status = userData.status || {};
+    const escapePlan = userData.escape_plan || {};
+    
+    // Ensure risk_level is a valid number between 0 and 1
+    let riskLevel = parseFloat(status.risk_level);
+    if (isNaN(riskLevel) || riskLevel === null || riskLevel === undefined) {
+        riskLevel = 0.5; // Default to medium risk if invalid
+    }
+    riskLevel = Math.min(1, Math.max(0, riskLevel)); // Clamp to 0-1 range
+    
+    const daysLeft = status.days_until_blackhole || 0;
+    const timelineFeasible = escapePlan.timeline_feasible || false;
+    
+    const riskFill = document.getElementById('riskFill');
+    const riskLevelText = document.getElementById('riskLevel');
+    const riskDescription = document.getElementById('riskDescription');
+
+    // Set risk bar fill percentage (0-100)
+    const riskPercentage = Math.min(100, Math.max(0, riskLevel * 100));
+    riskFill.style.width = riskPercentage + '%';
+    
+    // Set risk bar color based on level
+    if (riskPercentage > 70) {
+        riskFill.style.background = 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)';
+    } else if (riskPercentage > 40) {
+        riskFill.style.background = 'linear-gradient(90deg, #facc15 0%, #eab308 100%)';
+    } else {
+        riskFill.style.background = 'linear-gradient(90deg, #4ade80 0%, #22c55e 100%)';
+    }
+
+    // Format risk level text
+    let riskText = 'Low Risk';
+    if (riskLevel > 0.7) riskText = 'High Risk';
+    else if (riskLevel > 0.4) riskText = 'Medium Risk';
+    riskLevelText.textContent = riskText + ` (${(riskLevel * 100).toFixed(0)}%)`;
+
+    // Generate risk description based on actual data
+    let description = '';
+    
+    if (status.is_blackholed) {
+        description = '🔴 You are currently in the Black Hole. Contact administration immediately.';
+    } else if (riskLevel > 0.8) {
+        description = '⚠️ CRITICAL: Immediate action required. Focus urgently on completing projects.';
+    } else if (riskLevel > 0.6) {
+        description = '⚠️ HIGH RISK: Increase project work significantly. Consider adjusting your schedule.';
+    } else if (riskLevel > 0.4) {
+        description = '⏱️ MODERATE RISK: Maintain consistent work. Balance activities carefully.';
+    } else {
+        description = '✓ LOW RISK: On track. Continue at current pace while maintaining balance.';
+    }
+    
+    if (!timelineFeasible && daysLeft > 0 && daysLeft < 30) {
+        description += ' ⚡ Note: Current timeline may be tight.';
+    }
+
+    riskDescription.textContent = description;
+}
+
+// Update recommendations
+function updateRecommendations() {
+    const recommendationsList = document.getElementById('recommendationsList');
+    recommendationsList.innerHTML = '';
+
+    const recommendations = generateRecommendations();
+    
+    if (recommendations.length === 0) {
+        recommendationsList.innerHTML = '<p class="loading-text">No recommendations at this time.</p>';
+        return;
+    }
+
+    recommendations.forEach(rec => {
+        const item = document.createElement('div');
+        item.className = `recommendation-item ${rec.level}`;
+        item.innerHTML = `<div class="recommendation-text">${rec.text}</div>`;
+        recommendationsList.appendChild(item);
+    });
+}
+
+// Generate recommendations based on user data
+function generateRecommendations() {
+    const status = userData.status || {};
+    const escapePlan = userData.escape_plan || {};
+    
+    const recommendations = escapePlan.recommendations || [];
+    const riskLevel = status.risk_level || 0;
+    const daysLeft = status.days_until_blackhole || 0;
+    const level = status.level || 0;
+
+    // Use backend recommendations if available
+    if (recommendations.length > 0) {
+        return recommendations.map(rec => ({
+            level: riskLevel > 0.6 ? 'danger' : (riskLevel > 0.3 ? 'warning' : 'info'),
+            text: rec
+        }));
+    }
+
+    // Fallback to generated recommendations
+    const fallbackRecs = [];
+    
+    // Risk-based recommendations
+    if (riskLevel > 0.8) {
+        fallbackRecs.push({
+            level: 'danger',
+            text: '🚨 URGENT: Your risk level is critical. Prioritize project completion over all other activities.'
+        });
+        fallbackRecs.push({
+            level: 'danger',
+            text: '⏰ You have less than ' + daysLeft + ' days. Create a strict daily schedule focused on projects.'
+        });
+    } else if (riskLevel > 0.6) {
+        fallbackRecs.push({
+            level: 'warning',
+            text: '🎯 Increase project work time by 20-30% this week to reduce risk.'
+        });
+        fallbackRecs.push({
+            level: 'warning',
+            text: '📋 Identify your top priority project and allocate dedicated focus time daily.'
+        });
+    }
+
+    // Level-based recommendations
+    if (level < 2) {
+        fallbackRecs.push({
+            level: 'info',
+            text: '📚 Focus on fundamental projects. Build a strong foundation before moving to advanced work.'
+        });
+    } else if (level > 5) {
+        fallbackRecs.push({
+            level: 'info',
+            text: '🏆 You\'re progressing well! Consider challenging projects to accelerate your growth.'
+        });
+    }
+
+    // General wellness recommendations
+    if (riskLevel < 0.5) {
+        fallbackRecs.push({
+            level: 'info',
+            text: '✨ Maintain your current pace. Remember to take regular breaks for optimal productivity.'
+        });
+        fallbackRecs.push({
+            level: 'info',
+            text: '🤝 Connect with peers. Collaboration can enhance learning and provide support.'
+        });
+    }
+
+    return fallbackRecs.slice(0, 5);
+}
+
+// Populate schedule table
+function populateSchedule() {
+    // Generate time slots (hourly from 00:00 to 24:00)
+    const timeSlotContainer = document.getElementById('timeSlots');
+    timeSlotContainer.innerHTML = '';
+    
+    for (let hour = 0; hour < 24; hour++) {
+        const timeSlot = document.createElement('div');
+        timeSlot.className = 'time-slot';
+        const displayHour = hour.toString().padStart(2, '0');
+        timeSlot.textContent = `${displayHour}:00`;
+        timeSlotContainer.appendChild(timeSlot);
+    }
+
+    // Generate calendar view
+    const daysContainer = document.getElementById('daysContainer');
+    daysContainer.innerHTML = '';
+
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    
+    // Sample schedule data - 2-hour blocks per day
+    const scheduleData = {
+        0: [  // Monday
+            { name: 'Study & Preparation', startHour: 6, endHour: 8, category: 'learning' },
+            { name: 'Coding Session', startHour: 8, endHour: 10, category: 'coding' },
+            { name: 'Coding Session', startHour: 10, endHour: 12, category: 'coding' },
+            { name: 'Lunch Break', startHour: 12, endHour: 14, category: 'break' },
+            { name: 'Project Work', startHour: 14, endHour: 16, category: 'coding' },
+            { name: 'Exercise & Wellness', startHour: 16, endHour: 18, category: 'wellness' },
+            { name: 'Evening Study', startHour: 18, endHour: 20, category: 'learning' },
+            { name: 'Rest & Wind Down', startHour: 20, endHour: 22, category: 'wellness' }
+        ],
+        1: [  // Tuesday
+            { name: 'Morning Coding', startHour: 6, endHour: 8, category: 'coding' },
+            { name: 'Code Review', startHour: 8, endHour: 10, category: 'social' },
+            { name: 'Pair Programming', startHour: 10, endHour: 12, category: 'coding' },
+            { name: 'Lunch Break', startHour: 12, endHour: 14, category: 'break' },
+            { name: 'Project Development', startHour: 14, endHour: 16, category: 'coding' },
+            { name: 'Learning & Research', startHour: 16, endHour: 18, category: 'learning' },
+            { name: 'Social Activities', startHour: 18, endHour: 20, category: 'social' },
+            { name: 'Rest & Recovery', startHour: 20, endHour: 22, category: 'wellness' }
+        ],
+        2: [  // Wednesday
+            { name: 'Coding Session', startHour: 6, endHour: 8, category: 'coding' },
+            { name: 'Algorithm Study', startHour: 8, endHour: 10, category: 'learning' },
+            { name: 'Project Work', startHour: 10, endHour: 12, category: 'coding' },
+            { name: 'Lunch Break', startHour: 12, endHour: 14, category: 'break' },
+            { name: 'Workshop & Training', startHour: 14, endHour: 16, category: 'learning' },
+            { name: 'Development', startHour: 16, endHour: 18, category: 'coding' },
+            { name: 'Community Events', startHour: 18, endHour: 20, category: 'social' },
+            { name: 'Evening Relaxation', startHour: 20, endHour: 22, category: 'wellness' }
+        ],
+        3: [  // Thursday
+            { name: 'Data Structures', startHour: 6, endHour: 8, category: 'learning' },
+            { name: 'Coding Practice', startHour: 8, endHour: 10, category: 'coding' },
+            { name: 'Problem Solving', startHour: 10, endHour: 12, category: 'coding' },
+            { name: 'Lunch Break', startHour: 12, endHour: 14, category: 'break' },
+            { name: 'Project Development', startHour: 14, endHour: 16, category: 'coding' },
+            { name: 'Algorithm Optimization', startHour: 16, endHour: 18, category: 'learning' },
+            { name: 'Social Time', startHour: 18, endHour: 20, category: 'social' },
+            { name: 'Sleep Preparation', startHour: 20, endHour: 22, category: 'wellness' }
+        ],
+        4: [  // Friday
+            { name: 'Final Push Coding', startHour: 6, endHour: 8, category: 'coding' },
+            { name: 'Code Optimization', startHour: 8, endHour: 10, category: 'coding' },
+            { name: 'Testing & Debug', startHour: 10, endHour: 12, category: 'coding' },
+            { name: 'Lunch Break', startHour: 12, endHour: 14, category: 'break' },
+            { name: 'Project Completion', startHour: 14, endHour: 16, category: 'coding' },
+            { name: 'Team Collaboration', startHour: 16, endHour: 18, category: 'social' },
+            { name: 'Weekend Prep', startHour: 18, endHour: 20, category: 'break' },
+            { name: 'Social Celebration', startHour: 20, endHour: 22, category: 'social' }
+        ],
+        5: [  // Saturday
+            { name: 'Morning Wellness', startHour: 8, endHour: 10, category: 'wellness' },
+            { name: 'Physical Exercise', startHour: 10, endHour: 12, category: 'wellness' },
+            { name: 'Social Brunch', startHour: 12, endHour: 14, category: 'social' },
+            { name: 'Recreation Time', startHour: 14, endHour: 16, category: 'wellness' },
+            { name: 'Learning & Hobby', startHour: 16, endHour: 18, category: 'learning' },
+            { name: 'Entertainment', startHour: 18, endHour: 20, category: 'social' },
+            { name: 'Relaxation', startHour: 20, endHour: 22, category: 'wellness' }
+        ],
+        6: [  // Sunday
+            { name: 'Peaceful Morning', startHour: 8, endHour: 10, category: 'wellness' },
+            { name: 'Meal Preparation', startHour: 10, endHour: 12, category: 'break' },
+            { name: 'Personal Time', startHour: 12, endHour: 14, category: 'wellness' },
+            { name: 'Week Planning', startHour: 14, endHour: 16, category: 'learning' },
+            { name: 'Reflection Study', startHour: 16, endHour: 18, category: 'learning' },
+            { name: 'Social Connection', startHour: 18, endHour: 20, category: 'social' },
+            { name: 'Sleep Preparation', startHour: 20, endHour: 22, category: 'wellness' }
+        ]
+    };
+
+    days.forEach((dayShort, dayIndex) => {
+        const dayColumn = document.createElement('div');
+        dayColumn.className = 'day-column';
+
+        // Day header
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'day-header';
+        dayHeader.innerHTML = `<div class="day-label">${dayShort}</div>`;
+        dayColumn.appendChild(dayHeader);
+
+        // Day timeline container
+        const timeline = document.createElement('div');
+        timeline.className = 'day-timeline';
+
+        // Add 24 hour slots
+        for (let hour = 0; hour < 24; hour++) {
+            const hourBlock = document.createElement('div');
+            hourBlock.className = 'hour-block';
+            timeline.appendChild(hourBlock);
+        }
+
+        // Add events to the timeline
+        const events = scheduleData[dayIndex] || [];
+        events.forEach(event => {
+            const eventEl = document.createElement('div');
+            eventEl.className = `calendar-event ${event.category}`;
+            
+            // Calculate position and height
+            const startPercent = (event.startHour / 24) * 100;
+            const durationHours = event.endHour - event.startHour;
+            const heightPercent = (durationHours / 24) * 100;
+            
+            eventEl.style.top = startPercent + '%';
+            eventEl.style.height = heightPercent + '%';
+            
+            eventEl.innerHTML = `
+                <div class="event-content">
+                    <div class="event-time">${event.startHour.toString().padStart(2, '0')}:00 - ${event.endHour.toString().padStart(2, '0')}:00</div>
+                    <div class="event-title">${event.name}</div>
+                </div>
+            `;
+            
+            timeline.appendChild(eventEl);
+        });
+
+        dayColumn.appendChild(timeline);
+        daysContainer.appendChild(dayColumn);
+    });
+
+    updateWeekDisplay();
+}
+
+// Update week display
+function updateWeekDisplay() {
+    const today = new Date();
+    const weekDate = new Date(today);
+    weekDate.setDate(today.getDate() + currentWeekOffset * 7);
+    
+    const weekStart = new Date(weekDate);
+    const day = weekStart.getDay();
+    const diff = weekStart.getDate() - day + (day === 0 ? -6 : 1);
+    weekStart.setDate(diff);
+
+    const weekEnd = new Date(weekStart);
+    weekEnd.setDate(weekStart.getDate() + 6);
+
+    const options = { month: 'short', day: 'numeric' };
+    const startStr = weekStart.toLocaleDateString('en-US', options);
+    const endStr = weekEnd.toLocaleDateString('en-US', options);
+
+    document.getElementById('weekDisplay').textContent = `${startStr} - ${endStr}`;
+}
+
+// Populate projects list
+function populateProjects() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    projectsGrid.innerHTML = '';
+
+    // Get projects from backend escape plan or create default list
+    const escapePlan = userData.escape_plan || {};
+    const priorityProjects = escapePlan.priority_projects || [];
+    const remainingProjects = escapePlan.projects_remaining_current || 0;
+    
+    let projects = [];
+    
+    // Try to get projects from backend first
+    if (priorityProjects.length > 0) {
+        projects = priorityProjects.map((name, idx) => ({
+            name: name,
+            description: `Priority project ${idx + 1} - Focus on completing this`,
+            status: idx < remainingProjects ? 'pending' : 'completed',
+            level: 'Beginner',
+            duration: '2-3 weeks'
+        }));
+    }
+    
+    // Fallback to default list if no backend projects
+    if (projects.length === 0) {
+        projects = [
+            {
+                name: 'Libft',
+                description: 'Your first C library - foundation of everything',
+                status: 'completed'
+            },
+            {
+                name: 'Get Next Line',
+                description: 'Read file line by line - core utility skill',
+                status: 'completed'
+            },
+            {
+                name: 'Printf',
+                description: 'Recreate printf function - string and formatting mastery',
+                status: 'in-progress'
+            },
+            {
+                name: 'Born2Beroot',
+                description: 'Virtual machine and system administration basics',
+                status: 'pending'
+            },
+            {
+                name: 'Minishell',
+                description: 'Build a shell - understand process and system calls',
+                status: 'pending'
+            },
+            {
+                name: 'Philosophers',
+                description: 'Threading and synchronization - advanced concepts',
+                status: 'pending'
+            }
         ];
-
-        options.forEach(option => {
-          const optionElement = document.createElement("option");
-          optionElement.value = option.value;
-          optionElement.textContent = option.text;
-          optionElement.selected = day.type === option.value;
-          select.appendChild(optionElement);
-        });
-
-        timeSlotDiv.appendChild(select);
-      });
-
-      timeSlotsContainer.appendChild(timeSlotDiv);
-    });
-  }
-
-  // Modal functionality
-  const modal = document.getElementById("customization-modal");
-  const customizeBtn = document.getElementById("customize-schedule");
-  const closeModal = document.getElementById("close-modal");
-  const resetBtn = document.getElementById("reset-schedule");
-  const generateSuggestionsBtn = document.getElementById("generate-suggestions");
-  const form = document.getElementById("customization-form");
-
-  customizeBtn.addEventListener("click", function() {
-    populateCustomizationForm();
-    modal.style.display = "block";
-  });
-
-  closeModal.addEventListener("click", function() {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", function(event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
     }
-  });
 
-  resetBtn.addEventListener("click", function() {
-    if (confirm("Are you sure you want to reset to the default schedule? This will erase all your customizations.")) {
-      currentSchedule = JSON.parse(JSON.stringify(defaultSchedule));
-      populateCustomizationForm();
-      populateTimetable();
-      localStorage.removeItem("blackHoleSchedule");
-    }
-  });
+    projects.forEach((project, index) => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        
+        let statusClass = 'pending';
+        let statusText = 'Pending';
+        if (project.status === 'completed') {
+            statusClass = 'completed';
+            statusText = 'Completed ✓';
+        } else if (project.status === 'in-progress') {
+            statusClass = 'in-progress';
+            statusText = 'In Progress';
+        }
 
-  generateSuggestionsBtn.addEventListener("click", function() {
-    // Generate completely new personalized suggestions
-    generatePersonalizedSuggestions();
-    alert("New personalized suggestions generated based on your current schedule!");
-  });
+        card.innerHTML = `
+            <div class="project-status ${statusClass}">${statusText}</div>
+            <h3>${project.name || 'Project ' + (index + 1)}</h3>
+            <p class="project-description">${project.description || 'Important project to master'}</p>
+            <div class="project-meta">
+                <span>📚 Level: ${project.level || 'Beginner'}</span>
+                <span>⏱️ Duration: ${project.duration || '2-3 weeks'}</span>
+            </div>
+        `;
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Update currentSchedule with form values
-    currentSchedule.studentName = document.getElementById("student-name").value;
-    currentSchedule.focusArea = document.getElementById("focus-area").value;
-    currentSchedule.currentProject = document.getElementById("current-project").value;
-    currentSchedule.sleepPattern = document.getElementById("sleep-pattern").value;
-    currentSchedule.socialPreference = document.getElementById("social-preference").value;
-    currentSchedule.exerciseFrequency = document.getElementById("exercise-frequency").value;
-    currentSchedule.breakStyle = document.getElementById("break-style").value;
-    currentSchedule.studyEnvironment = document.getElementById("study-environment").value;
-    currentSchedule.suggestionsPreference = document.getElementById("suggestions-preference").value;
-
-    // Update activity types from the form
-    const activitySelects = document.querySelectorAll(".activity-edit");
-    activitySelects.forEach(select => {
-      const slotIndex = parseInt(select.dataset.slotIndex);
-      const dayIndex = parseInt(select.dataset.dayIndex);
-      currentSchedule.timeSlots[slotIndex].days[dayIndex].type = select.value;
+        projectsGrid.appendChild(card);
     });
+}
 
-    // Generate personalized suggestions based on new data
-    generatePersonalizedSuggestions();
+// Switch between tabs
+function switchTab(e) {
+    const tabBtn = e.target.closest('.tab-btn');
+    if (!tabBtn) return;
 
-    // Save to localStorage
-    localStorage.setItem("blackHoleSchedule", JSON.stringify(currentSchedule));
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-    // Update the timetable
-    populateTimetable();
+    // Add active class to clicked tab
+    tabBtn.classList.add('active');
+    const tabName = tabBtn.dataset.tab;
+    const tabContent = document.getElementById(tabName);
+    if (tabContent) {
+        tabContent.classList.add('active');
+    }
+}
 
-    // Close the modal
-    modal.style.display = "none";
+// Show/hide loading spinner
+function showLoadingSpinner(show) {
+    const spinner = document.getElementById('loadingSpinner');
+    if (show) {
+        spinner.style.display = 'flex';
+    } else {
+        spinner.style.display = 'none';
+    }
+}
 
-    // Show success message
-    alert("Your schedule has been updated with personalized suggestions!");
-  });
+// Interactive background animation with mouse tracking
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let targetX = mouseX;
+let targetY = mouseY;
 
-  // Initialize the timetable
-  populateTimetable();
-
-  // Generate initial personalized suggestions
-  generatePersonalizedSuggestions();
+document.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
 });
+
+function animateBackgroundGradient() {
+    // Smooth interpolation for smoother animation
+    mouseX += (targetX - mouseX) * 0.05;
+    mouseY += (targetY - mouseY) * 0.05;
+
+    const bg = document.querySelector('.background-animation');
+    if (bg) {
+        const xPercent = (mouseX / window.innerWidth) * 100;
+        const yPercent = (mouseY / window.innerHeight) * 100;
+
+        // Create interactive gradient that follows cursor - increased by 150%
+        const gradient = `
+            radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(255, 255, 255, 0.2) 0%, transparent 25%),
+            radial-gradient(circle at ${100 - xPercent}% ${100 - yPercent}%, rgba(255, 255, 255, 0.125) 0%, transparent 25%),
+            radial-gradient(circle at ${xPercent}% ${100 - yPercent}%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
+            linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)
+        `;
+        bg.style.background = gradient;
+    }
+
+    requestAnimationFrame(animateBackgroundGradient);
+}
+
+// Start the background animation
+animateBackgroundGradient();
+
+// Show login error
+function showLoginError(message) {
+    const errorEl = document.getElementById('loginError');
+    const inputEl = document.getElementById('intraLogin');
+    
+    errorEl.textContent = message;
+    errorEl.classList.add('show');
+    inputEl.classList.add('error');
+}
+
+// Hide login error
+function hideLoginError() {
+    const errorEl = document.getElementById('loginError');
+    const inputEl = document.getElementById('intraLogin');
+    
+    errorEl.textContent = '';
+    errorEl.classList.remove('show');
+    inputEl.classList.remove('error');
+}
+
+// Logout function
+function logout() {
+    currentUser = null;
+    userData = null;
+    currentWeekOffset = 0;
+
+    // Clear session storage
+    sessionStorage.removeItem('currentUser');
+    sessionStorage.removeItem('userData');
+
+    // Reset form
+    document.getElementById('intraLogin').value = '';
+    hideLoginError();
+
+    // Smooth transition to login modal
+    const loginModal = document.getElementById('loginModal');
+    const mainContainer = document.getElementById('mainContainer');
+
+    // Fade out main container
+    mainContainer.style.opacity = '0';
+    mainContainer.style.transition = 'opacity 0.5s ease-out';
+    
+    // After fade out, hide and show login
+    setTimeout(() => {
+        mainContainer.classList.add('hidden');
+        mainContainer.style.opacity = '1';
+        mainContainer.style.transition = '';
+        
+        loginModal.style.display = 'flex';
+        loginModal.classList.add('active');
+    }, 500);
+}
