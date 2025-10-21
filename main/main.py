@@ -1,21 +1,35 @@
 import requests
 import json
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Union
 import math
 import time
 from collections import deque
+import os
 
 class BlackHoleEscape:
-    def __init__(self, client_id: str, client_secret: str):
+    def __init__(self, client_id: str, client_secret: str, save_responses: bool = True):
         """
         Initialize the BlackHoleEscape system with 42 API credentials
+        
+        Args:
+            client_id: 42 API client ID
+            client_secret: 42 API client secret
+            save_responses: If True, saves all API responses to JSON files
         """
         self.base_url = "https://api.intra.42.fr"
         self.client_id = client_id
         self.client_secret = client_secret
         self.access_token = None
         self.rate_limit_queue = deque()
+        self.save_responses = save_responses
+        
+        # Create directory for API responses
+        if self.save_responses:
+            self.api_responses_dir = "api_responses"
+            os.makedirs(self.api_responses_dir, exist_ok=True)
+            print(f"📁 API responses will be saved to: {self.api_responses_dir}/")
+        
         self.authenticate()
     
     def rate_limit_delay(self):
@@ -53,6 +67,37 @@ class BlackHoleEscape:
                 print(f"Response text: {e.response.text}")
             raise
     
+    def _save_api_response(self, endpoint: str, data: Union[Dict, List], params: Dict = None):
+        """Save API response to a JSON file"""
+        if not self.save_responses:
+            return
+        
+        try:
+            # Create a safe filename from the endpoint
+            safe_endpoint = endpoint.replace('/', '_').replace('?', '_').strip('_')
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            
+            # Add params to filename if they exist
+            if params:
+                param_str = '_'.join(f"{k}={v}" for k, v in params.items() if k not in ['page', 'per_page'])
+                if param_str:
+                    safe_endpoint += f"_{param_str}"
+            
+            filename = f"{self.api_responses_dir}/{safe_endpoint}_{timestamp}.json"
+            
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump({
+                    'endpoint': endpoint,
+                    'params': params,
+                    'timestamp': timestamp,
+                    'data': data
+                }, f, indent=2, ensure_ascii=False)
+            
+            print(f"💾 Saved API response to: {filename}")
+            
+        except Exception as e:
+            print(f"⚠️ Failed to save API response: {e}")
+    
     def make_api_request(self, endpoint: str, params: Dict = None) -> Dict:
         """Make authenticated API request to 42 Intra with rate limiting"""
         self.rate_limit_delay()
@@ -69,7 +114,12 @@ class BlackHoleEscape:
                 return self.make_api_request(endpoint, params)
             
             response.raise_for_status()
-            return response.json()
+            data = response.json()
+            
+            # Save the response to a file
+            self._save_api_response(endpoint, data, params)
+            
+            return data
             
         except requests.exceptions.RequestException as e:
             print(f"❌ API request failed for {endpoint}: {e}")
@@ -112,6 +162,11 @@ class BlackHoleEscape:
                 break
         
         print(f"✅ Retrieved {len(all_data)} items from {endpoint}")
+        
+        # Save the combined paginated data
+        if self.save_responses and all_data:
+            self._save_api_response(f"{endpoint}_ALL_PAGES", all_data, params)
+        
         return all_data
     
     def get_user_info(self, login: str) -> Dict:
@@ -131,9 +186,23 @@ class BlackHoleEscape:
         params = {'filter[user_id]': user_id}
         return self.get_all_paginated_data("/v2/projects_users", params)
     
+    def get_user_locations(self, user_id: int) -> List[Dict]:
+        """Get user's campus locations and check-in history"""
+        return self.get_all_paginated_data(f"/v2/users/{user_id}/locations")
+    
+    def get_user_scale_teams(self, user_id: int) -> List[Dict]:
+        """Get user's scale teams (evaluations) to detect activity gaps"""
+        params = {'user_id': user_id}
+        return self.get_all_paginated_data("/v2/scale_teams", params)
+    
+    def get_user_achievements(self, user_id: int) -> List[Dict]:
+        """Get user achievements to detect system type"""
+        return self.get_all_paginated_data(f"/v2/users/{user_id}/achievements")
+    
     def get_42_circle_structure(self) -> Dict:
         """
         Define 42 circle structure with required projects for each circle
+        Now includes optional projects (either/or choices)
         """
         return {
             1: {
@@ -144,33 +213,59 @@ class BlackHoleEscape:
             },
             2: {
                 "name": "Circle 2 - Core Systems",
-                "required_projects": ["get_next_line", "ft_printf", "born2beroot"],
+                "required_projects": [
+                    "get_next_line", 
+                    "ft_printf", 
+                    "born2beroot"
+                ],
                 "description": "File I/O, formatted output, and system administration",
                 "min_projects": 2  # Need 2 out of 3 to progress
             },
             3: {
                 "name": "Circle 3 - Algorithms & Graphics",
-                "required_projects": ["pipex", "minitalk", "push_swap", "fdf", "fract-ol", "so_long"],
+                "required_projects": [
+                    ["pipex", "minitalk"],  # Either pipex OR minitalk
+                    "push_swap",
+                    ["fdf", "so_long", "fract-ol"]  # Either fdf OR so_long OR fract-ol
+                ],
                 "description": "Processes, signals, sorting algorithms, and 2D graphics",
-                "min_projects": 3  # Need 3 out of 6 to progress
+                "min_projects": 3  # Need 3 projects total (counting either/or as 1 each)
             },
             4: {
                 "name": "Circle 4 - Advanced Systems",
-                "required_projects": ["minishell", "Philosophers"],
+                "required_projects": [
+                    ["minishell", "Philosophers"]  # Either minishell OR Philosophers
+                ],
                 "description": "Shell implementation and concurrent programming",
                 "min_projects": 1  # Need 1 out of 2 to progress
             },
             5: {
                 "name": "Circle 5 - C++ & 3D",
-                "required_projects": ["cpp-module-00", "cpp-module-01", "cpp-module-02", "cpp-module-03", "cpp-module-04", "cub3d", "netpractice", "minirt"],
+                "required_projects": [
+                    "cpp-module-00", 
+                    "cpp-module-01", 
+                    "cpp-module-02", 
+                    "cpp-module-03", 
+                    "cpp-module-04",
+                    ["cub3d", "minirt"],  # Either cub3d OR minirt
+                    "netpractice"
+                ],
                 "description": "C++ programming and 3D graphics",
-                "min_projects": 4  # Need 4 out of 8 to progress
+                "min_projects": 6  # Need 6 out of 7 (counting either/or as 1)
             },
             6: {
                 "name": "Circle 6 - Web & Networks",
-                "required_projects": ["ft_irc", "webserv", "inception", "cpp-module-05", "cpp-module-06", "cpp-module-07", "cpp-module-08", "cpp-module-09"],
+                "required_projects": [
+                    ["ft_irc", "webserv"],  # Either ft_irc OR webserv
+                    "inception",
+                    "cpp-module-05", 
+                    "cpp-module-06", 
+                    "cpp-module-07", 
+                    "cpp-module-08", 
+                    "cpp-module-09"
+                ],
                 "description": "Network programming and web services",
-                "min_projects": 3  # Need 3 out of 8 to progress
+                "min_projects": 6  # Need 6 out of 8 (counting either/or as 1)
             },
             7: {
                 "name": "Circle 7 - Specialization",
@@ -229,7 +324,271 @@ class BlackHoleEscape:
             # Circle 7
             "ft_transcendence": {"weeks": 6, "difficulty": "very_hard", "hours": 200, "type": "fullstack"}
         }
+
+    def _detect_system_type(self, user_id: int, cursus_users: List[Dict]) -> str:
+        """
+        Detect whether user is under old black hole system or new pace system
+        """
+        try:
+            # Check achievements for pace system indicators
+            achievements = self.get_user_achievements(user_id)
+            
+            # Look for pace-related achievements
+            pace_indicators = ["pace", "velocity", "sprint", "iteration"]
+            for achievement in achievements:
+                name = achievement.get('name', '').lower()
+                description = achievement.get('description', '').lower()
+                if any(indicator in name or indicator in description for indicator in pace_indicators):
+                    return "pace"
+            
+            # Check cursus information
+            for cursus in cursus_users:
+                cursus_name = cursus.get('cursus', {}).get('name', '').lower()
+                if 'pace' in cursus_name or 'velocity' in cursus_name:
+                    return "pace"
+                
+                # Check if blackholed_at exists and has reasonable value
+                blackholed_at = cursus.get('blackholed_at')
+                if blackholed_at:
+                    try:
+                        bh_date = datetime.fromisoformat(blackholed_at.replace('Z', '+00:00'))
+                        # If black hole date is more than 2 years from start, likely pace system
+                        begin_at = cursus.get('begin_at')
+                        if begin_at:
+                            start_date = datetime.fromisoformat(begin_at.replace('Z', '+00:00'))
+                            days_diff = (bh_date - start_date).days
+                            if days_diff > 730:  # More than 2 years
+                                return "pace"
+                    except:
+                        pass
+            
+            # Default to old system for older students
+            return "old_blackhole"
+            
+        except Exception as e:
+            print(f"⚠️ Error detecting system type: {e}")
+            return "old_blackhole"
+
+    def _detect_freeze_periods(self, user_id: int, begin_at: str, current_date: datetime) -> List[Dict]:
+        """
+        Detect freeze periods by analyzing gaps in activity
+        """
+        freeze_periods = []
+        
+        try:
+            # Get user locations to detect campus activity
+            locations = self.get_user_locations(user_id)
+            # Get scale teams to detect evaluation activity
+            scale_teams = self.get_user_scale_teams(user_id)
+            
+            # Collect all activity dates
+            activity_dates = []
+            
+            # Add location dates
+            for location in locations:
+                if location.get('end_at'):
+                    try:
+                        end_date = datetime.fromisoformat(location['end_at'].replace('Z', '+00:00'))
+                        activity_dates.append(end_date.date())
+                    except:
+                        pass
+            
+            # Add scale team dates
+            for scale_team in scale_teams:
+                if scale_team.get('filled_at'):
+                    try:
+                        filled_date = datetime.fromisoformat(scale_team['filled_at'].replace('Z', '+00:00'))
+                        activity_dates.append(filled_date.date())
+                    except:
+                        pass
+            
+            # Remove duplicates and sort
+            activity_dates = sorted(list(set(activity_dates)))
+            
+            if not activity_dates:
+                return freeze_periods
+            
+            # Convert start date
+            start_date = datetime.fromisoformat(begin_at.replace('Z', '+00:00')).date()
+            
+            # Find gaps in activity (potential freeze periods)
+            current_date_date = current_date.date()
+            previous_date = start_date
+            
+            for activity_date in activity_dates:
+                # Check if gap is significant (more than 30 days)
+                gap_days = (activity_date - previous_date).days
+                if gap_days > 30:
+                    freeze_periods.append({
+                        'start': previous_date,
+                        'end': activity_date,
+                        'days': gap_days,
+                        'type': 'detected_gap'
+                    })
+                previous_date = activity_date
+            
+            # Check for gap from last activity to current date
+            last_activity = max(activity_dates)
+            gap_days = (current_date_date - last_activity).days
+            if gap_days > 30:
+                freeze_periods.append({
+                    'start': last_activity,
+                    'end': current_date_date,
+                    'days': gap_days,
+                    'type': 'current_gap'
+                })
+            
+            print(f"❄️  Detected {len(freeze_periods)} potential freeze periods")
+            for i, freeze in enumerate(freeze_periods, 1):
+                print(f"   Period {i}: {freeze['start']} to {freeze['end']} ({freeze['days']} days)")
+            
+        except Exception as e:
+            print(f"⚠️ Error detecting freeze periods: {e}")
+        
+        return freeze_periods
+
+    def _calculate_old_blackhole_date(self, user_id: int, begin_at: str, current_date: datetime, freeze_periods: List[Dict]) -> Tuple[Optional[datetime], Optional[int], bool]:
+        """
+        Calculate black hole date for OLD system (455 days + freezes)
+        """
+        try:
+            start_date = datetime.fromisoformat(begin_at.replace('Z', '+00:00'))
+            
+            # OLD SYSTEM: Base 455 days (65 weeks)
+            base_blackhole_days = 455
+            base_blackhole_date = start_date + timedelta(days=base_blackhole_days)
+            
+            # Calculate total freeze days
+            total_freeze_days = sum(freeze['days'] for freeze in freeze_periods)
+            
+            # Apply freeze extensions
+            final_blackhole_date = base_blackhole_date + timedelta(days=total_freeze_days)
+            
+            days_until = (final_blackhole_date - current_date).days
+            is_blackholed = days_until <= 0
+            
+            print(f"📅 OLD SYSTEM Calculation:")
+            print(f"   Base Period: {base_blackhole_days} days")
+            print(f"   Freeze Extensions: +{total_freeze_days} days")
+            print(f"   Final Date: {final_blackhole_date.date()}")
+            
+            return final_blackhole_date, days_until, is_blackholed
+            
+        except Exception as e:
+            print(f"⚠️ Error in old system calculation: {e}")
+            return None, None, False
+
+    def _calculate_pace_system_date(self, user_id: int, begin_at: str, current_date: datetime, freeze_periods: List[Dict], level: float) -> Tuple[Optional[datetime], Optional[int], bool]:
+        """
+        Calculate black hole date for NEW PACE system
+        """
+        try:
+            start_date = datetime.fromisoformat(begin_at.replace('Z', '+00:00'))
+            
+            # NEW PACE SYSTEM: Much longer periods based on level progression
+            # Base period increases with level
+            base_days_per_level = 120  # ~4 months per level in pace system
+            current_level = level if level else 0
+            
+            # Minimum base period for pace system (even at level 0)
+            base_blackhole_days = max(365, int(current_level * base_days_per_level) + 180)
+            
+            base_blackhole_date = start_date + timedelta(days=base_blackhole_days)
+            
+            # Calculate total freeze days
+            total_freeze_days = sum(freeze['days'] for freeze in freeze_periods)
+            
+            # Apply freeze extensions
+            final_blackhole_date = base_blackhole_date + timedelta(days=total_freeze_days)
+            
+            days_until = (final_blackhole_date - current_date).days
+            is_blackholed = days_until <= 0
+            
+            print(f"📅 PACE SYSTEM Calculation:")
+            print(f"   Current Level: {current_level}")
+            print(f"   Base Period: {base_blackhole_days} days (based on level)")
+            print(f"   Freeze Extensions: +{total_freeze_days} days")
+            print(f"   Final Date: {final_blackhole_date.date()}")
+            
+            return final_blackhole_date, days_until, is_blackholed
+            
+        except Exception as e:
+            print(f"⚠️ Error in pace system calculation: {e}")
+            return None, None, False
+
+    def _calculate_accurate_blackhole_date(self, user_id: int, begin_at: str, current_date: datetime, blackholed_at: str = None, cursus_users: List[Dict] = None, level: float = 0) -> Tuple[Optional[datetime], Optional[int], bool, List[Dict], str]:
+        """
+        Calculate accurate black hole date based on detected system type
+        """
+        freeze_periods = []
+        system_type = "old_blackhole"
+        
+        try:
+            # If API provides blackholed_at, use it as it should already account for system type and freezes
+            if blackholed_at:
+                try:
+                    api_blackhole_date = datetime.fromisoformat(blackholed_at.replace('Z', '+00:00'))
+                    days_until = (api_blackhole_date - current_date).days
+                    is_blackholed = days_until <= 0
+                    
+                    # Detect system type based on the API date
+                    if begin_at:
+                        start_date = datetime.fromisoformat(begin_at.replace('Z', '+00:00'))
+                        total_days = (api_blackhole_date - start_date).days
+                        if total_days > 600:  # More than ~20 months
+                            system_type = "pace"
+                        else:
+                            system_type = "old_blackhole"
+                    
+                    print(f"📅 Using API blackhole date ({system_type}): {api_blackhole_date.date()}")
+                    return api_blackhole_date, days_until, is_blackholed, freeze_periods, system_type
+                except (ValueError, TypeError) as e:
+                    print(f"⚠️ Error parsing API blackhole date, calculating manually: {e}")
+            
+            # Detect system type
+            if cursus_users:
+                system_type = self._detect_system_type(user_id, cursus_users)
+            
+            # Detect freeze periods
+            freeze_periods = self._detect_freeze_periods(user_id, begin_at, current_date)
+            
+            # Calculate based on system type
+            if system_type == "pace":
+                blackhole_date, days_until, is_blackholed = self._calculate_pace_system_date(
+                    user_id, begin_at, current_date, freeze_periods, level
+                )
+            else:
+                blackhole_date, days_until, is_blackholed = self._calculate_old_blackhole_date(
+                    user_id, begin_at, current_date, freeze_periods
+                )
+            
+            return blackhole_date, days_until, is_blackholed, freeze_periods, system_type
+            
+        except Exception as e:
+            print(f"⚠️ Error in accurate black hole calculation: {e}")
+            return None, None, False, freeze_periods, system_type
+
+    def _is_project_completed(self, project_name: str, completed_projects: set) -> bool:
+        """Check if a project (or any of its alternatives) is completed"""
+        normalized_name = self._normalize_name(project_name)
+        
+        # Check if this exact project is completed
+        for completed in completed_projects:
+            if normalized_name in completed or completed in normalized_name:
+                return True
+        return False
     
+    def _normalize_name(self, name: str) -> str:
+        """Normalize project name for comparison"""
+        if not name:
+            return ""
+        name = name.lower().strip()
+        # Remove common variations
+        name = name.replace('_', ' ').replace('-', ' ')
+        # Remove extra spaces
+        name = ' '.join(name.split())
+        return name
+
     def calculate_blackhole_status(self, login: str) -> Dict:
         """
         Calculate accurate black hole status using proper API endpoints
@@ -275,9 +634,9 @@ class BlackHoleEscape:
         # Calculate current status with safe date handling
         current_date = datetime.now().astimezone()
         
-        # FIXED: Calculate black hole date properly
-        blackhole_date, days_until_blackhole, is_blackholed = self._calculate_blackhole_date(
-            blackholed_at, begin_at, current_date
+        # FIXED: Use accurate black hole calculation with system detection
+        blackhole_date, days_until_blackhole, is_blackholed, freeze_periods, system_type = self._calculate_accurate_blackhole_date(
+            user_id, begin_at, current_date, blackholed_at, cursus_users, level
         )
         
         # Calculate projects information
@@ -292,8 +651,8 @@ class BlackHoleEscape:
             circle_info.get('current_circle', 0)
         )
         
-        # Calculate risk level safely
-        risk_level = self._calculate_risk_level(days_until_blackhole, level, circle_info)
+        # Calculate risk level safely (different thresholds for different systems)
+        risk_level = self._calculate_risk_level(days_until_blackhole, level, circle_info, system_type)
         
         return {
             "user_login": user_info.get("login"),
@@ -308,45 +667,11 @@ class BlackHoleEscape:
             "total_completed": len(completed_projects),
             "circle_info": circle_info,
             "remaining_projects": current_circle_projects,
-            "risk_level": risk_level
+            "risk_level": risk_level,
+            "freeze_periods": freeze_periods,
+            "total_freeze_days": sum(freeze['days'] for freeze in freeze_periods),
+            "system_type": system_type
         }
-    
-    def _calculate_blackhole_date(self, blackholed_at: str, begin_at: str, current_date: datetime) -> Tuple[Optional[datetime], Optional[int], bool]:
-        """
-        Calculate black hole date accurately based on 42 rules
-        """
-        # If API provides blackholed_at, use it directly
-        if blackholed_at:
-            try:
-                blackhole_date = datetime.fromisoformat(blackholed_at.replace('Z', '+00:00'))
-                days_until = (blackhole_date - current_date).days
-                is_blackholed = days_until <= 0
-                return blackhole_date, days_until, is_blackholed
-            except (ValueError, TypeError) as e:
-                print(f"⚠️ Error parsing API blackhole date: {e}")
-        
-        # If no blackholed_at from API, calculate based on 42 rules
-        if begin_at:
-            try:
-                start_date = datetime.fromisoformat(begin_at.replace('Z', '+00:00'))
-                
-                # 42 standard black hole period: 392 days (56 weeks) from start date
-                blackhole_period_days = 392
-                calculated_blackhole_date = start_date + timedelta(days=blackhole_period_days)
-                
-                days_until = (calculated_blackhole_date - current_date).days
-                is_blackholed = days_until <= 0
-                
-                print(f"📅 Calculated black hole date: {calculated_blackhole_date.date()} "
-                      f"(392 days from start: {start_date.date()})")
-                
-                return calculated_blackhole_date, days_until, is_blackholed
-                
-            except (ValueError, TypeError) as e:
-                print(f"⚠️ Error calculating black hole date: {e}")
-        
-        # If we can't calculate, return None values
-        return None, None, False
     
     def _get_completed_projects(self, projects_users: List[Dict]) -> List[Dict]:
         """Get completed and validated projects"""
@@ -372,23 +697,11 @@ class BlackHoleEscape:
     
     def _calculate_circle_progress(self, completed_projects: List[Dict]) -> Dict:
         """
-        Calculate current circle based on milestone projects
-        FIXED: You are in a circle as soon as you start working on it, not when you complete all projects
+        Calculate current circle based on milestone projects with optional projects
         """
-        def _normalize_name(name: str) -> str:
-            """Normalize project name for comparison"""
-            if not name:
-                return ""
-            name = name.lower().strip()
-            # Remove common variations
-            name = name.replace('_', ' ').replace('-', ' ')
-            # Remove extra spaces
-            name = ' '.join(name.split())
-            return name
-
         # Build set of completed project names (normalized)
-        completed_names = {_normalize_name(p.get("name", "")) for p in completed_projects}
-        completed_slugs = {_normalize_name(p.get("slug", "")) for p in completed_projects}
+        completed_names = {self._normalize_name(p.get("name", "")) for p in completed_projects}
+        completed_slugs = {self._normalize_name(p.get("slug", "")) for p in completed_projects}
         all_completed = completed_names.union(completed_slugs)
         
         circle_structure = self.get_42_circle_structure()
@@ -402,27 +715,30 @@ class BlackHoleEscape:
             required_projects = circle_data["required_projects"]
             min_projects = circle_data.get("min_projects", 1)
             
-            # Count how many required projects for this circle are completed
-            completed_count = 0
-            for project in required_projects:
-                normalized_project = _normalize_name(project)
-                found = False
-                
-                # Check if this project (or variation) is completed
-                for completed in all_completed:
-                    if normalized_project in completed or completed in normalized_project:
-                        found = True
-                        break
-                
-                if found:
-                    completed_count += 1
+            # Count how many required project GROUPS are completed
+            completed_groups = 0
             
-            # If user has completed at least 1 project in this circle, they've reached it
-            if completed_count > 0:
+            for project_group in required_projects:
+                if isinstance(project_group, list):
+                    # This is an "either/or" group - check if any project in the group is completed
+                    group_completed = False
+                    for project in project_group:
+                        if self._is_project_completed(project, all_completed):
+                            group_completed = True
+                            break
+                    if group_completed:
+                        completed_groups += 1
+                else:
+                    # This is a single required project
+                    if self._is_project_completed(project_group, all_completed):
+                        completed_groups += 1
+            
+            # If user has completed at least 1 project group in this circle, they've reached it
+            if completed_groups > 0:
                 highest_circle_with_progress = circle_num
                 
-            # If user has completed minimum required projects, they can progress
-            if completed_count >= min_projects:
+            # If user has completed minimum required project groups, they can progress
+            if completed_groups >= min_projects:
                 current_circle = circle_num + 1  # They can move to next circle
             else:
                 # Stop at the first circle where they haven't met requirements
@@ -440,19 +756,26 @@ class BlackHoleEscape:
         completed_in_current = 0
         missing_in_current = []
         
-        for project in current_required:
-            normalized_project = _normalize_name(project)
-            found = False
-            
-            for completed in all_completed:
-                if normalized_project in completed or completed in normalized_project:
-                    found = True
-                    break
-            
-            if found:
-                completed_in_current += 1
+        for project_group in current_required:
+            if isinstance(project_group, list):
+                # Check if any project in this either/or group is completed
+                group_completed = False
+                for project in project_group:
+                    if self._is_project_completed(project, all_completed):
+                        group_completed = True
+                        break
+                
+                if group_completed:
+                    completed_in_current += 1
+                else:
+                    # Add the first project from the group as missing (user can choose any)
+                    missing_in_current.append(f"Either: {', '.join(project_group)}")
             else:
-                missing_in_current.append(project)
+                # Single required project
+                if self._is_project_completed(project_group, all_completed):
+                    completed_in_current += 1
+                else:
+                    missing_in_current.append(project_group)
         
         remaining_in_current = max(0, current_min - completed_in_current)
         is_on_track = completed_in_current >= current_min
@@ -482,48 +805,59 @@ class BlackHoleEscape:
         required_projects = current_circle_data.get("required_projects", [])
         project_time_estimates = self.get_project_time_estimates()
         
-        def _normalize_name(name: str) -> str:
-            if not name:
-                return ""
-            name = name.lower().strip()
-            name = name.replace('_', ' ').replace('-', ' ')
-            name = ' '.join(name.split())
-            return name
-        
         # Get completed project names
-        completed_names = {_normalize_name(p.get("name", "")) for p in completed_projects}
-        completed_slugs = {_normalize_name(p.get("slug", "")) for p in completed_projects}
+        completed_names = {self._normalize_name(p.get("name", "")) for p in completed_projects}
+        completed_slugs = {self._normalize_name(p.get("slug", "")) for p in completed_projects}
         all_completed = completed_names.union(completed_slugs)
         
-        # Find which required projects are NOT completed
+        # Find which required project groups are NOT completed
         remaining = []
-        for project in required_projects:
-            normalized_project = _normalize_name(project)
-            found = False
-            
-            # Check if this project is already completed
-            for completed in all_completed:
-                if normalized_project in completed or completed in normalized_project:
-                    found = True
-                    break
-            
-            if not found:
-                # Get time estimate for this project
-                time_estimate = project_time_estimates.get(project, {"weeks": 2, "difficulty": "medium", "hours": 40})
-                remaining.append({
-                    "name": project,
-                    "slug": project.lower().replace(' ', '-'),
-                    "description": f"Required for {current_circle_data.get('name', f'Circle {current_circle}')}",
-                    "circle": current_circle,
-                    "estimated_weeks": time_estimate["weeks"],
-                    "estimated_hours": time_estimate["hours"],
-                    "difficulty": time_estimate["difficulty"],
-                    "type": time_estimate.get("type", "general")
-                })
+        
+        for project_group in required_projects:
+            if isinstance(project_group, list):
+                # Check if any project in this either/or group is completed
+                group_completed = False
+                for project in project_group:
+                    if self._is_project_completed(project, all_completed):
+                        group_completed = True
+                        break
+                
+                if not group_completed:
+                    # Add all options from this group as remaining (user can choose any)
+                    for project in project_group:
+                        time_estimate = project_time_estimates.get(project, {"weeks": 2, "difficulty": "medium", "hours": 40})
+                        remaining.append({
+                            "name": project,
+                            "slug": project.lower().replace(' ', '-'),
+                            "description": f"Optional: Choose one from {', '.join(project_group)}",
+                            "circle": current_circle,
+                            "estimated_weeks": time_estimate["weeks"],
+                            "estimated_hours": time_estimate["hours"],
+                            "difficulty": time_estimate["difficulty"],
+                            "type": time_estimate.get("type", "general"),
+                            "is_optional": True,
+                            "alternatives": [p for p in project_group if p != project]
+                        })
+            else:
+                # Single required project
+                if not self._is_project_completed(project_group, all_completed):
+                    time_estimate = project_time_estimates.get(project_group, {"weeks": 2, "difficulty": "medium", "hours": 40})
+                    remaining.append({
+                        "name": project_group,
+                        "slug": project_group.lower().replace(' ', '-'),
+                        "description": f"Required for {current_circle_data.get('name', f'Circle {current_circle}')}",
+                        "circle": current_circle,
+                        "estimated_weeks": time_estimate["weeks"],
+                        "estimated_hours": time_estimate["hours"],
+                        "difficulty": time_estimate["difficulty"],
+                        "type": time_estimate.get("type", "general"),
+                        "is_optional": False,
+                        "alternatives": []
+                    })
         
         return remaining
     
-    def _calculate_risk_level(self, days_until_blackhole: Optional[int], current_level: float, circle_info: Dict) -> str:
+    def _calculate_risk_level(self, days_until_blackhole: Optional[int], current_level: float, circle_info: Dict, system_type: str) -> str:
         """Calculate risk level based on black hole date and progress"""
         if days_until_blackhole is None:
             return "UNKNOWN"
@@ -533,20 +867,37 @@ class BlackHoleEscape:
         current_circle = circle_info.get("current_circle", 0)
         is_on_track = circle_info.get("is_on_track", False)
         
-        if safe_days <= 0:
-            return "BLACK_HOLED"
-        elif safe_days <= 30:
-            return "CRITICAL"
-        elif safe_days <= 60:
-            return "HIGH"
-        elif safe_days <= 90:
-            return "MEDIUM"
-        elif safe_days <= 180 and not is_on_track:
-            return "LOW"
-        elif safe_level < 3.0 and current_circle <= 2 and safe_days <= 270:
-            return "LOW"  # New students in early circles have more time
+        # Different risk thresholds for different systems
+        if system_type == "pace":
+            # Pace system has much longer timelines
+            if safe_days <= 0:
+                return "BLACK_HOLED"
+            elif safe_days <= 90:  # 3 months in pace system is critical
+                return "CRITICAL"
+            elif safe_days <= 180:  # 6 months in pace system is high
+                return "HIGH"
+            elif safe_days <= 270:  # 9 months in pace system is medium
+                return "MEDIUM"
+            elif safe_days <= 365 and not is_on_track:  # 1 year in pace system
+                return "LOW"
+            else:
+                return "SAFE"
         else:
-            return "SAFE"
+            # Old black hole system (shorter timelines)
+            if safe_days <= 0:
+                return "BLACK_HOLED"
+            elif safe_days <= 30:
+                return "CRITICAL"
+            elif safe_days <= 60:
+                return "HIGH"
+            elif safe_days <= 90:
+                return "MEDIUM"
+            elif safe_days <= 180 and not is_on_track:
+                return "LOW"
+            elif safe_level < 3.0 and current_circle <= 2 and safe_days <= 270:
+                return "LOW"
+            else:
+                return "SAFE"
     
     def generate_escape_plan(self, login: str) -> Dict:
         """
@@ -577,6 +928,9 @@ class BlackHoleEscape:
         circle_info = status.get("circle_info", {})
         remaining_projects = status.get("remaining_projects", [])
         begin_at = status.get("begin_at")
+        freeze_periods = status.get("freeze_periods", [])
+        total_freeze_days = status.get("total_freeze_days", 0)
+        system_type = status.get("system_type", "old_blackhole")
         
         if days_remaining is None or days_remaining > 1000:
             return {
@@ -598,8 +952,22 @@ class BlackHoleEscape:
         missing_projects = circle_info.get("missing_projects", [])
         
         # Calculate total time needed based on realistic project estimates
-        total_weeks_needed = sum(project.get("estimated_weeks", 2) for project in remaining_projects[:projects_needed])
-        total_hours_needed = sum(project.get("estimated_hours", 40) for project in remaining_projects[:projects_needed])
+        # For optional projects, use the shortest estimated time
+        total_weeks_needed = 0
+        total_hours_needed = 0
+        optional_groups_processed = set()
+        
+        for project in remaining_projects[:projects_needed]:
+            if project.get("is_optional"):
+                # For optional projects, only count each group once
+                group_key = tuple(sorted(project.get("alternatives", []) + [project["name"]]))
+                if group_key not in optional_groups_processed:
+                    optional_groups_processed.add(group_key)
+                    total_weeks_needed += project.get("estimated_weeks", 2)
+                    total_hours_needed += project.get("estimated_hours", 40)
+            else:
+                total_weeks_needed += project.get("estimated_weeks", 2)
+                total_hours_needed += project.get("estimated_hours", 40)
         
         # Ensure we have valid numbers for calculations
         safe_days_remaining = max(1, days_remaining) if days_remaining is not None else 30
@@ -631,6 +999,9 @@ class BlackHoleEscape:
             "weekly_schedule": weekly_plan,
             "priority_projects": [p.get("name", "Unknown") for p in remaining_projects],
             "missing_projects": missing_projects,
+            "freeze_periods": freeze_periods,
+            "total_freeze_days": total_freeze_days,
+            "system_type": system_type,
             "recommendations": self._generate_realistic_recommendations(
                 status, days_remaining, total_weeks_needed, weeks_available, timeline_feasible
             )
@@ -652,15 +1023,27 @@ class BlackHoleEscape:
         weekly_schedule = []
         current_week = 1
         scheduled_projects = []
+        scheduled_optional_groups = set()
         
         # Sort projects by estimated weeks (longest first to schedule them early)
-        projects_to_schedule.sort(key=lambda x: x.get("estimated_weeks", 2), reverse=True)
+        # For optional projects, prefer the ones with shorter estimated times
+        projects_to_schedule.sort(key=lambda x: (
+            -x.get("estimated_weeks", 2),  # Longer projects first
+            len(x.get("alternatives", []))  # Optional projects with more alternatives first
+        ))
         
         for project in projects_to_schedule:
+            # Skip if this is an optional project from a group we've already scheduled
+            if project.get("is_optional"):
+                group_key = tuple(sorted(project.get("alternatives", []) + [project["name"]]))
+                if group_key in scheduled_optional_groups:
+                    continue
+            
             project_weeks = project.get("estimated_weeks", 2)
             project_name = project.get("name", "Unknown Project")
             project_hours = project.get("estimated_hours", 40)
             difficulty = project.get("difficulty", "medium")
+            is_optional = project.get("is_optional", False)
             
             # Check if we can fit this project in the remaining weeks
             if current_week + project_weeks - 1 > weeks_available:
@@ -689,13 +1072,18 @@ class BlackHoleEscape:
                 
                 # Add project to this week (only once per project)
                 if week_offset == 0:
-                    week_entry["focus_projects"].append({
+                    project_info = {
                         "name": project_name,
                         "estimated_hours": project_hours,
                         "difficulty": difficulty,
                         "total_weeks": project_weeks,
-                        "week_in_progress": 1
-                    })
+                        "week_in_progress": 1,
+                        "is_optional": is_optional
+                    }
+                    if is_optional:
+                        project_info["alternatives"] = project.get("alternatives", [])
+                    
+                    week_entry["focus_projects"].append(project_info)
                     week_entry["total_hours"] += project_hours // project_weeks
                 else:
                     # For subsequent weeks, just mark it as ongoing
@@ -706,6 +1094,11 @@ class BlackHoleEscape:
             
             current_week += project_weeks
             scheduled_projects.append(project)
+            
+            # Mark optional group as scheduled
+            if project.get("is_optional"):
+                group_key = tuple(sorted(project.get("alternatives", []) + [project["name"]]))
+                scheduled_optional_groups.add(group_key)
             
             # Stop if we've scheduled all required projects or run out of weeks
             if len(scheduled_projects) >= required_count or current_week > weeks_available:
@@ -719,12 +1112,19 @@ class BlackHoleEscape:
             
             goals = []
             if new_projects:
-                goals.append("Start: " + ", ".join([p["name"] for p in new_projects]))
+                new_projects_list = []
+                for p in new_projects:
+                    if p.get("is_optional"):
+                        new_projects_list.append(f"{p['name']} (choose one from: {', '.join(p.get('alternatives', []))})")
+                    else:
+                        new_projects_list.append(p["name"])
+                goals.append("Start: " + ", ".join(new_projects_list))
+            
             if ongoing_projects:
-                formatted = [
-                    f"{p['name']} (week {p.get('week_in_progress', 1)}/{p.get('total_weeks', 1)})"
-                    for p in ongoing_projects
-                ]
+                formatted = []
+                for p in ongoing_projects:
+                    status = f" (week {p.get('week_in_progress', 1)}/{p.get('total_weeks', 1)})"
+                    formatted.append(f"{p['name']}{status}")
                 goals.append("Continue: " + ", ".join(formatted))
             
             goals.extend([
@@ -745,6 +1145,18 @@ class BlackHoleEscape:
         current_level = status.get("level", 0)
         circle_info = status.get("circle_info", {})
         begin_at = status.get("begin_at")
+        freeze_periods = status.get("freeze_periods", [])
+        total_freeze_days = status.get("total_freeze_days", 0)
+        system_type = status.get("system_type", "old_blackhole")
+        
+        # Add system type information
+        system_name = "Pace System" if system_type == "pace" else "Old Black Hole System"
+        recommendations.append(f"🎯 System: {system_name}")
+        
+        # Add freeze period information
+        if freeze_periods:
+            recommendations.append(f"❄️  Freeze periods detected: {len(freeze_periods)} periods, {total_freeze_days} total days")
+            recommendations.append("📅 Your black hole date has been extended due to freeze periods")
         
         # Timeline analysis
         if not timeline_feasible:
@@ -756,6 +1168,21 @@ class BlackHoleEscape:
             ])
         else:
             recommendations.append(f"✅ Timeline looks feasible: {total_weeks_needed} weeks needed, {weeks_available} weeks available")
+        
+        # System-specific recommendations
+        if system_type == "pace":
+            recommendations.extend([
+                "🏃‍♂️ PACE SYSTEM: You have more flexible deadlines",
+                "📊 Focus on consistent progress rather than rushed completion",
+                "🎯 Set realistic sprint goals and maintain steady velocity",
+                "🔄 Regular self-assessment and plan adjustments"
+            ])
+        else:
+            recommendations.extend([
+                "⏰ OLD SYSTEM: Fixed deadlines require careful planning",
+                "🚀 Prioritize projects that unlock circle progression",
+                "📈 Track progress weekly and adjust intensity as needed"
+            ])
         
         if risk_level == "CRITICAL":
             recommendations.extend([
@@ -794,7 +1221,16 @@ class BlackHoleEscape:
         completed_in_current = circle_info.get("completed_in_current", 0)
         required_in_current = circle_info.get("required_in_current", 0)
         
-        recommendations.append(f"🎯 You are in Circle {current_circle}: {completed_in_current}/{required_in_current} projects completed")
+        recommendations.append(f"🎯 You are in Circle {current_circle}: {completed_in_current}/{required_in_current} project groups completed")
+        
+        # Add advice about optional projects
+        if current_circle >= 3:  # Circles with optional projects start from circle 3
+            recommendations.extend([
+                "🔄 REMEMBER: For optional projects, you only need to complete ONE from each group",
+                "💡 Choose projects based on your interests and skills",
+                "📊 Compare time estimates when selecting optional projects",
+                "👥 Talk to peers who have completed different options"
+            ])
         
         # Project-specific time management advice
         if current_circle >= 4:
@@ -824,6 +1260,71 @@ class BlackHoleEscape:
         
         return recommendations
 
+    def save_complete_user_data(self, login: str) -> str:
+        """
+        Fetch and save all available data for a user to JSON files.
+        Responses from each API call are automatically saved by _save_api_response.
+        This method also writes a SUMMARY.json file.
+        """
+        # Create user-specific directory and temporarily route all saves there
+        base_dir = getattr(self, "api_responses_dir", "api_responses")
+        user_dir = os.path.join(base_dir, login)
+        os.makedirs(user_dir, exist_ok=True)
+
+        original_dir = self.api_responses_dir
+        self.api_responses_dir = user_dir
+        try:
+            print(f"📊 Fetching complete data for {login}...")
+
+            # 1) User info
+            user_info = self.get_user_info(login)
+            if not user_info or 'id' not in user_info:
+                print(f"❌ Could not find user {login}")
+                return user_dir
+
+            user_id = user_info['id']
+
+            # 2) Cursus
+            cursus_users = self.get_user_cursus_users(user_id)
+
+            # 3) Projects
+            user_projects = self.get_user_projects(user_id)
+
+            # 4) Locations (check-ins)
+            locations = self.get_user_locations(user_id)
+
+            # 5) Scale teams (evaluations)
+            scale_teams = self.get_user_scale_teams(user_id)
+
+            # 6) Achievements
+            achievements = self.get_user_achievements(user_id)
+
+            # Write a compact summary file
+            summary = {
+                "fetched_at": datetime.now().isoformat(),
+                "user_info": {
+                    "id": user_info.get("id"),
+                    "login": user_info.get("login"),
+                    "displayname": user_info.get("displayname"),
+                    "campus": [c.get("name") for c in (user_info.get("campus", []) or [])],
+                },
+                "counts": {
+                    "cursus_users": len(cursus_users or []),
+                    "projects_users": len(user_projects or []),
+                    "locations": len(locations or []),
+                    "scale_teams": len(scale_teams or []),
+                    "achievements": len(achievements or []),
+                }
+            }
+            with open(os.path.join(user_dir, "SUMMARY.json"), "w", encoding="utf-8") as f:
+                json.dump(summary, f, indent=2, ensure_ascii=False)
+
+            print(f"✅ All data saved under: {user_dir}/")
+            return user_dir
+        finally:
+            # Restore original save directory
+            self.api_responses_dir = original_dir
+
 def main():
     """
     Main function to demonstrate the accurate BlackHoleEscape system
@@ -832,17 +1333,37 @@ def main():
     CLIENT_SECRET = "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"
     
     try:
-        escape_system = BlackHoleEscape(CLIENT_ID, CLIENT_SECRET)
+        # Initialize with save_responses=True to save all API calls
+        escape_system = BlackHoleEscape(CLIENT_ID, CLIENT_SECRET, save_responses=True)
         
         # Test with a real 42 login
         student_login = input("Enter 42 login: ").strip()
         if not student_login:
             student_login = "kskender"  # Fallback for testing
         
-        print(f"🚀 Starting Accurate Black Hole Escape Analysis for {student_login}...")
+        # Ask if user wants to save complete data
+        save_all = input("Do you want to save all API data to JSON files? (y/n): ").strip().lower()
+        
+        if save_all == 'y':
+            print("\n" + "="*70)
+            print("📥 SAVING ALL API DATA TO JSON FILES")
+            print("="*70)
+            user_dir = escape_system.save_complete_user_data(student_login)
+            print(f"\n✅ Complete API data saved to: {user_dir}/")
+            print("\nYou can now examine the JSON files to see all available data from the API.")
+            print("\n" + "="*70)
+        
+        print(f"\n🚀 Starting Accurate Black Hole Escape Analysis for {student_login}...")
         print("=" * 70)
         
         result = escape_system.generate_escape_plan(student_login)
+        
+        # Save the final result
+        if escape_system.save_responses:
+            result_file = f"{escape_system.api_responses_dir}/{student_login}_escape_plan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(result_file, 'w', encoding='utf-8') as f:
+                json.dump(result, f, indent=2, ensure_ascii=False, default=str)
+            print(f"\n💾 Escape plan saved to: {result_file}")
         
         if "error" in result:
             print(f"❌ Error: {result['error']}")
@@ -856,9 +1377,12 @@ def main():
         print(f"🎓 Cursus: {status.get('cursus', 'Unknown')}")
         print(f"📈 Level: {status.get('level', 'Unknown')}")
         print(f"🎯 Risk Level: {status.get('risk_level', 'UNKNOWN')}")
+        print(f"🏃‍♂️ System Type: {status.get('system_type', 'Unknown')}")
         
         blackhole_date = status.get('blackhole_date')
         begin_at = status.get('begin_at')
+        freeze_periods = status.get('freeze_periods', [])
+        total_freeze_days = status.get('total_freeze_days', 0)
         
         if begin_at:
             try:
@@ -876,10 +1400,15 @@ def main():
         
         print(f"✅ Projects Completed: {status.get('total_completed', 0)}")
         
+        if freeze_periods:
+            print(f"❄️  Freeze Periods: {len(freeze_periods)} periods, {total_freeze_days} total days")
+            for i, freeze in enumerate(freeze_periods, 1):
+                print(f"   Period {i}: {freeze['start']} to {freeze['end']} ({freeze['days']} days)")
+        
         circle_info = status.get('circle_info', {})
         current_circle = circle_info.get('current_circle', 0)
         print(f"🔄 Current Circle: {current_circle} - {circle_info.get('current_circle_name', '')}")
-        print(f"📊 Progress in Circle {current_circle}: {circle_info.get('completed_in_current', 0)}/{circle_info.get('required_in_current', 0)} projects")
+        print(f"📊 Progress in Circle {current_circle}: {circle_info.get('completed_in_current', 0)}/{circle_info.get('required_in_current', 0)} project groups")
         
         next_circle = circle_info.get('next_circle')
         if next_circle is not None:
@@ -890,18 +1419,26 @@ def main():
             if 'message' in plan:
                 print(plan['message'])
             else:
-                print(f"🎯 Required Projects for Circle {plan.get('current_circle')}: {plan.get('projects_remaining_current', 0)}")
+                print(f"🎯 Required Project Groups for Circle {plan.get('current_circle')}: {plan.get('projects_remaining_current', 0)}")
                 print(f"⏰ Total Time Needed: {plan.get('total_weeks_needed', 0)} weeks ({plan.get('total_hours_needed', 0)} hours)")
                 print(f"📅 Weeks Available: {plan.get('weeks_available', 0)} weeks")
                 print(f"📈 Timeline Feasible: {'✅ YES' if plan.get('timeline_feasible') else '❌ NO'}")
+                print(f"🏃‍♂️ System: {plan.get('system_type', 'Unknown')}")
+                
+                # Show freeze period information in escape plan
+                if plan.get('freeze_periods'):
+                    print(f"❄️  Freeze periods accounted for: {plan.get('total_freeze_days', 0)} days")
                 
                 # Show exactly which projects are missing with time estimates
                 missing_projects = plan.get('missing_projects', [])
                 if missing_projects:
-                    print(f"\n🎯 PROJECTS NEEDED FOR CIRCLE {plan.get('current_circle')}:")
+                    print(f"\n🎯 PROJECT GROUPS NEEDED FOR CIRCLE {plan.get('current_circle')}:")
                     for i, project in enumerate(missing_projects, 1):
-                        time_est = escape_system.get_project_time_estimates().get(project, {"weeks": 2, "hours": 40})
-                        print(f"  {i}. {project} - {time_est['weeks']} weeks, {time_est['hours']} hours ({time_est['difficulty']})")
+                        if project.startswith("Either:"):
+                            print(f"  {i}. {project}")
+                        else:
+                            time_est = escape_system.get_project_time_estimates().get(project, {"weeks": 2, "hours": 40})
+                            print(f"  {i}. {project} - {time_est['weeks']} weeks, {time_est['hours']} hours ({time_est['difficulty']})")
                 
                 weekly_schedule = plan.get('weekly_schedule', [])
                 if weekly_schedule:
@@ -909,8 +1446,9 @@ def main():
                     for week in weekly_schedule:
                         print(f"\nWeek {week.get('week', '?')}:")
                         for project in week.get('focus_projects', []):
-                            status = f" (Week {project.get('week_in_progress', 1)}/{project.get('total_weeks', 2)})" if project.get('total_weeks', 2) > 1 else ""
-                            print(f"   • {project.get('name', 'Unknown')}{status} - {project.get('estimated_hours', 0)} hours ({project.get('difficulty', 'medium')})")
+                            status_str = f" (Week {project.get('week_in_progress', 1)}/{project.get('total_weeks', 2)})" if project.get('total_weeks', 2) > 1 else ""
+                            optional_note = " [OPTIONAL - choose one]" if project.get('is_optional') else ""
+                            print(f"   • {project.get('name', 'Unknown')}{status_str}{optional_note} - {project.get('estimated_hours', 0)} hours ({project.get('difficulty', 'medium')})")
                         for goal in week.get('weekly_goals', []):
                             print(f"   🎯 {goal}")
             
@@ -919,6 +1457,8 @@ def main():
                 print(f"\n💡 REALISTIC RECOMMENDATIONS:")
                 for rec in recommendations:
                     print(f"  • {rec}")
+        
+        print(f"\n📁 All API responses saved to: {escape_system.api_responses_dir}/")
             
     except Exception as e:
         print(f"❌ System error: {e}")
