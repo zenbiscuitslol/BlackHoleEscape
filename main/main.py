@@ -180,6 +180,56 @@ class BlackHoleEscape:
             }
         }
     
+    def get_project_time_estimates(self) -> Dict:
+        """
+        Get realistic time estimates for 42 projects based on actual curriculum
+        and student feedback
+        """
+        return {
+            # Circle 1
+            "libft": {"weeks": 2, "difficulty": "medium", "hours": 40, "type": "foundation"},
+            
+            # Circle 2
+            "get_next_line": {"weeks": 1, "difficulty": "medium", "hours": 25, "type": "file_io"},
+            "ft_printf": {"weeks": 2, "difficulty": "hard", "hours": 50, "type": "formatting"},
+            "born2beroot": {"weeks": 1, "difficulty": "easy", "hours": 20, "type": "sysadmin"},
+            
+            # Circle 3
+            "pipex": {"weeks": 2, "difficulty": "hard", "hours": 45, "type": "processes"},
+            "minitalk": {"weeks": 1, "difficulty": "medium", "hours": 30, "type": "signals"},
+            "push_swap": {"weeks": 3, "difficulty": "very_hard", "hours": 80, "type": "algorithms"},
+            "fdf": {"weeks": 2, "difficulty": "medium", "hours": 40, "type": "graphics"},
+            "fract-ol": {"weeks": 2, "difficulty": "medium", "hours": 35, "type": "graphics"},
+            "so_long": {"weeks": 2, "difficulty": "medium", "hours": 40, "type": "game"},
+            
+            # Circle 4
+            "minishell": {"weeks": 4, "difficulty": "very_hard", "hours": 120, "type": "systems"},
+            "Philosophers": {"weeks": 3, "difficulty": "very_hard", "hours": 90, "type": "concurrency"},
+            
+            # Circle 5
+            "cpp-module-00": {"weeks": 1, "difficulty": "easy", "hours": 15, "type": "cpp"},
+            "cpp-module-01": {"weeks": 1, "difficulty": "easy", "hours": 20, "type": "cpp"},
+            "cpp-module-02": {"weeks": 1, "difficulty": "medium", "hours": 25, "type": "cpp"},
+            "cpp-module-03": {"weeks": 2, "difficulty": "medium", "hours": 35, "type": "cpp"},
+            "cpp-module-04": {"weeks": 2, "difficulty": "hard", "hours": 45, "type": "cpp"},
+            "cub3d": {"weeks": 3, "difficulty": "very_hard", "hours": 100, "type": "3d_graphics"},
+            "netpractice": {"weeks": 1, "difficulty": "easy", "hours": 15, "type": "networking"},
+            "minirt": {"weeks": 4, "difficulty": "very_hard", "hours": 120, "type": "ray_tracing"},
+            
+            # Circle 6
+            "ft_irc": {"weeks": 4, "difficulty": "very_hard", "hours": 110, "type": "networking"},
+            "webserv": {"weeks": 4, "difficulty": "very_hard", "hours": 130, "type": "web"},
+            "inception": {"weeks": 2, "difficulty": "medium", "hours": 40, "type": "devops"},
+            "cpp-module-05": {"weeks": 2, "difficulty": "hard", "hours": 50, "type": "cpp"},
+            "cpp-module-06": {"weeks": 2, "difficulty": "hard", "hours": 55, "type": "cpp"},
+            "cpp-module-07": {"weeks": 2, "difficulty": "hard", "hours": 60, "type": "cpp"},
+            "cpp-module-08": {"weeks": 2, "difficulty": "very_hard", "hours": 70, "type": "cpp"},
+            "cpp-module-09": {"weeks": 2, "difficulty": "very_hard", "hours": 75, "type": "cpp"},
+            
+            # Circle 7
+            "ft_transcendence": {"weeks": 6, "difficulty": "very_hard", "hours": 200, "type": "fullstack"}
+        }
+    
     def calculate_blackhole_status(self, login: str) -> Dict:
         """
         Calculate accurate black hole status using proper API endpoints
@@ -304,7 +354,7 @@ class BlackHoleEscape:
         for project_user in projects_users:
             if not isinstance(project_user, dict):
                 continue
-                
+            
             status = project_user.get("status", "")
             final_mark = project_user.get("final_mark", 0)
             
@@ -430,6 +480,7 @@ class BlackHoleEscape:
         circle_structure = self.get_42_circle_structure()
         current_circle_data = circle_structure.get(current_circle, {})
         required_projects = current_circle_data.get("required_projects", [])
+        project_time_estimates = self.get_project_time_estimates()
         
         def _normalize_name(name: str) -> str:
             if not name:
@@ -457,11 +508,17 @@ class BlackHoleEscape:
                     break
             
             if not found:
+                # Get time estimate for this project
+                time_estimate = project_time_estimates.get(project, {"weeks": 2, "difficulty": "medium", "hours": 40})
                 remaining.append({
                     "name": project,
                     "slug": project.lower().replace(' ', '-'),
                     "description": f"Required for {current_circle_data.get('name', f'Circle {current_circle}')}",
-                    "circle": current_circle
+                    "circle": current_circle,
+                    "estimated_weeks": time_estimate["weeks"],
+                    "estimated_hours": time_estimate["hours"],
+                    "difficulty": time_estimate["difficulty"],
+                    "type": time_estimate.get("type", "general")
                 })
         
         return remaining
@@ -540,20 +597,26 @@ class BlackHoleEscape:
         projects_needed = circle_info.get("remaining_in_current", 0)
         missing_projects = circle_info.get("missing_projects", [])
         
+        # Calculate total time needed based on realistic project estimates
+        total_weeks_needed = sum(project.get("estimated_weeks", 2) for project in remaining_projects[:projects_needed])
+        total_hours_needed = sum(project.get("estimated_hours", 40) for project in remaining_projects[:projects_needed])
+        
         # Ensure we have valid numbers for calculations
         safe_days_remaining = max(1, days_remaining) if days_remaining is not None else 30
         safe_projects_needed = max(1, projects_needed)
         
-        weekly_pace = math.ceil(safe_projects_needed / max(1, safe_days_remaining / 7))
-        daily_pace = safe_projects_needed / safe_days_remaining
+        # Create realistic weekly plan based on project time estimates
+        weekly_plan = self._create_realistic_weekly_schedule(remaining_projects, safe_days_remaining, safe_projects_needed)
         
-        # Create weekly plan focusing only on the missing projects for current circle
-        weekly_plan = self._create_weekly_schedule(remaining_projects, safe_days_remaining, safe_projects_needed)
+        # Calculate if the timeline is realistic
+        weeks_available = math.ceil(safe_days_remaining / 7)
+        timeline_feasible = total_weeks_needed <= weeks_available
         
         escape_plan = {
             "start_date": begin_at,
             "blackhole_date": status.get("blackhole_date"),
             "days_remaining": days_remaining,
+            "weeks_available": weeks_available,
             "current_circle": circle_info.get("current_circle", 0),
             "current_circle_name": circle_info.get("current_circle_name", ""),
             "next_circle": circle_info.get("next_circle"),
@@ -561,13 +624,16 @@ class BlackHoleEscape:
             "projects_completed_current": circle_info.get("completed_in_current", 0),
             "projects_required_current": circle_info.get("required_in_current", 0),
             "projects_remaining_current": projects_needed,
+            "total_weeks_needed": total_weeks_needed,
+            "total_hours_needed": total_hours_needed,
+            "timeline_feasible": timeline_feasible,
             "required_projects": safe_projects_needed,
-            "recommended_weekly_pace": weekly_pace,
-            "recommended_daily_pace": f"{daily_pace:.2f} projects per day",
             "weekly_schedule": weekly_plan,
             "priority_projects": [p.get("name", "Unknown") for p in remaining_projects],
             "missing_projects": missing_projects,
-            "recommendations": self._generate_recommendations(status, days_remaining, weekly_pace)
+            "recommendations": self._generate_realistic_recommendations(
+                status, days_remaining, total_weeks_needed, weeks_available, timeline_feasible
+            )
         }
         
         return {
@@ -575,82 +641,152 @@ class BlackHoleEscape:
             "escape_plan": escape_plan
         }
     
-    def _create_weekly_schedule(self, projects: List[Dict], days_remaining: int, required_count: int) -> List[Dict]:
-        """Create a weekly study schedule focusing only on required projects"""
+    def _create_realistic_weekly_schedule(self, projects: List[Dict], days_remaining: int, required_count: int) -> List[Dict]:
+        """Create a realistic weekly schedule based on project time estimates"""
         if not projects:
             return []
             
-        weeks = math.ceil(days_remaining / 7) if days_remaining else 4
-        projects_per_week = math.ceil(required_count / max(1, weeks))
+        weeks_available = math.ceil(days_remaining / 7)
+        projects_to_schedule = projects[:required_count]
         
         weekly_schedule = []
+        current_week = 1
+        scheduled_projects = []
         
-        for week in range(1, weeks + 1):
-            if not projects:
-                break
-                
-            # Take projects for this week
-            week_projects = projects[:projects_per_week]
-            projects = projects[projects_per_week:]  # Remove taken projects
+        # Sort projects by estimated weeks (longest first to schedule them early)
+        projects_to_schedule.sort(key=lambda x: x.get("estimated_weeks", 2), reverse=True)
+        
+        for project in projects_to_schedule:
+            project_weeks = project.get("estimated_weeks", 2)
+            project_name = project.get("name", "Unknown Project")
+            project_hours = project.get("estimated_hours", 40)
+            difficulty = project.get("difficulty", "medium")
             
-            weekly_schedule.append({
-                "week": week,
-                "target_projects": len(week_projects),
-                "projects": [
-                    {
-                        "name": p.get("name", "Unknown Project"), 
-                        "description": p.get("description", "Required project")
-                    } for p in week_projects
-                ],
-                "weekly_goals": [
-                    f"Complete {len(week_projects)} required projects",
-                    f"Focus on: {', '.join([p.get('name', 'Unknown') for p in week_projects])}",
-                    "Attend relevant workshops",
-                    "Get peer code reviews",
-                    "Schedule evaluations early"
+            # Check if we can fit this project in the remaining weeks
+            if current_week + project_weeks - 1 > weeks_available:
+                # If not, skip this project (it won't fit in the timeline)
+                continue
+            
+            # Schedule the project
+            for week_offset in range(project_weeks):
+                week_num = current_week + week_offset
+                
+                # Find or create the week entry
+                week_entry = None
+                for entry in weekly_schedule:
+                    if entry["week"] == week_num:
+                        week_entry = entry
+                        break
+                
+                if not week_entry:
+                    week_entry = {
+                        "week": week_num,
+                        "focus_projects": [],
+                        "weekly_goals": [],
+                        "total_hours": 0
+                    }
+                    weekly_schedule.append(week_entry)
+                
+                # Add project to this week (only once per project)
+                if week_offset == 0:
+                    week_entry["focus_projects"].append({
+                        "name": project_name,
+                        "estimated_hours": project_hours,
+                        "difficulty": difficulty,
+                        "total_weeks": project_weeks,
+                        "week_in_progress": 1
+                    })
+                    week_entry["total_hours"] += project_hours // project_weeks
+                else:
+                    # For subsequent weeks, just mark it as ongoing
+                    for existing_project in week_entry["focus_projects"]:
+                        if existing_project["name"] == project_name:
+                            existing_project["week_in_progress"] = week_offset + 1
+                            break
+            
+            current_week += project_weeks
+            scheduled_projects.append(project)
+            
+            # Stop if we've scheduled all required projects or run out of weeks
+            if len(scheduled_projects) >= required_count or current_week > weeks_available:
+                break
+        
+        # Add weekly goals and format the schedule
+        for week_entry in weekly_schedule:
+            focus_projects = week_entry["focus_projects"]
+            ongoing_projects = [p for p in focus_projects if p.get("week_in_progress", 1) > 1]
+            new_projects = [p for p in focus_projects if p.get("week_in_progress", 1) == 1]
+            
+            goals = []
+            if new_projects:
+                goals.append("Start: " + ", ".join([p["name"] for p in new_projects]))
+            if ongoing_projects:
+                formatted = [
+                    f"{p['name']} (week {p.get('week_in_progress', 1)}/{p.get('total_weeks', 1)})"
+                    for p in ongoing_projects
                 ]
-            })
+                goals.append("Continue: " + ", ".join(formatted))
+            
+            goals.extend([
+                f"Target: {week_entry['total_hours']} hours of focused work",
+                "Daily coding sessions: 4-6 hours",
+                "Weekend: Intensive work and peer reviews"
+            ])
+            
+            week_entry["weekly_goals"] = goals
         
         return weekly_schedule
     
-    def _generate_recommendations(self, status: Dict, days_remaining: Optional[int], weekly_pace: int) -> List[str]:
-        """Generate personalized recommendations"""
+    def _generate_realistic_recommendations(self, status: Dict, days_remaining: int, total_weeks_needed: int, 
+                                         weeks_available: int, timeline_feasible: bool) -> List[str]:
+        """Generate realistic recommendations based on project time estimates"""
         recommendations = []
         risk_level = status.get("risk_level", "UNKNOWN")
         current_level = status.get("level", 0)
         circle_info = status.get("circle_info", {})
         begin_at = status.get("begin_at")
         
+        # Timeline analysis
+        if not timeline_feasible:
+            recommendations.extend([
+                "🚨 TIMELINE CRITICAL: Your available time may not be sufficient",
+                f"⏰ You need {total_weeks_needed} weeks but only have {weeks_available} weeks until black hole",
+                "💡 Consider focusing on the most critical projects first",
+                "🆘 Discuss timeline options with your campus staff"
+            ])
+        else:
+            recommendations.append(f"✅ Timeline looks feasible: {total_weeks_needed} weeks needed, {weeks_available} weeks available")
+        
         if risk_level == "CRITICAL":
             recommendations.extend([
-                "🚨 CRITICAL: Maximum effort required!",
-                "🎯 Focus exclusively on required projects for current circle",
-                "⏰ Dedicate 6-8 hours daily to coding",
-                "🆘 Seek immediate help from staff and peers",
-                "📞 Schedule daily check-ins with your tutor"
+                "🚨 MAXIMUM EFFORT REQUIRED!",
+                "⏰ Dedicate 6-8 hours daily to coding (40-50 hours/week)",
+                "🎯 Focus on one project at a time to maximize efficiency",
+                "🆘 Seek immediate help from staff and senior students",
+                "📞 Daily check-ins with your tutor or referent"
             ])
         elif risk_level == "HIGH":
             recommendations.extend([
-                "⚠️ HIGH RISK: Significant effort needed",
-                "🎯 Prioritize circle progression over everything",
-                "⏰ Dedicate 4-6 hours daily to coding",
-                "👥 Form study groups for accountability",
-                "📊 Track progress daily"
+                "⚠️ HIGH INTENSITY NEEDED",
+                "⏰ Dedicate 4-6 hours daily (30-40 hours/week)",
+                "👥 Form dedicated study groups for each project",
+                "📊 Track progress daily and adjust plan weekly",
+                "🎯 Prioritize projects by circle progression impact"
             ])
         elif risk_level == "MEDIUM":
             recommendations.extend([
-                "🔶 MEDIUM RISK: Stay consistent and focused",
-                "🎯 Maintain steady project completion pace",
-                "⏰ Dedicate 3-4 hours daily to coding",
+                "🔶 CONSISTENT EFFORT REQUIRED",
+                "⏰ Dedicate 3-4 hours daily (20-30 hours/week)",
                 "👥 Regular peer programming sessions",
-                "📈 Weekly progress reviews"
+                "📈 Weekly progress reviews and plan adjustments",
+                "💡 Balance project work with skill development"
             ])
         else:
             recommendations.extend([
-                "✅ You're on track! Maintain consistency",
-                "🎯 Focus on quality project completion",
-                "⏰ 2-3 hours of focused coding daily",
-                "👥 Help peers and reinforce learning"
+                "✅ STEADY PACE MAINTAINED",
+                "⏰ 2-3 hours of focused coding daily (15-20 hours/week)",
+                "👥 Help peers and reinforce learning through teaching",
+                "🚀 Challenge yourself with bonus objectives"
             ])
         
         # Add circle-specific advice
@@ -660,6 +796,23 @@ class BlackHoleEscape:
         
         recommendations.append(f"🎯 You are in Circle {current_circle}: {completed_in_current}/{required_in_current} projects completed")
         
+        # Project-specific time management advice
+        if current_circle >= 4:
+            recommendations.extend([
+                "⏳ Complex projects ahead: Plan for 3-4 week timelines",
+                "🔧 Break large projects into smaller milestones",
+                "📝 Document your progress and challenges",
+                "🔄 Regular code reviews with peers"
+            ])
+        
+        # Time management strategies
+        recommendations.extend([
+            "📅 Use time blocking: Dedicate specific hours each day to coding",
+            "🎯 Set weekly milestones with clear deliverables",
+            "🔄 Review and adjust your plan every Sunday",
+            "⏰ Track actual time spent vs estimated time"
+        ])
+        
         # Add black hole specific info
         if begin_at:
             try:
@@ -668,22 +821,6 @@ class BlackHoleEscape:
                 recommendations.append(f"📅 Started: {start_date.date()} ({days_since_start} days ago)")
             except:
                 pass
-        
-        if current_circle <= 2:
-            recommendations.extend([
-                "🌱 Focus on mastering C fundamentals and memory management",
-                "💡 Practice debugging with valgrind and gdb"
-            ])
-        elif current_circle <= 4:
-            recommendations.extend([
-                "🚀 Work on algorithm optimization and system design",
-                "🔧 Learn multi-process and multi-threaded programming"
-            ])
-        else:
-            recommendations.extend([
-                "🌟 You're in advanced territory - focus on architecture",
-                "💡 Consider specialization paths and career goals"
-            ])
         
         return recommendations
 
@@ -749,38 +886,37 @@ def main():
             print(f"🎯 Next Circle: {next_circle} - {circle_info.get('next_circle_name', '')}")
         
         if plan:
-            print(f"\n📝 PERSONALIZED ESCAPE PLAN")
+            print(f"\n📝 REALISTIC ESCAPE PLAN")
             if 'message' in plan:
                 print(plan['message'])
             else:
                 print(f"🎯 Required Projects for Circle {plan.get('current_circle')}: {plan.get('projects_remaining_current', 0)}")
-                print(f"📈 Recommended Pace: {plan.get('recommended_daily_pace', 'N/A')}")
-                print(f"📅 Weekly Target: {plan.get('recommended_weekly_pace', 0)} projects/week")
+                print(f"⏰ Total Time Needed: {plan.get('total_weeks_needed', 0)} weeks ({plan.get('total_hours_needed', 0)} hours)")
+                print(f"📅 Weeks Available: {plan.get('weeks_available', 0)} weeks")
+                print(f"📈 Timeline Feasible: {'✅ YES' if plan.get('timeline_feasible') else '❌ NO'}")
                 
-                # Show exactly which projects are missing
+                # Show exactly which projects are missing with time estimates
                 missing_projects = plan.get('missing_projects', [])
                 if missing_projects:
-                    print(f"\n🎯 SPECIFIC PROJECTS NEEDED FOR CIRCLE {plan.get('current_circle')}:")
+                    print(f"\n🎯 PROJECTS NEEDED FOR CIRCLE {plan.get('current_circle')}:")
                     for i, project in enumerate(missing_projects, 1):
-                        print(f"  {i}. {project}")
+                        time_est = escape_system.get_project_time_estimates().get(project, {"weeks": 2, "hours": 40})
+                        print(f"  {i}. {project} - {time_est['weeks']} weeks, {time_est['hours']} hours ({time_est['difficulty']})")
                 
                 weekly_schedule = plan.get('weekly_schedule', [])
                 if weekly_schedule:
-                    print(f"\n📅 WEEKLY ACTION PLAN:")
+                    print(f"\n📅 REALISTIC WEEKLY SCHEDULE:")
                     for week in weekly_schedule:
-                        print(f"\nWeek {week.get('week', '?')}: {week.get('target_projects', 0)} projects")
-                        for project in week.get('projects', []):
-                            print(f"   • {project.get('name', 'Unknown')}")
-            
-            priority_projects = plan.get('priority_projects', [])
-            if priority_projects:
-                print(f"\n🎯 PRIORITY PROJECTS (in order):")
-                for i, project in enumerate(priority_projects, 1):
-                    print(f"  {i}. {project}")
+                        print(f"\nWeek {week.get('week', '?')}:")
+                        for project in week.get('focus_projects', []):
+                            status = f" (Week {project.get('week_in_progress', 1)}/{project.get('total_weeks', 2)})" if project.get('total_weeks', 2) > 1 else ""
+                            print(f"   • {project.get('name', 'Unknown')}{status} - {project.get('estimated_hours', 0)} hours ({project.get('difficulty', 'medium')})")
+                        for goal in week.get('weekly_goals', []):
+                            print(f"   🎯 {goal}")
             
             recommendations = plan.get('recommendations', [])
             if recommendations:
-                print(f"\n💡 EXPERT RECOMMENDATIONS:")
+                print(f"\n💡 REALISTIC RECOMMENDATIONS:")
                 for rec in recommendations:
                     print(f"  • {rec}")
             
