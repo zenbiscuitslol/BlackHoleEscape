@@ -1,0 +1,169 @@
+{
+  "status": {
+    "user_login": "pprejith",
+    "user_name": "Pranin Edward Prejith",
+    "cursus": "42cursus",
+    "level": 3.2,
+    "begin_at": "2025-03-10T08:00:00.000Z",
+    "blackholed_at": "2026-01-21T08:00:00.000Z",
+    "blackhole_date": "2026-01-21T08:00:00+00:00",
+    "days_until_blackhole": 91,
+    "is_blackholed": false,
+    "total_completed": 41,
+    "circle_info": {
+      "current_circle": 4,
+      "next_circle": 5,
+      "completed_in_current": 0,
+      "required_in_current": 1,
+      "remaining_in_current": 1,
+      "missing_projects": [
+        "Either: minishell, Philosophers"
+      ],
+      "is_on_track": false,
+      "current_circle_name": "Circle 4 - Advanced Systems",
+      "next_circle_name": "Circle 5 - C++ & 3D",
+      "highest_circle_reached": 3
+    },
+    "remaining_projects": [
+      {
+        "name": "minishell",
+        "slug": "minishell",
+        "description": "Optional: Choose one from minishell, Philosophers",
+        "circle": 4,
+        "estimated_weeks": 4,
+        "estimated_hours": 120,
+        "difficulty": "very_hard",
+        "type": "systems",
+        "is_optional": true,
+        "alternatives": [
+          "Philosophers"
+        ]
+      },
+      {
+        "name": "Philosophers",
+        "slug": "philosophers",
+        "description": "Optional: Choose one from minishell, Philosophers",
+        "circle": 4,
+        "estimated_weeks": 3,
+        "estimated_hours": 90,
+        "difficulty": "very_hard",
+        "type": "concurrency",
+        "is_optional": true,
+        "alternatives": [
+          "minishell"
+        ]
+      }
+    ],
+    "risk_level": 0.35,
+    "freeze_periods": [],
+    "total_freeze_days": 0,
+    "system_type": "old_blackhole"
+  },
+  "escape_plan": {
+    "start_date": "2025-03-10T08:00:00.000Z",
+    "blackhole_date": "2026-01-21T08:00:00+00:00",
+    "days_remaining": 91,
+    "weeks_available": 13,
+    "current_circle": 4,
+    "current_circle_name": "Circle 4 - Advanced Systems",
+    "next_circle": 5,
+    "next_circle_name": "Circle 5 - C++ & 3D",
+    "projects_completed_current": 0,
+    "projects_required_current": 1,
+    "projects_remaining_current": 1,
+    "total_weeks_needed": 4,
+    "total_hours_needed": 120,
+    "timeline_feasible": true,
+    "required_projects": 1,
+    "weekly_schedule": [
+      {
+        "week": 1,
+        "focus_projects": [
+          {
+            "name": "minishell",
+            "estimated_hours": 120,
+            "difficulty": "very_hard",
+            "total_weeks": 4,
+            "week_in_progress": 1,
+            "is_optional": true,
+            "alternatives": [
+              "Philosophers"
+            ]
+          }
+        ],
+        "weekly_goals": [
+          "Start: minishell (choose one from: Philosophers)",
+          "Target: 30 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 30
+      },
+      {
+        "week": 2,
+        "focus_projects": [],
+        "weekly_goals": [
+          "Target: 0 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 0
+      },
+      {
+        "week": 3,
+        "focus_projects": [],
+        "weekly_goals": [
+          "Target: 0 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 0
+      },
+      {
+        "week": 4,
+        "focus_projects": [],
+        "weekly_goals": [
+          "Target: 0 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 0
+      }
+    ],
+    "priority_projects": [
+      "minishell",
+      "Philosophers"
+    ],
+    "missing_projects": [
+      "Either: minishell, Philosophers"
+    ],
+    "freeze_periods": [],
+    "total_freeze_days": 0,
+    "system_type": "old_blackhole",
+    "recommendations": [
+      "🎯 System: Old Black Hole System",
+      "✅ Timeline looks feasible: 4 weeks needed, 13 weeks available",
+      "⏰ OLD SYSTEM: Fixed deadlines require careful planning",
+      "🚀 Prioritize projects that unlock circle progression",
+      "📈 Track progress weekly and adjust intensity as needed",
+      "✅ STEADY PACE MAINTAINED",
+      "⏰ 2-3 hours of focused coding daily (15-20 hours/week)",
+      "👥 Help peers and reinforce learning through teaching",
+      "🚀 Challenge yourself with bonus objectives",
+      "🎯 You are in Circle 4: 0/1 project groups completed",
+      "🔄 REMEMBER: For optional projects, you only need to complete ONE from each group",
+      "💡 Choose projects based on your interests and skills",
+      "📊 Compare time estimates when selecting optional projects",
+      "👥 Talk to peers who have completed different options",
+      "⏳ Complex projects ahead: Plan for 3-4 week timelines",
+      "🔧 Break large projects into smaller milestones",
+      "📝 Document your progress and challenges",
+      "🔄 Regular code reviews with peers",
+      "📅 Use time blocking: Dedicate specific hours each day to coding",
+      "🎯 Set weekly milestones with clear deliverables",
+      "🔄 Review and adjust your plan every Sunday",
+      "⏰ Track actual time spent vs estimated time",
+      "📅 Started: 2025-03-10 (225 days ago)"
+    ]
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "status": {
+    "user_login": "yyudi",
+    "user_name": "Yudi Yudi",
+    "cursus": "42cursus",
+    "level": 4.44,
+    "begin_at": "2025-07-07T10:00:00.000Z",
+    "blackholed_at": "2026-08-04T10:00:00.000Z",
+    "blackhole_date": "2026-08-04T10:00:00+00:00",
+    "days_until_blackhole": 287,
+    "is_blackholed": false,
+    "total_completed": 26,
+    "circle_info": {
+      "current_circle": 5,
+      "next_circle": 6,
+      "completed_in_current": 3,
+      "required_in_current": 6,
+      "remaining_in_current": 3,
+      "missing_projects": [
+        "cpp-module-02",
+        "cpp-module-03",
+        "cpp-module-04",
+        "Either: cub3d, minirt"
+      ],
+      "is_on_track": false,
+      "current_circle_name": "Circle 5 - C++ & 3D",
+      "next_circle_name": "Circle 6 - Web & Networks",
+      "highest_circle_reached": 5
+    },
+    "remaining_projects": [
+      {
+        "name": "cpp-module-02",
+        "slug": "cpp-module-02",
+        "description": "Required for Circle 5 - C++ & 3D",
+        "circle": 5,
+        "estimated_weeks": 1,
+        "estimated_hours": 25,
+        "difficulty": "medium",
+        "type": "cpp",
+        "is_optional": false,
+        "alternatives": []
+      },
+      {
+        "name": "cpp-module-03",
+        "slug": "cpp-module-03",
+        "description": "Required for Circle 5 - C++ & 3D",
+        "circle": 5,
+        "estimated_weeks": 2,
+        "estimated_hours": 35,
+        "difficulty": "medium",
+        "type": "cpp",
+        "is_optional": false,
+        "alternatives": []
+      },
+      {
+        "name": "cpp-module-04",
+        "slug": "cpp-module-04",
+        "description": "Required for Circle 5 - C++ & 3D",
+        "circle": 5,
+        "estimated_weeks": 2,
+        "estimated_hours": 45,
+        "difficulty": "hard",
+        "type": "cpp",
+        "is_optional": false,
+        "alternatives": []
+      },
+      {
+        "name": "cub3d",
+        "slug": "cub3d",
+        "description": "Optional: Choose one from cub3d, minirt",
+        "circle": 5,
+        "estimated_weeks": 3,
+        "estimated_hours": 100,
+        "difficulty": "very_hard",
+        "type": "3d_graphics",
+        "is_optional": true,
+        "alternatives": [
+          "minirt"
+        ]
+      },
+      {
+        "name": "minirt",
+        "slug": "minirt",
+        "description": "Optional: Choose one from cub3d, minirt",
+        "circle": 5,
+        "estimated_weeks": 4,
+        "estimated_hours": 120,
+        "difficulty": "very_hard",
+        "type": "ray_tracing",
+        "is_optional": true,
+        "alternatives": [
+          "cub3d"
+        ]
+      }
+    ],
+    "risk_level": "SAFE",
+    "freeze_periods": [],
+    "total_freeze_days": 0,
+    "system_type": "old_blackhole"
+  },
+  "escape_plan": {
+    "start_date": "2025-07-07T10:00:00.000Z",
+    "blackhole_date": "2026-08-04T10:00:00+00:00",
+    "days_remaining": 287,
+    "weeks_available": 41,
+    "current_circle": 5,
+    "current_circle_name": "Circle 5 - C++ & 3D",
+    "next_circle": 6,
+    "next_circle_name": "Circle 6 - Web & Networks",
+    "projects_completed_current": 3,
+    "projects_required_current": 6,
+    "projects_remaining_current": 3,
+    "total_weeks_needed": 5,
+    "total_hours_needed": 105,
+    "timeline_feasible": true,
+    "required_projects": 3,
+    "weekly_schedule": [
+      {
+        "week": 1,
+        "focus_projects": [
+          {
+            "name": "cpp-module-03",
+            "estimated_hours": 35,
+            "difficulty": "medium",
+            "total_weeks": 2,
+            "week_in_progress": 1,
+            "is_optional": false
+          }
+        ],
+        "weekly_goals": [
+          "Start: cpp-module-03",
+          "Target: 17 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 17
+      },
+      {
+        "week": 2,
+        "focus_projects": [],
+        "weekly_goals": [
+          "Target: 0 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 0
+      },
+      {
+        "week": 3,
+        "focus_projects": [
+          {
+            "name": "cpp-module-04",
+            "estimated_hours": 45,
+            "difficulty": "hard",
+            "total_weeks": 2,
+            "week_in_progress": 1,
+            "is_optional": false
+          }
+        ],
+        "weekly_goals": [
+          "Start: cpp-module-04",
+          "Target: 22 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 22
+      },
+      {
+        "week": 4,
+        "focus_projects": [],
+        "weekly_goals": [
+          "Target: 0 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 0
+      },
+      {
+        "week": 5,
+        "focus_projects": [
+          {
+            "name": "cpp-module-02",
+            "estimated_hours": 25,
+            "difficulty": "medium",
+            "total_weeks": 1,
+            "week_in_progress": 1,
+            "is_optional": false
+          }
+        ],
+        "weekly_goals": [
+          "Start: cpp-module-02",
+          "Target: 25 hours of focused work",
+          "Daily coding sessions: 4-6 hours",
+          "Weekend: Intensive work and peer reviews"
+        ],
+        "total_hours": 25
+      }
+    ],
+    "priority_projects": [
+      "cpp-module-02",
+      "cpp-module-03",
+      "cpp-module-04",
+      "cub3d",
+      "minirt"
+    ],
+    "missing_projects": [
+      "cpp-module-02",
+      "cpp-module-03",
+      "cpp-module-04",
+      "Either: cub3d, minirt"
+    ],
+    "freeze_periods": [],
+    "total_freeze_days": 0,
+    "system_type": "old_blackhole",
+    "recommendations": [
+      "🎯 System: Old Black Hole System",
+      "✅ Timeline looks feasible: 5 weeks needed, 41 weeks available",
+      "⏰ OLD SYSTEM: Fixed deadlines require careful planning",
+      "🚀 Prioritize projects that unlock circle progression",
+      "📈 Track progress weekly and adjust intensity as needed",
+      "✅ STEADY PACE MAINTAINED",
+      "⏰ 2-3 hours of focused coding daily (15-20 hours/week)",
+      "👥 Help peers and reinforce learning through teaching",
+      "🚀 Challenge yourself with bonus objectives",
+      "🎯 You are in Circle 5: 3/6 project groups completed",
+      "🔄 REMEMBER: For optional projects, you only need to complete ONE from each group",
+      "💡 Choose projects based on your interests and skills",
+      "📊 Compare time estimates when selecting optional projects",
+      "👥 Talk to peers who have completed different options",
+      "⏳ Complex projects ahead: Plan for 3-4 week timelines",
+      "🔧 Break large projects into smaller milestones",
+      "📝 Document your progress and challenges",
+      "🔄 Regular code reviews with peers",
+      "📅 Use time blocking: Dedicate specific hours each day to coding",
+      "🎯 Set weekly milestones with clear deliverables",
+      "🔄 Review and adjust your plan every Sunday",
+      "⏰ Track actual time spent vs estimated time",
+      "📅 Started: 2025-07-07 (105 days ago)"
+    ]
+  }
+}

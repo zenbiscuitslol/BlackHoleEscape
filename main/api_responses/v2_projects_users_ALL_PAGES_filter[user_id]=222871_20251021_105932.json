@@ -1,0 +1,2119 @@
+{
+  "endpoint": "/v2/projects_users_ALL_PAGES",
+  "params": {
+    "filter[user_id]": 222871,
+    "page": 1,
+    "per_page": 100
+  },
+  "timestamp": "20251021_105932",
+  "data": [
+    {
+      "id": 4297085,
+      "occurrence": 0,
+      "final_mark": 0,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6571395,
+      "project": {
+        "id": 1309,
+        "name": "C Piscine Rush 02",
+        "slug": "c-piscine-rush-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-19T15:19:51.761Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-05-15T10:11:56.036Z",
+      "updated_at": "2025-05-24T03:17:14.913Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6571395,
+          "name": "seaydemi's group",
+          "url": "https://api.intra.42.fr/v2/teams/6571395",
+          "final_mark": 0,
+          "project_id": 1309,
+          "created_at": "2025-05-16T16:42:04.067Z",
+          "updated_at": "2025-05-19T15:19:51.942Z",
+          "status": "finished",
+          "terminating_at": "2025-05-23T22:42:10.177Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4297085
+            },
+            {
+              "id": 222884,
+              "login": "seaydemi",
+              "url": "https://api.intra.42.fr/v2/users/seaydemi",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4299446
+            },
+            {
+              "id": 222901,
+              "login": "mamrouss",
+              "url": "https://api.intra.42.fr/v2/users/mamrouss",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4298445
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-18ebcce3-e72f-4a35-969c-101aec79cdfa-6571395-seaydemi",
+          "repo_uuid": "intra-uuid-18ebcce3-e72f-4a35-969c-101aec79cdfa-6571395-seaydemi",
+          "locked_at": "2025-05-16T16:42:04.606Z",
+          "closed_at": "2025-05-18T22:42:10.177Z",
+          "project_session_id": 5084,
+          "project_gitlab_path": "pedago_world/c-piscine/rush-02"
+        }
+      ]
+    },
+    {
+      "id": 4301813,
+      "occurrence": 0,
+      "final_mark": 66,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6573784,
+      "project": {
+        "id": 1304,
+        "name": "C Piscine Final Exam",
+        "slug": "c-piscine-final-exam",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-22T10:15:48.944Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-05-19T10:43:47.519Z",
+      "updated_at": "2025-05-22T15:28:57.302Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6573784,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6573784",
+          "final_mark": 66,
+          "project_id": 1304,
+          "created_at": "2025-05-19T10:43:47.541Z",
+          "updated_at": "2025-05-22T15:28:56.945Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4301813
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-374763ff-2e7b-4038-9512-16a4e05873f1-6573784-oazlan",
+          "locked_at": "2025-05-19T10:43:47.589Z",
+          "closed_at": "2025-05-22T15:28:56.649Z",
+          "project_session_id": 5089,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4300721,
+      "occurrence": 0,
+      "final_mark": 70,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6572400,
+      "project": {
+        "id": 1256,
+        "name": "C Piscine Shell 01",
+        "slug": "c-piscine-shell-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-21T14:23:15.177Z",
+      "marked": true,
+      "retriable_at": "2025-05-21T14:43:15.268Z",
+      "created_at": "2025-05-18T09:27:49.270Z",
+      "updated_at": "2025-05-22T12:49:38.067Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6572400,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6572400",
+          "final_mark": 70,
+          "project_id": 1256,
+          "created_at": "2025-05-18T09:27:49.281Z",
+          "updated_at": "2025-05-21T14:23:14.938Z",
+          "status": "finished",
+          "terminating_at": "2025-05-22T12:49:13.406Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4300721
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-9e09f6e5-3557-49f3-901e-4f119db92438-6572400-oazlan",
+          "repo_uuid": "intra-uuid-9e09f6e5-3557-49f3-901e-4f119db92438-6572400-oazlan",
+          "locked_at": "2025-05-18T09:27:49.318Z",
+          "closed_at": "2025-05-21T12:49:13.406Z",
+          "project_session_id": 3022,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-01"
+        }
+      ]
+    },
+    {
+      "id": 4287941,
+      "occurrence": 2,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6577393,
+      "project": {
+        "id": 1264,
+        "name": "C Piscine C 08",
+        "slug": "c-piscine-c-08",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-21T09:37:56.037Z",
+      "marked": true,
+      "retriable_at": "2025-05-21T10:37:56.126Z",
+      "created_at": "2025-05-11T13:52:54.120Z",
+      "updated_at": "2025-05-22T07:55:37.683Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6556613,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6556613",
+          "final_mark": 1,
+          "project_id": 1264,
+          "created_at": "2025-05-11T13:52:54.141Z",
+          "updated_at": "2025-05-20T16:54:34.675Z",
+          "status": "finished",
+          "terminating_at": "2025-05-21T15:28:55.834Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4287941
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-78c98e7b-4b70-4690-9825-65a72519beb9-6556613-oazlan",
+          "repo_uuid": "intra-uuid-78c98e7b-4b70-4690-9825-65a72519beb9-6556613-oazlan",
+          "locked_at": "2025-05-11T13:52:54.198Z",
+          "closed_at": "2025-05-20T15:28:55.834Z",
+          "project_session_id": 3030,
+          "project_gitlab_path": "pedago_world/c-piscine/c-08"
+        },
+        {
+          "id": 6577272,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6577272",
+          "final_mark": 40,
+          "project_id": 1264,
+          "created_at": "2025-05-21T04:58:41.315Z",
+          "updated_at": "2025-05-21T06:11:24.742Z",
+          "status": "finished",
+          "terminating_at": "2025-05-22T05:09:53.768Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4287941
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-c6b13333-b817-4ac5-acaa-c50eecd499e1-6577272-oazlan",
+          "repo_uuid": "intra-uuid-c6b13333-b817-4ac5-acaa-c50eecd499e1-6577272-oazlan",
+          "locked_at": "2025-05-21T04:58:41.352Z",
+          "closed_at": "2025-05-21T05:09:53.768Z",
+          "project_session_id": 3030,
+          "project_gitlab_path": "pedago_world/c-piscine/c-08"
+        },
+        {
+          "id": 6577393,
+          "name": "oazlan's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6577393",
+          "final_mark": 100,
+          "project_id": 1264,
+          "created_at": "2025-05-21T06:53:09.606Z",
+          "updated_at": "2025-05-21T09:37:55.827Z",
+          "status": "finished",
+          "terminating_at": "2025-05-22T07:55:26.329Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4287941
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-30357b36-2266-4d46-8817-99421a1e2016-6577393-oazlan",
+          "repo_uuid": "intra-uuid-30357b36-2266-4d46-8817-99421a1e2016-6577393-oazlan",
+          "locked_at": "2025-05-21T06:53:09.646Z",
+          "closed_at": "2025-05-21T07:55:26.329Z",
+          "project_session_id": 3030,
+          "project_gitlab_path": "pedago_world/c-piscine/c-08"
+        }
+      ]
+    },
+    {
+      "id": 4278910,
+      "occurrence": 1,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6576886,
+      "project": {
+        "id": 1261,
+        "name": "C Piscine C 04",
+        "slug": "c-piscine-c-04",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-21T07:51:55.775Z",
+      "marked": true,
+      "retriable_at": "2025-05-21T08:31:55.870Z",
+      "created_at": "2025-05-04T09:19:54.332Z",
+      "updated_at": "2025-05-22T05:57:30.093Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6544179,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6544179",
+          "final_mark": 70,
+          "project_id": 1261,
+          "created_at": "2025-05-04T09:19:54.352Z",
+          "updated_at": "2025-05-07T18:00:07.870Z",
+          "status": "finished",
+          "terminating_at": "2025-05-08T16:49:00.722Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4278910
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-4c84a0c6-42f5-41c9-8a78-f6b945866b08-6544179-oazlan",
+          "repo_uuid": "intra-uuid-4c84a0c6-42f5-41c9-8a78-f6b945866b08-6544179-oazlan",
+          "locked_at": "2025-05-04T09:19:54.387Z",
+          "closed_at": "2025-05-07T16:49:00.722Z",
+          "project_session_id": 3027,
+          "project_gitlab_path": "pedago_world/c-piscine/c-04"
+        },
+        {
+          "id": 6576886,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6576886",
+          "final_mark": 100,
+          "project_id": 1261,
+          "created_at": "2025-05-20T17:48:15.498Z",
+          "updated_at": "2025-05-21T07:51:55.567Z",
+          "status": "finished",
+          "terminating_at": "2025-05-22T05:57:17.909Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4278910
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-bca408b6-703e-4fc0-a696-fa801a9e4ca0-6576886-oazlan",
+          "repo_uuid": "intra-uuid-bca408b6-703e-4fc0-a696-fa801a9e4ca0-6576886-oazlan",
+          "locked_at": "2025-05-20T17:48:15.540Z",
+          "closed_at": "2025-05-21T05:57:17.909Z",
+          "project_session_id": 3027,
+          "project_gitlab_path": "pedago_world/c-piscine/c-04"
+        }
+      ]
+    },
+    {
+      "id": 4287678,
+      "occurrence": 1,
+      "final_mark": 60,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6576029,
+      "project": {
+        "id": 1270,
+        "name": "C Piscine C 07",
+        "slug": "c-piscine-c-07",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-20T14:34:48.570Z",
+      "marked": true,
+      "retriable_at": "2025-05-20T15:14:48.658Z",
+      "created_at": "2025-05-10T19:00:47.221Z",
+      "updated_at": "2025-05-21T13:06:22.422Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6556196,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6556196",
+          "final_mark": 30,
+          "project_id": 1270,
+          "created_at": "2025-05-10T19:00:47.250Z",
+          "updated_at": "2025-05-14T15:41:51.269Z",
+          "status": "finished",
+          "terminating_at": "2025-05-15T14:35:55.016Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4287678
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-b2f169a5-6b3c-43b5-8f19-e03f24db4742-6556196-oazlan",
+          "repo_uuid": "intra-uuid-b2f169a5-6b3c-43b5-8f19-e03f24db4742-6556196-oazlan",
+          "locked_at": "2025-05-10T19:00:47.290Z",
+          "closed_at": "2025-05-14T14:35:55.016Z",
+          "project_session_id": 3036,
+          "project_gitlab_path": "pedago_world/c-piscine/c-07"
+        },
+        {
+          "id": 6576029,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6576029",
+          "final_mark": 60,
+          "project_id": 1270,
+          "created_at": "2025-05-20T11:58:13.090Z",
+          "updated_at": "2025-05-20T14:34:48.328Z",
+          "status": "finished",
+          "terminating_at": "2025-05-21T13:06:17.134Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4287678
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-d8e09327-9506-4b1d-9c3f-76b12e26cafb-6576029-oazlan",
+          "repo_uuid": "intra-uuid-d8e09327-9506-4b1d-9c3f-76b12e26cafb-6576029-oazlan",
+          "locked_at": "2025-05-20T11:58:13.128Z",
+          "closed_at": "2025-05-20T13:06:17.134Z",
+          "project_session_id": 3036,
+          "project_gitlab_path": "pedago_world/c-piscine/c-07"
+        }
+      ]
+    },
+    {
+      "id": 4274466,
+      "occurrence": 1,
+      "final_mark": 85,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6575507,
+      "project": {
+        "id": 1257,
+        "name": "C Piscine C 00",
+        "slug": "c-piscine-c-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-20T10:16:04.601Z",
+      "marked": true,
+      "retriable_at": "2025-05-20T10:56:04.701Z",
+      "created_at": "2025-04-30T09:51:23.404Z",
+      "updated_at": "2025-05-21T09:08:34.059Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6537813,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6537813",
+          "final_mark": 50,
+          "project_id": 1257,
+          "created_at": "2025-04-30T09:51:23.431Z",
+          "updated_at": "2025-04-30T16:53:02.617Z",
+          "status": "finished",
+          "terminating_at": "2025-05-01T11:00:27.929Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4274466
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-172f7c41-603e-4331-9cf7-5611dcea7cc0-6537813-oazlan",
+          "repo_uuid": "intra-uuid-172f7c41-603e-4331-9cf7-5611dcea7cc0-6537813-oazlan",
+          "locked_at": "2025-04-30T09:51:23.479Z",
+          "closed_at": "2025-04-30T11:00:27.929Z",
+          "project_session_id": 3023,
+          "project_gitlab_path": "pedago_world/c-piscine/c-00"
+        },
+        {
+          "id": 6575507,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6575507",
+          "final_mark": 85,
+          "project_id": 1257,
+          "created_at": "2025-05-20T09:02:37.122Z",
+          "updated_at": "2025-05-20T10:16:04.302Z",
+          "status": "finished",
+          "terminating_at": "2025-05-21T09:07:47.502Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4274466
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-3e5cd2c3-aa50-4ea5-9fb9-62276419f794-6575507-oazlan",
+          "repo_uuid": "intra-uuid-3e5cd2c3-aa50-4ea5-9fb9-62276419f794-6575507-oazlan",
+          "locked_at": "2025-05-20T09:02:37.187Z",
+          "closed_at": "2025-05-20T09:07:47.502Z",
+          "project_session_id": 3023,
+          "project_gitlab_path": "pedago_world/c-piscine/c-00"
+        }
+      ]
+    },
+    {
+      "id": 4275690,
+      "occurrence": 3,
+      "final_mark": 85,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6572643,
+      "project": {
+        "id": 1259,
+        "name": "C Piscine C 02",
+        "slug": "c-piscine-c-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-18T16:55:41.541Z",
+      "marked": true,
+      "retriable_at": "2025-05-18T18:55:41.636Z",
+      "created_at": "2025-04-30T19:54:21.653Z",
+      "updated_at": "2025-05-19T15:46:40.510Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6539523,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6539523",
+          "final_mark": 35,
+          "project_id": 1259,
+          "created_at": "2025-04-30T19:54:21.671Z",
+          "updated_at": "2025-05-01T17:41:17.883Z",
+          "status": "finished",
+          "terminating_at": "2025-05-02T16:11:46.321Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4275690
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-b074df7a-bec5-405e-8b7c-19e8bd8f9f56-6539523-oazlan",
+          "repo_uuid": "intra-uuid-b074df7a-bec5-405e-8b7c-19e8bd8f9f56-6539523-oazlan",
+          "locked_at": "2025-04-30T19:54:21.790Z",
+          "closed_at": "2025-05-01T16:11:46.321Z",
+          "project_session_id": 3025,
+          "project_gitlab_path": "pedago_world/c-piscine/c-02"
+        },
+        {
+          "id": 6543683,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6543683",
+          "final_mark": 65,
+          "project_id": 1259,
+          "created_at": "2025-05-03T15:19:57.589Z",
+          "updated_at": "2025-05-03T18:09:44.991Z",
+          "status": "finished",
+          "terminating_at": "2025-05-04T16:40:50.512Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4275690
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-161db2db-a14c-4922-94de-c93c83afef7c-6543683-oazlan",
+          "repo_uuid": "intra-uuid-161db2db-a14c-4922-94de-c93c83afef7c-6543683-oazlan",
+          "locked_at": "2025-05-03T15:19:57.633Z",
+          "closed_at": "2025-05-03T16:40:50.512Z",
+          "project_session_id": 3025,
+          "project_gitlab_path": "pedago_world/c-piscine/c-02"
+        },
+        {
+          "id": 6572476,
+          "name": "oazlan's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6572476",
+          "final_mark": 55,
+          "project_id": 1259,
+          "created_at": "2025-05-18T11:46:37.809Z",
+          "updated_at": "2025-05-18T14:22:17.901Z",
+          "status": "finished",
+          "terminating_at": "2025-05-19T11:53:58.296Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4275690
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-4cc83b8f-089b-4ffc-9bef-92386917b223-6572476-oazlan",
+          "repo_uuid": "intra-uuid-4cc83b8f-089b-4ffc-9bef-92386917b223-6572476-oazlan",
+          "locked_at": "2025-05-18T11:46:37.848Z",
+          "closed_at": "2025-05-18T11:53:58.296Z",
+          "project_session_id": 3025,
+          "project_gitlab_path": "pedago_world/c-piscine/c-02"
+        },
+        {
+          "id": 6572643,
+          "name": "oazlan's group-3",
+          "url": "https://api.intra.42.fr/v2/teams/6572643",
+          "final_mark": 85,
+          "project_id": 1259,
+          "created_at": "2025-05-18T15:28:55.107Z",
+          "updated_at": "2025-05-18T16:55:41.334Z",
+          "status": "finished",
+          "terminating_at": "2025-05-19T15:46:37.577Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 3,
+              "validated": true,
+              "projects_user_id": 4275690
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-a992fdfd-2a0f-436d-ba8c-a6188dd2fff6-6572643-oazlan",
+          "repo_uuid": "intra-uuid-a992fdfd-2a0f-436d-ba8c-a6188dd2fff6-6572643-oazlan",
+          "locked_at": "2025-05-18T15:28:55.162Z",
+          "closed_at": "2025-05-18T15:46:37.577Z",
+          "project_session_id": 3025,
+          "project_gitlab_path": "pedago_world/c-piscine/c-02"
+        }
+      ]
+    },
+    {
+      "id": 4278637,
+      "occurrence": 2,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6572085,
+      "project": {
+        "id": 1260,
+        "name": "C Piscine C 03",
+        "slug": "c-piscine-c-03",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-18T07:43:18.674Z",
+      "marked": true,
+      "retriable_at": "2025-05-18T08:43:18.791Z",
+      "created_at": "2025-05-03T16:45:56.091Z",
+      "updated_at": "2025-05-19T04:25:43.649Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6543778,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6543778",
+          "final_mark": 0,
+          "project_id": 1260,
+          "created_at": "2025-05-03T16:45:56.114Z",
+          "updated_at": "2025-05-09T08:06:20.063Z",
+          "status": "finished",
+          "terminating_at": "2025-05-09T08:06:17.556Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4278637
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-f106dc5d-5c90-40c5-b4aa-6a21b864be81-6543778-oazlan",
+          "repo_uuid": "intra-uuid-f106dc5d-5c90-40c5-b4aa-6a21b864be81-6543778-oazlan",
+          "locked_at": "2025-05-03T16:45:56.167Z",
+          "closed_at": "2025-05-08T08:06:17.556Z",
+          "project_session_id": 3026,
+          "project_gitlab_path": "pedago_world/c-piscine/c-03"
+        },
+        {
+          "id": 6553614,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6553614",
+          "final_mark": 75,
+          "project_id": 1260,
+          "created_at": "2025-05-08T13:17:01.154Z",
+          "updated_at": "2025-05-08T15:21:26.201Z",
+          "status": "finished",
+          "terminating_at": "2025-05-09T13:21:56.871Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4278637
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-0501cf45-d262-47f1-b552-b01b0bebcd8e-6553614-oazlan",
+          "repo_uuid": "intra-uuid-0501cf45-d262-47f1-b552-b01b0bebcd8e-6553614-oazlan",
+          "locked_at": "2025-05-08T13:17:01.201Z",
+          "closed_at": "2025-05-08T13:21:56.871Z",
+          "project_session_id": 3026,
+          "project_gitlab_path": "pedago_world/c-piscine/c-03"
+        },
+        {
+          "id": 6572085,
+          "name": "oazlan's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6572085",
+          "final_mark": 100,
+          "project_id": 1260,
+          "created_at": "2025-05-17T15:41:56.612Z",
+          "updated_at": "2025-05-18T07:43:18.340Z",
+          "status": "finished",
+          "terminating_at": "2025-05-19T04:24:51.809Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4278637
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-4015041b-8181-4ac0-bc7f-6daaf8033b95-6572085-oazlan",
+          "repo_uuid": "intra-uuid-4015041b-8181-4ac0-bc7f-6daaf8033b95-6572085-oazlan",
+          "locked_at": "2025-05-17T15:41:56.655Z",
+          "closed_at": "2025-05-18T04:24:51.809Z",
+          "project_session_id": 3026,
+          "project_gitlab_path": "pedago_world/c-piscine/c-03"
+        }
+      ]
+    },
+    {
+      "id": 4275539,
+      "occurrence": 2,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6572030,
+      "project": {
+        "id": 1258,
+        "name": "C Piscine C 01",
+        "slug": "c-piscine-c-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-17T17:03:24.564Z",
+      "marked": true,
+      "retriable_at": "2025-05-17T18:03:24.645Z",
+      "created_at": "2025-04-30T17:05:32.506Z",
+      "updated_at": "2025-05-18T14:31:18.813Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6539278,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6539278",
+          "final_mark": -42,
+          "project_id": 1258,
+          "created_at": "2025-04-30T17:05:32.533Z",
+          "updated_at": "2025-04-30T21:12:34.284Z",
+          "status": "finished",
+          "terminating_at": "2025-05-01T19:21:16.330Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4275539
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-257859ab-9b84-4882-ac5c-d92edceed51b-6539278-oazlan",
+          "repo_uuid": "intra-uuid-257859ab-9b84-4882-ac5c-d92edceed51b-6539278-oazlan",
+          "locked_at": "2025-04-30T17:05:32.578Z",
+          "closed_at": "2025-04-30T19:21:16.330Z",
+          "project_session_id": 3024,
+          "project_gitlab_path": "pedago_world/c-piscine/c-01"
+        },
+        {
+          "id": 6539995,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6539995",
+          "final_mark": 70,
+          "project_id": 1258,
+          "created_at": "2025-05-01T07:28:42.585Z",
+          "updated_at": "2025-05-02T07:38:45.871Z",
+          "status": "finished",
+          "terminating_at": "2025-05-02T07:38:42.274Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4275539
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-5812cc55-4d13-4fc5-8e8b-54873cd6881d-6539995-oazlan",
+          "repo_uuid": "intra-uuid-5812cc55-4d13-4fc5-8e8b-54873cd6881d-6539995-oazlan",
+          "locked_at": "2025-05-01T07:28:42.628Z",
+          "closed_at": "2025-05-01T07:38:42.274Z",
+          "project_session_id": 3024,
+          "project_gitlab_path": "pedago_world/c-piscine/c-01"
+        },
+        {
+          "id": 6572030,
+          "name": "oazlan's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6572030",
+          "final_mark": 100,
+          "project_id": 1258,
+          "created_at": "2025-05-17T14:27:10.142Z",
+          "updated_at": "2025-05-17T17:03:24.356Z",
+          "status": "finished",
+          "terminating_at": "2025-05-18T14:30:59.899Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4275539
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-82aba091-0e8a-4aa6-94b0-ec10d827ef73-6572030-oazlan",
+          "repo_uuid": "intra-uuid-82aba091-0e8a-4aa6-94b0-ec10d827ef73-6572030-oazlan",
+          "locked_at": "2025-05-17T14:27:10.188Z",
+          "closed_at": "2025-05-17T14:30:59.899Z",
+          "project_session_id": 3024,
+          "project_gitlab_path": "pedago_world/c-piscine/c-01"
+        }
+      ]
+    },
+    {
+      "id": 4285765,
+      "occurrence": 0,
+      "final_mark": 0,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6555378,
+      "project": {
+        "id": 1310,
+        "name": "C Piscine Rush 01",
+        "slug": "c-piscine-rush-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-14T13:55:41.580Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-05-08T11:39:10.496Z",
+      "updated_at": "2025-05-16T22:42:28.560Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6555378,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6555378",
+          "final_mark": 0,
+          "project_id": 1310,
+          "created_at": "2025-05-09T16:42:26.643Z",
+          "updated_at": "2025-05-14T13:55:41.885Z",
+          "status": "finished",
+          "terminating_at": "2025-05-16T22:42:17.929Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4285765
+            },
+            {
+              "id": 222927,
+              "login": "olmatske",
+              "url": "https://api.intra.42.fr/v2/users/olmatske",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4286791
+            },
+            {
+              "id": 222978,
+              "login": "mbenedet",
+              "url": "https://api.intra.42.fr/v2/users/mbenedet",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4284752
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-ce7000a1-32c7-4bc6-8cae-61ac9a6dbd18-6555378-oazlan",
+          "repo_uuid": "intra-uuid-ce7000a1-32c7-4bc6-8cae-61ac9a6dbd18-6555378-oazlan",
+          "locked_at": "2025-05-09T16:42:26.916Z",
+          "closed_at": "2025-05-11T22:42:17.929Z",
+          "project_session_id": 5083,
+          "project_gitlab_path": "pedago_world/c-piscine/rush-01"
+        }
+      ]
+    },
+    {
+      "id": 4295517,
+      "occurrence": 0,
+      "final_mark": 90,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6565788,
+      "project": {
+        "id": 1303,
+        "name": "C Piscine Exam 02",
+        "slug": "c-piscine-exam-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-16T13:15:21.774Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-05-14T15:25:49.296Z",
+      "updated_at": "2025-05-16T14:59:21.728Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6565788,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6565788",
+          "final_mark": 90,
+          "project_id": 1303,
+          "created_at": "2025-05-14T15:25:49.312Z",
+          "updated_at": "2025-05-16T14:59:21.106Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4295517
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-164b10d5-12d5-4d68-9577-bc28f032c91f-6565788-oazlan",
+          "locked_at": "2025-05-14T15:25:49.365Z",
+          "closed_at": "2025-05-16T14:59:20.831Z",
+          "project_session_id": 5088,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4284856,
+      "occurrence": 0,
+      "final_mark": 80,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6552279,
+      "project": {
+        "id": 1262,
+        "name": "C Piscine C 05",
+        "slug": "c-piscine-c-05",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-11T13:52:33.257Z",
+      "marked": true,
+      "retriable_at": "2025-05-11T14:12:33.372Z",
+      "created_at": "2025-05-07T18:01:17.107Z",
+      "updated_at": "2025-05-12T11:38:38.673Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6552279,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6552279",
+          "final_mark": 80,
+          "project_id": 1262,
+          "created_at": "2025-05-07T18:01:17.132Z",
+          "updated_at": "2025-05-11T13:52:32.884Z",
+          "status": "finished",
+          "terminating_at": "2025-05-12T11:38:37.318Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4284856
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-c925de94-56c2-445c-bff1-ddf6adf28309-6552279-oazlan",
+          "repo_uuid": "intra-uuid-c925de94-56c2-445c-bff1-ddf6adf28309-6552279-oazlan",
+          "locked_at": "2025-05-07T18:01:17.176Z",
+          "closed_at": "2025-05-11T11:38:37.318Z",
+          "project_session_id": 3028,
+          "project_gitlab_path": "pedago_world/c-piscine/c-05"
+        }
+      ]
+    },
+    {
+      "id": 4287281,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6555572,
+      "project": {
+        "id": 1263,
+        "name": "C Piscine C 06",
+        "slug": "c-piscine-c-06",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-10T18:58:45.386Z",
+      "marked": true,
+      "retriable_at": "2025-05-10T19:18:45.490Z",
+      "created_at": "2025-05-09T21:24:29.501Z",
+      "updated_at": "2025-05-11T17:30:54.959Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6555572,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6555572",
+          "final_mark": 100,
+          "project_id": 1263,
+          "created_at": "2025-05-09T21:24:29.530Z",
+          "updated_at": "2025-05-10T18:58:45.161Z",
+          "status": "finished",
+          "terminating_at": "2025-05-11T17:30:52.047Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4287281
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-ae96c992-b0de-41f6-b866-299c2a79dd0c-6555572-oazlan",
+          "repo_uuid": "intra-uuid-ae96c992-b0de-41f6-b866-299c2a79dd0c-6555572-oazlan",
+          "locked_at": "2025-05-09T21:24:29.576Z",
+          "closed_at": "2025-05-10T17:30:52.047Z",
+          "project_session_id": 3029,
+          "project_gitlab_path": "pedago_world/c-piscine/c-06"
+        }
+      ]
+    },
+    {
+      "id": 4273281,
+      "occurrence": 0,
+      "final_mark": 58,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6542804,
+      "project": {
+        "id": 1308,
+        "name": "C Piscine Rush 00",
+        "slug": "c-piscine-rush-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-06T10:27:17.598Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-04-29T16:43:26.952Z",
+      "updated_at": "2025-05-09T22:42:17.258Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6542804,
+          "name": "segribas's group",
+          "url": "https://api.intra.42.fr/v2/teams/6542804",
+          "final_mark": 58,
+          "project_id": 1308,
+          "created_at": "2025-05-02T16:42:06.743Z",
+          "updated_at": "2025-05-06T10:27:17.706Z",
+          "status": "finished",
+          "terminating_at": "2025-05-09T22:42:05.544Z",
+          "users": [
+            {
+              "id": 222870,
+              "login": "ddietle",
+              "url": "https://api.intra.42.fr/v2/users/ddietle",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4277530
+            },
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4273281
+            },
+            {
+              "id": 222942,
+              "login": "segribas",
+              "url": "https://api.intra.42.fr/v2/users/segribas",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4277503
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-3f7c8807-d045-4458-88c2-5dd722e1b003-6542804-segribas",
+          "repo_uuid": "intra-uuid-3f7c8807-d045-4458-88c2-5dd722e1b003-6542804-segribas",
+          "locked_at": "2025-05-02T16:42:07.180Z",
+          "closed_at": "2025-05-04T22:42:05.544Z",
+          "project_session_id": 5082,
+          "project_gitlab_path": "pedago_world/c-piscine/rush-00"
+        }
+      ]
+    },
+    {
+      "id": 4282496,
+      "occurrence": 0,
+      "final_mark": 90,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6549118,
+      "project": {
+        "id": 1302,
+        "name": "C Piscine Exam 01",
+        "slug": "c-piscine-exam-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-09T14:32:53.512Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-05-06T13:02:23.591Z",
+      "updated_at": "2025-05-09T14:52:25.671Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6549118,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6549118",
+          "final_mark": 90,
+          "project_id": 1302,
+          "created_at": "2025-05-06T13:02:23.609Z",
+          "updated_at": "2025-05-09T14:52:25.267Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4282496
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-1cd08f60-43e6-4471-a730-7b401246e728-6549118-oazlan",
+          "locked_at": "2025-05-06T13:02:23.664Z",
+          "closed_at": "2025-05-09T14:52:24.986Z",
+          "project_session_id": 5087,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4273273,
+      "occurrence": 0,
+      "final_mark": 70,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6536252,
+      "project": {
+        "id": 1301,
+        "name": "C Piscine Exam 00",
+        "slug": "c-piscine-exam-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-05-02T13:10:56.088Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2025-04-29T16:38:57.026Z",
+      "updated_at": "2025-05-02T15:01:04.274Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6536252,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6536252",
+          "final_mark": 70,
+          "project_id": 1301,
+          "created_at": "2025-04-29T16:38:57.051Z",
+          "updated_at": "2025-05-02T15:01:03.928Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4273273
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-6d534fe0-8308-4caa-907e-913869c61aaa-6536252-oazlan",
+          "locked_at": "2025-04-29T16:38:57.092Z",
+          "closed_at": "2025-05-02T15:01:03.582Z",
+          "project_session_id": 5086,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4270251,
+      "occurrence": 2,
+      "final_mark": 60,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6536250,
+      "project": {
+        "id": 1255,
+        "name": "C Piscine Shell 00",
+        "slug": "c-piscine-shell-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2025-04-29T18:36:07.802Z",
+      "marked": true,
+      "retriable_at": "2025-04-29T19:36:07.923Z",
+      "created_at": "2025-04-28T11:04:26.550Z",
+      "updated_at": "2025-04-30T17:13:35.697Z",
+      "user": {
+        "id": 222871,
+        "email": "oazlan@student.42heilbronn.de",
+        "login": "oazlan",
+        "first_name": "Omar",
+        "last_name": "Azlan",
+        "usual_full_name": "Omar Azlan",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/oazlan",
+        "phone": "hidden",
+        "displayname": "Omar Azlan",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/846de6f463a47c192150a1d4b5c40853/oazlan.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/0cfca6b44d549cf3833af72cab853bc1/large_oazlan.jpg",
+            "medium": "https://cdn.intra.42.fr/users/b712ef04881d0102822473c4191071db/medium_oazlan.jpg",
+            "small": "https://cdn.intra.42.fr/users/f935389a93999fc0015a88ffb0f1f07f/small_oazlan.jpg",
+            "micro": "https://cdn.intra.42.fr/users/a828039f617e972d6febdbf2a706cfc8/micro_oazlan.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 5,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 0,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:06:31.094Z",
+        "updated_at": "2025-10-18T20:02:35.999Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6532223,
+          "name": "oazlan's group",
+          "url": "https://api.intra.42.fr/v2/teams/6532223",
+          "final_mark": 0,
+          "project_id": 1255,
+          "created_at": "2025-04-28T11:04:26.579Z",
+          "updated_at": "2025-04-29T16:40:38.751Z",
+          "status": "finished",
+          "terminating_at": "2025-04-29T16:40:36.014Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4270251
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-6fdf47a5-29eb-44fe-ab89-01367c9718e9-6532223-oazlan",
+          "repo_uuid": "intra-uuid-6fdf47a5-29eb-44fe-ab89-01367c9718e9-6532223-oazlan",
+          "locked_at": "2025-04-28T11:04:26.651Z",
+          "closed_at": "2025-04-28T16:40:36.014Z",
+          "project_session_id": 3021,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-00"
+        },
+        {
+          "id": 6533509,
+          "name": "oazlan's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6533509",
+          "final_mark": 30,
+          "project_id": 1255,
+          "created_at": "2025-04-28T19:37:24.620Z",
+          "updated_at": "2025-04-28T21:52:24.575Z",
+          "status": "finished",
+          "terminating_at": "2025-04-29T20:01:01.709Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4270251
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-8a75e74e-99f5-4962-ae4a-f57bffbc0993-6533509-oazlan",
+          "repo_uuid": "intra-uuid-8a75e74e-99f5-4962-ae4a-f57bffbc0993-6533509-oazlan",
+          "locked_at": "2025-04-28T19:37:24.657Z",
+          "closed_at": "2025-04-28T20:01:01.709Z",
+          "project_session_id": 3021,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-00"
+        },
+        {
+          "id": 6536250,
+          "name": "oazlan's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6536250",
+          "final_mark": 60,
+          "project_id": 1255,
+          "created_at": "2025-04-29T16:38:16.020Z",
+          "updated_at": "2025-04-29T18:36:07.597Z",
+          "status": "finished",
+          "terminating_at": "2025-04-30T17:13:19.759Z",
+          "users": [
+            {
+              "id": 222871,
+              "login": "oazlan",
+              "url": "https://api.intra.42.fr/v2/users/oazlan",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4270251
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-7822b763-59b5-4de1-9b8f-106ccdc7b271-6536250-oazlan",
+          "repo_uuid": "intra-uuid-7822b763-59b5-4de1-9b8f-106ccdc7b271-6536250-oazlan",
+          "locked_at": "2025-04-29T16:38:16.077Z",
+          "closed_at": "2025-04-29T17:13:19.759Z",
+          "project_session_id": 3021,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-00"
+        }
+      ]
+    }
+  ]
+}

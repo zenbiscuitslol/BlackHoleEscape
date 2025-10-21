@@ -1,0 +1,232 @@
+{
+  "endpoint": "/v2/users/222868/cursus_users",
+  "params": {
+    "page": 1,
+    "per_page": 100
+  },
+  "timestamp": "20251021_130014",
+  "data": [
+    {
+      "id": 331784,
+      "begin_at": "2025-06-30T14:00:00.000Z",
+      "end_at": "2025-07-07T00:00:00.000Z",
+      "grade": null,
+      "level": 0.0,
+      "skills": [],
+      "cursus_id": 66,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-06-30T10:11:18.633Z",
+      "updated_at": "2025-06-30T10:11:18.633Z",
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 66,
+        "created_at": "2023-03-08T08:57:17.181Z",
+        "name": "C-Piscine-Reloaded",
+        "slug": "c-piscine-reloaded",
+        "kind": "external"
+      }
+    },
+    {
+      "id": 327734,
+      "begin_at": "2025-07-07T10:00:00.000Z",
+      "end_at": null,
+      "grade": "Cadet",
+      "level": 4.44,
+      "skills": [
+        {
+          "id": 2,
+          "name": "Imperative programming",
+          "level": 4.2
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 4.18
+        },
+        {
+          "id": 1,
+          "name": "Algorithms & AI",
+          "level": 3.76
+        },
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 3.39
+        },
+        {
+          "id": 10,
+          "name": "Network & system administration",
+          "level": 3.37
+        },
+        {
+          "id": 5,
+          "name": "Graphics",
+          "level": 1.48
+        }
+      ],
+      "cursus_id": 21,
+      "has_coalition": true,
+      "blackholed_at": "2026-08-04T10:00:00.000Z",
+      "created_at": "2025-05-28T16:31:30.628Z",
+      "updated_at": "2025-07-07T10:06:41.140Z",
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 21,
+        "created_at": "2019-07-29T08:45:17.896Z",
+        "name": "42cursus",
+        "slug": "42cursus",
+        "kind": "main"
+      }
+    },
+    {
+      "id": 322573,
+      "begin_at": "2025-04-28T08:06:17.000Z",
+      "end_at": "2025-05-23T17:00:00.000Z",
+      "grade": "Pisciner",
+      "level": 7.36,
+      "skills": [
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 8.2
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 6.39
+        },
+        {
+          "id": 1,
+          "name": "Algorithms & AI",
+          "level": 6.34
+        },
+        {
+          "id": 7,
+          "name": "Group & interpersonal",
+          "level": 1.52
+        },
+        {
+          "id": 14,
+          "name": "Adaptation & creativity",
+          "level": 0.76
+        }
+      ],
+      "cursus_id": 9,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-04-28T08:05:17.747Z",
+      "updated_at": "2025-04-28T08:05:17.747Z",
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 9,
+        "created_at": "2015-11-04T10:58:13.979Z",
+        "name": "C Piscine",
+        "slug": "c-piscine",
+        "kind": "piscine"
+      }
+    }
+  ]
+}

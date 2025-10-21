@@ -1,0 +1,298 @@
+{
+  "endpoint": "/v2/users/207919/cursus_users_ALL_PAGES",
+  "params": {
+    "page": 1,
+    "per_page": 100
+  },
+  "timestamp": "20251021_124431",
+  "data": [
+    {
+      "id": 347797,
+      "begin_at": "2025-09-15T08:00:00.000Z",
+      "end_at": "2025-09-25T08:00:00.000Z",
+      "grade": null,
+      "level": 13.57,
+      "skills": [
+        {
+          "id": 6,
+          "name": "Web",
+          "level": 18.67
+        },
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 12.07
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 3.38
+        }
+      ],
+      "cursus_id": 3,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-09-15T09:49:17.824Z",
+      "updated_at": "2025-09-15T09:49:17.824Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 3,
+        "created_at": "2015-04-20T07:39:49.050Z",
+        "name": "Discovery Piscine - Web Programming Essentials",
+        "slug": "discovery-piscine-web-programming-essentials",
+        "kind": "professional_training"
+      }
+    },
+    {
+      "id": 314863,
+      "begin_at": "2025-03-04T09:14:00.000Z",
+      "end_at": null,
+      "grade": null,
+      "level": 0.0,
+      "skills": [],
+      "cursus_id": 66,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-03-04T09:14:44.766Z",
+      "updated_at": "2025-03-04T09:14:44.766Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 66,
+        "created_at": "2023-03-08T08:57:17.181Z",
+        "name": "C-Piscine-Reloaded",
+        "slug": "c-piscine-reloaded",
+        "kind": "external"
+      }
+    },
+    {
+      "id": 304265,
+      "begin_at": "2025-03-10T08:00:00.000Z",
+      "end_at": null,
+      "grade": "Cadet",
+      "level": 3.2,
+      "skills": [
+        {
+          "id": 1,
+          "name": "Algorithms & AI",
+          "level": 3.25
+        },
+        {
+          "id": 2,
+          "name": "Imperative programming",
+          "level": 2.51
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 2.33
+        },
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 2.03
+        },
+        {
+          "id": 5,
+          "name": "Graphics",
+          "level": 1.56
+        },
+        {
+          "id": 10,
+          "name": "Network & system administration",
+          "level": 1.3900000000000001
+        }
+      ],
+      "cursus_id": 21,
+      "has_coalition": true,
+      "blackholed_at": "2026-01-21T08:00:00.000Z",
+      "created_at": "2024-12-18T10:58:20.476Z",
+      "updated_at": "2025-03-03T14:56:13.451Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 21,
+        "created_at": "2019-07-29T08:45:17.896Z",
+        "name": "42cursus",
+        "slug": "42cursus",
+        "kind": "main"
+      }
+    },
+    {
+      "id": 301511,
+      "begin_at": "2024-11-11T09:13:06.000Z",
+      "end_at": "2024-12-06T17:00:00.000Z",
+      "grade": "Pisciner",
+      "level": 6.02,
+      "skills": [
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 7.09
+        },
+        {
+          "id": 1,
+          "name": "Algorithms & AI",
+          "level": 4.67
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 4.35
+        },
+        {
+          "id": 14,
+          "name": "Adaptation & creativity",
+          "level": 2.77
+        }
+      ],
+      "cursus_id": 9,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2024-11-11T09:12:07.118Z",
+      "updated_at": "2024-11-11T09:12:07.118Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 9,
+        "created_at": "2015-11-04T10:58:13.979Z",
+        "name": "C Piscine",
+        "slug": "c-piscine",
+        "kind": "piscine"
+      }
+    }
+  ]
+}

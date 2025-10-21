@@ -1,0 +1,1248 @@
+{
+  "endpoint": "/v2/events_users",
+  "params": {
+    "user_id": 222868,
+    "page": 1,
+    "per_page": 100
+  },
+  "timestamp": "20251021_125158",
+  "data": [
+    {
+      "id": 1366984,
+      "event_id": 36017,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 36017,
+        "name": "Coalition Clash + Halloween",
+        "description": "Kick off the sprint with fast mini-games, costumes, and a shared pot of 30,000 Coalition Points. Play stations, collect 50-point tokens, and boost your coalition on the leaderboard.\r\n\r\nWhat to expect\r\n\r\n15:00 intro → 15:30 rules → 15:45–19:00 stations open → 18:00–19:00 token turn-in → 19:30 winners\r\n\r\nCostumes: Two contests—network-wide (@42_network IG) and our campus top 5 (judged 18:30–19:30).\r\n\r\nHelp & food bonuses: Station helpers earn 500 Coalition Points (single shift 15:45–19:00). Bring cake/food and get 150 Coalition Points.\r\n\r\nStations: Mario Kart, Build the Tower, Blackjack, Can Toss, Ring Toss, Cornhole, Jewelry Crafting.\r\n\r\nNotes: Participation counts toward a compensation day. Not into photos? Tell a staffer on site—no problem. Wear a costume, bring a snack if you can, and game on!\r\n\r\nfor more information look here: https://42born2code.slack.com/archives/C025MAETZ8Q/p1760683955835019",
+        "location": "Open Space",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 25,
+        "begin_at": "2025-10-31T14:00:00.000Z",
+        "end_at": "2025-10-31T19:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-10-16T15:27:16.993Z",
+        "updated_at": "2025-10-17T06:53:38.544Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1365750,
+      "event_id": 35997,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 35997,
+        "name": "Student Development Day",
+        "description": "Participants (will be updated as soon as we have more attendees)\r\n- Moozz\r\n- Campus Founders\r\n- Validatus\r\n- Secor Group\r\n- Adolf Würth GmbH\r\n- Vector Informatik\r\n- Audi AG\r\n- Xeptum Consulting\r\n- Unternehmen der Schwarz Gruppe\r\n- Kardex MLog \r\n- ETAS\r\n- Bosch Engineering\r\n- XL2 GmbH\r\n- Bechtle AG\r\n- Anydesk\r\n- BWI Baden Württemberg International\r\n\r\n",
+        "location": "Open Space, Weipertstraße 8-10, 74076 Heilbronn",
+        "kind": "partnership",
+        "max_people": null,
+        "nbr_subscribers": 80,
+        "begin_at": "2025-11-12T13:00:00.000Z",
+        "end_at": "2025-11-12T16:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-10-15T15:41:13.099Z",
+        "updated_at": "2025-10-20T15:05:27.982Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1361101,
+      "event_id": 35875,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 35875,
+        "name": "Excursion x Audi AG",
+        "description": "Agenda Exkursion 30.10.2025\r\n›9.30 Uhr Treffpunkt Tor 6\r\n›10 Uhr –12 UhrFachvortrag IT\r\n›12 Uhr –12.30 UhrPause & Vernetzen\r\n›13 Uhr –15 UhrWerksführung",
+        "location": "Meeting Point: AUDI AG Neckarsulm– Tor 6",
+        "kind": "partnership",
+        "max_people": 25,
+        "nbr_subscribers": 25,
+        "begin_at": "2025-10-30T08:30:00.000Z",
+        "end_at": "2025-10-30T14:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-10-10T15:02:54.725Z",
+        "updated_at": "2025-10-10T15:02:54.737Z",
+        "prohibition_of_cancellation": 72,
+        "waitlist": {
+          "id": 20802,
+          "waitlistable_id": 35875,
+          "waitlistable_type": "Event",
+          "created_at": "2025-10-10T15:02:54.746Z",
+          "updated_at": "2025-10-10T15:02:54.746Z"
+        }
+      }
+    },
+    {
+      "id": 1360752,
+      "event_id": 35858,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 35858,
+        "name": "Internship presentation - Sigmatek GmbH & Co KG - Embedded Linux Engineer - makurz ",
+        "description": "Presentation and Q&A Session of what the student did at their internship. \r\n\r\nThese events are a fantastic opportunity to get to know different companies from the perspective of a 42 Student as well as different career paths and workplaces. \r\n\r\n- 30mins presentation with slides \r\n- 30mins Q&A ",
+        "location": "Open Space stage",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 49,
+        "begin_at": "2025-10-27T16:00:00.000Z",
+        "end_at": "2025-10-27T17:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21,
+          66
+        ],
+        "created_at": "2025-10-10T08:58:42.520Z",
+        "updated_at": "2025-10-10T08:58:42.541Z",
+        "prohibition_of_cancellation": 48,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1358171,
+      "event_id": 35020,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 35020,
+        "name": "💻👩‍🎤 2nd ever INTERNAL 42HN HACKATHON !",
+        "description": "🚀 It’s happening – our second-ever internal 42 Heilbronn Hackathon is here!\r\n\r\nNo matter your experience level – this hackathon is for everyone.\r\nAnd it won’t just be about coding: there will be lots of exciting things happening around the event too.\r\n\r\n👉 Stay tuned! More details will be shared soon in the event and hackathon channels on Slack – or just ask at Let’s Talk.\r\n\r\n✨ Bonus: There will be compensation days for the two hackathon days – so make sure to join and dive into the world of hackathons!",
+        "location": "",
+        "kind": "hackathon",
+        "max_people": null,
+        "nbr_subscribers": 184,
+        "begin_at": "2025-10-20T11:00:00.000Z",
+        "end_at": "2025-10-21T20:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21,
+          66
+        ],
+        "created_at": "2025-09-10T12:03:10.189Z",
+        "updated_at": "2025-10-06T08:08:02.178Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1349638,
+      "event_id": 35415,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 35415,
+        "name": "Community Meeting",
+        "description": "Monthly get together for news and updates. ",
+        "location": "Open Space stage",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 105,
+        "begin_at": "2025-10-07T12:00:00.000Z",
+        "end_at": "2025-10-07T13:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21,
+          66
+        ],
+        "created_at": "2025-09-26T12:01:19.833Z",
+        "updated_at": "2025-10-02T14:27:33.807Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1341983,
+      "event_id": 35122,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 35122,
+        "name": "CORE week",
+        "description": "CORE is a Coding Oriented Realtime Event developed and organized by students at 42 \r\nHeilbronn that blends the thrill of competition with the joy of learning and connection. It is a \r\nbot game coding challenge designed for programmers of all skill levels to test their abilities \r\nand compete in a dynamic tournament-style setting in 1vs1 matches. Whether you're a \r\ncoding veteran or a curious beginner, CORE promises an exhilarating dive into the cosmos \r\nof C coding.  \r\n \r\nThis is the first time CORE Game is being played at multiple Campuses at the same time. \r\nHelp us by joining this exciting Beta, take part in this thrilling competition and fight your \r\npeers. \r\n \r\nFind out more at coregame.de ",
+        "location": "",
+        "kind": "challenge",
+        "max_people": null,
+        "nbr_subscribers": 26,
+        "begin_at": "2025-09-19T16:00:00.000Z",
+        "end_at": "2025-09-26T12:00:00.000Z",
+        "campus_ids": [
+          44,
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-09-15T12:02:27.980Z",
+        "updated_at": "2025-09-15T12:02:28.009Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1333733,
+      "event_id": 34955,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 34955,
+        "name": "Brownie Bakeoff",
+        "description": "All 42 students are invited to participate in a friendly brownie baking competition to discover whose brownie stands out as the best.\r\nWhile there will be a secret prize awarded to the first-place winner, we encourage everyone to join primarily for the love of baking and the spirit of friendly competition. \r\nThe judging panel will consist of three jurors representing each coalition. They will evaluate the brownies anonymously using a scoring system, ensuring that their focus remains solely on taste and quality. \r\nTo participate, students must bake their brownies at home and submit a photo taken during the mixing process as proof of authenticity. Failure to provide this photographic evidence will result in disqualification from the competition. Make sure to submit the \r\nbrownies on the day of the event before 2 pm at the kitchen on the second floor!  \r\nShould this event prove successful, future competitions may offer enhanced rewards for winners.\r\nWe look forward to seeing your creativity and baking skills!\r\n\r\n(for more information please reach out to @ombilica)",
+        "location": "Kitchen upstairs",
+        "kind": "challenge",
+        "max_people": null,
+        "nbr_subscribers": 10,
+        "begin_at": "2025-09-19T13:00:00.000Z",
+        "end_at": "2025-09-19T14:30:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-09-08T08:46:32.527Z",
+        "updated_at": "2025-09-08T13:56:17.917Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1331643,
+      "event_id": 34891,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 34891,
+        "name": "Excursion @ AMG in Affalterbach (OPEN TO ALL)",
+        "description": "It’s almost time – on Wednesday, September 17, you’ll have the opportunity to join us on an excursion to Affalterbach!\r\n\r\n!!! Please note that you are responsible for organizing your own travel to the site.\r\n\r\nHere’s the program:\r\n\r\n08:45 – Arrival\r\n\r\n09:00–10:30 – Factory tour of the engine manufactory\r\n\r\n10:30–12:00 – 3–4 presentations (1x AMG company presentation, 2–3x talks from specialist departments)\r\n\r\nAs spots are limited, we want you to register only if you are sure you can attend. If you register but do not show up without prior cancellation, you will unfortunately be excluded from participating in future events for the next 6 months.\r\n\r\nWe’re looking forward to an exciting day with you!",
+        "location": " Daimlerstraße 1, 71563 Affalterbach",
+        "kind": "extern",
+        "max_people": 15,
+        "nbr_subscribers": 15,
+        "begin_at": "2025-09-17T06:30:00.000Z",
+        "end_at": "2025-09-17T10:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-09-04T12:45:25.862Z",
+        "updated_at": "2025-09-04T12:56:49.594Z",
+        "prohibition_of_cancellation": 48,
+        "waitlist": {
+          "id": 20301,
+          "waitlistable_id": 34891,
+          "waitlistable_type": "Event",
+          "created_at": "2025-09-04T12:45:25.888Z",
+          "updated_at": "2025-09-04T12:45:25.888Z"
+        }
+      }
+    },
+    {
+      "id": 1317174,
+      "event_id": 34352,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 34352,
+        "name": "Community Meeting",
+        "description": "Monthly get together for news and updates.",
+        "location": "Open Space stage",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 92,
+        "begin_at": "2025-09-10T14:00:00.000Z",
+        "end_at": "2025-09-10T15:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-08-14T12:01:46.693Z",
+        "updated_at": "2025-08-14T12:01:46.717Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1308475,
+      "event_id": 34033,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 34033,
+        "name": "Kickoff June 25 only - Tips on how to succeed at the core curriculum",
+        "description": "Hope you had a great first month at 42 Heilbronn!\r\nWe have some tips for you on how to succeed in the core curriculum.\r\n\r\nPlease join a short group meeting on Friday, August 8th at 2:00 pm in the event room for this.",
+        "location": "Event Room",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 31,
+        "begin_at": "2025-08-08T12:00:00.000Z",
+        "end_at": "2025-08-08T13:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-08-01T08:15:16.335Z",
+        "updated_at": "2025-08-01T08:15:16.352Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1308413,
+      "event_id": 34041,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 34041,
+        "name": "Community Meeting",
+        "description": "Monthly get together with news and updates. ",
+        "location": "Open Space stage",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 80,
+        "begin_at": "2025-08-14T09:00:00.000Z",
+        "end_at": "2025-08-14T10:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          21
+        ],
+        "created_at": "2025-08-01T08:57:49.538Z",
+        "updated_at": "2025-08-01T08:57:49.548Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1287806,
+      "event_id": 33260,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 33260,
+        "name": "Community Meeting",
+        "description": "Monthly get together with news and updates.\r\nCheck out the agenda here: https://42born2code.slack.com/archives/C024QNM2P7G/p1751544318336619",
+        "location": "Open Space stage",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 69,
+        "begin_at": "2025-07-10T09:00:00.000Z",
+        "end_at": "2025-07-10T09:30:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9,
+          21
+        ],
+        "created_at": "2025-07-03T11:08:22.365Z",
+        "updated_at": "2025-07-03T12:07:19.796Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1260069,
+      "event_id": 32280,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 32280,
+        "name": "CORE RUSH",
+        "description": "CORE is a Coding Oriented Realtime Event that blends the thrill of competition with the joy of learning and connection. CORE is a bot game coding challenge designed for programmers of all skill levels to test their abilities and compete in a dynamic tournament-style setting in 1vs1 matches. Whether you're a coding veteran or a curious beginner, CORE promises an exhilarating dive into the coding cosmos. Inspired by the camaraderie of classic LAN parties, this event is more than just a competition—it's a celebration of strategy, creativity, and community. ",
+        "location": "Cluster 1",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 48,
+        "begin_at": "2025-05-21T10:00:00.000Z",
+        "end_at": "2025-05-21T11:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-20T18:10:25.785Z",
+        "updated_at": "2025-05-20T18:10:25.794Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1258462,
+      "event_id": 32217,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 32217,
+        "name": "PISCINE BREAKFAST 🥞",
+        "description": "Take a break and join us for breakfast with the students! 🥞 We’ll provide some food, but feel free to bring a dish to share - maybe something from your culture or a personal favorite. Looking forward to seeing you there!",
+        "location": "Kitchen Upstairs",
+        "kind": "meet_up",
+        "max_people": null,
+        "nbr_subscribers": 62,
+        "begin_at": "2025-05-23T09:00:00.000Z",
+        "end_at": "2025-05-23T11:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-18T11:18:12.294Z",
+        "updated_at": "2025-05-18T11:18:12.305Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1258461,
+      "event_id": 32216,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 32216,
+        "name": "CLOSING CEREMONY",
+        "description": "Last community meeting after which you can treat yourself with some pizza 🍕",
+        "location": "Open Space - 42 Heilbronn",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 90,
+        "begin_at": "2025-05-22T16:15:00.000Z",
+        "end_at": "2025-05-22T18:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-18T11:17:06.862Z",
+        "updated_at": "2025-05-21T08:47:04.930Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1258460,
+      "event_id": 32215,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 32215,
+        "name": "PISCINE COMMUNITY MEETING",
+        "description": "Coding all day (and night?) can be really stressful. To make sure we all have the chance to take a break and enjoy the community, we host community meetings once per week. Join us for some updates from the staff, some chitchat with your peers, and to simply enjoy the community instead of thinking about coding all the time :) We will also host a small Q&A session, giving you the chance to voice any concerns, or ask some questions you feel are left unanswered.\r\n\r\nSee you then! :)",
+        "location": "Open Space",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 69,
+        "begin_at": "2025-05-19T11:00:00.000Z",
+        "end_at": "2025-05-19T12:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-18T11:14:54.156Z",
+        "updated_at": "2025-05-18T11:14:54.166Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1253583,
+      "event_id": 32039,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 32039,
+        "name": "GET TO KNOW CAMPUS FOUNDERS",
+        "description": "This is a special event we plan for you - A tour through the CampusFounders building and an introduction to their institution!\r\n\r\nThe CampusFounders are the Startup Hub of Heilbronn, and are part of our ecosystem. They are the go-to place for people interested in startups, and offer a variety of programs and events. During this event, you will get to know what they do and what they can offer, and also get a tour of their building. A must for anyone interested in the rapidly growing ecosystem in Heilbronn, and for anyone that is interested in startups or creating their own company.\r\n\r\nSpots are limited to 50 people - If you register, you must attend. Please be on time!\r\n\r\nEnjoy!",
+        "location": "Campus Founders, Bildungscampus 1, 1. Floor, 74076 Heilbronn",
+        "kind": "event",
+        "max_people": 50,
+        "nbr_subscribers": 47,
+        "begin_at": "2025-05-12T13:30:00.000Z",
+        "end_at": "2025-05-12T14:30:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-09T16:51:00.297Z",
+        "updated_at": "2025-05-12T08:20:18.107Z",
+        "prohibition_of_cancellation": 12,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1253552,
+      "event_id": 32038,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 32038,
+        "name": "COMMUNITY MEETING (PISCINE)",
+        "description": "Coding all day (and night?) can be really stressful. To make sure we all have the chance to take a break and enjoy the community, we host community meetings once per week. Join us for some updates from the staff, some chitchat with your peers, and to simply enjoy the community instead of thinking about coding all the time :) We will also host a small Q&A session, giving you the chance to voice any concerns, or ask some questions you feel are left unanswered.\r\n\r\nSee you then! :)",
+        "location": "Open Space",
+        "kind": "event",
+        "max_people": null,
+        "nbr_subscribers": 73,
+        "begin_at": "2025-05-12T11:00:00.000Z",
+        "end_at": "2025-05-12T12:00:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-09T16:46:43.670Z",
+        "updated_at": "2025-05-09T16:46:43.681Z",
+        "prohibition_of_cancellation": null,
+        "waitlist": null
+      }
+    },
+    {
+      "id": 1252028,
+      "event_id": 31923,
+      "user_id": 222868,
+      "user": {
+        "id": 222868,
+        "email": "yyudi@student.42heilbronn.de",
+        "login": "yyudi",
+        "first_name": "Yudi",
+        "last_name": "Yudi",
+        "usual_full_name": "Yudi Yudi",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/yyudi",
+        "phone": "hidden",
+        "displayname": "Yudi Yudi",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/4b590a1c4ff5eb5c7f746f321ac3bf12/yyudi.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c7b3545fd4ae1353eda596d009102337/large_yyudi.jpg",
+            "medium": "https://cdn.intra.42.fr/users/54087e319e41271d01192dbbb50a9d10/medium_yyudi.jpg",
+            "small": "https://cdn.intra.42.fr/users/51ffd9cf34eef36b6f3357795d54ca02/small_yyudi.jpg",
+            "micro": "https://cdn.intra.42.fr/users/efb9d706667df0f62a9b89d3593d588f/micro_yyudi.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 6,
+        "pool_month": "may",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 145,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-04-28T08:05:16.624Z",
+        "updated_at": "2025-10-20T13:27:33.224Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "event": {
+        "id": 31923,
+        "name": "PISCINE BREAKFAST 🥞",
+        "description": "Take a break and join us for breakfast with the students! 🥞\r\nWe’ll provide some food, but feel free to bring a dish to share - maybe something from your culture or a personal favorite. Looking forward to seeing you there!",
+        "location": "1st Floor Kitchen (upstairs) ",
+        "kind": "meet_up",
+        "max_people": null,
+        "nbr_subscribers": 60,
+        "begin_at": "2025-05-08T09:30:00.000Z",
+        "end_at": "2025-05-08T11:30:00.000Z",
+        "campus_ids": [
+          39
+        ],
+        "cursus_ids": [
+          9
+        ],
+        "created_at": "2025-05-06T14:55:34.168Z",
+        "updated_at": "2025-05-06T14:55:53.244Z",
+        "prohibition_of_cancellation": 0,
+        "waitlist": null
+      }
+    }
+  ]
+}

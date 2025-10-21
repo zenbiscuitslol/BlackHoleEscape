@@ -1,0 +1,298 @@
+{
+  "endpoint": "/v2/users/211982/cursus_users",
+  "params": {
+    "page": 1,
+    "per_page": 100
+  },
+  "timestamp": "20251021_103927",
+  "data": [
+    {
+      "id": 347775,
+      "begin_at": "2025-09-15T08:00:00.000Z",
+      "end_at": "2025-09-25T08:00:00.000Z",
+      "grade": null,
+      "level": 13.57,
+      "skills": [
+        {
+          "id": 6,
+          "name": "Web",
+          "level": 18.67
+        },
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 12.07
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 3.38
+        }
+      ],
+      "cursus_id": 3,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-09-15T09:48:51.044Z",
+      "updated_at": "2025-09-15T09:48:51.044Z",
+      "user": {
+        "id": 211982,
+        "email": "stliu@student.42heilbronn.de",
+        "login": "stliu",
+        "first_name": "Stephan",
+        "last_name": "Liu",
+        "usual_full_name": "Stephan Liu",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/stliu",
+        "phone": "hidden",
+        "displayname": "Stephan Liu",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/a3d67ab3e85250760e74c01b511dd6d3/stliu.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/4520cb4392bac988fff307572494081d/large_stliu.jpg",
+            "medium": "https://cdn.intra.42.fr/users/370e4891880d04f67c7c2cf0a3f715e3/medium_stliu.jpg",
+            "small": "https://cdn.intra.42.fr/users/2b0e4434a36ad8021c72842e58190044/small_stliu.jpg",
+            "micro": "https://cdn.intra.42.fr/users/602edfa1e452d4cab894ed6ef2b555b2/micro_stliu.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 8,
+        "pool_month": "january",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 85,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-01-13T09:27:59.418Z",
+        "updated_at": "2025-10-14T20:21:36.391Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 3,
+        "created_at": "2015-04-20T07:39:49.050Z",
+        "name": "Discovery Piscine - Web Programming Essentials",
+        "slug": "discovery-piscine-web-programming-essentials",
+        "kind": "professional_training"
+      }
+    },
+    {
+      "id": 314847,
+      "begin_at": "2025-03-03T15:45:00.000Z",
+      "end_at": null,
+      "grade": null,
+      "level": 0.0,
+      "skills": [],
+      "cursus_id": 66,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-03-03T15:45:13.008Z",
+      "updated_at": "2025-03-03T15:45:13.008Z",
+      "user": {
+        "id": 211982,
+        "email": "stliu@student.42heilbronn.de",
+        "login": "stliu",
+        "first_name": "Stephan",
+        "last_name": "Liu",
+        "usual_full_name": "Stephan Liu",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/stliu",
+        "phone": "hidden",
+        "displayname": "Stephan Liu",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/a3d67ab3e85250760e74c01b511dd6d3/stliu.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/4520cb4392bac988fff307572494081d/large_stliu.jpg",
+            "medium": "https://cdn.intra.42.fr/users/370e4891880d04f67c7c2cf0a3f715e3/medium_stliu.jpg",
+            "small": "https://cdn.intra.42.fr/users/2b0e4434a36ad8021c72842e58190044/small_stliu.jpg",
+            "micro": "https://cdn.intra.42.fr/users/602edfa1e452d4cab894ed6ef2b555b2/micro_stliu.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 8,
+        "pool_month": "january",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 85,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-01-13T09:27:59.418Z",
+        "updated_at": "2025-10-14T20:21:36.391Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 66,
+        "created_at": "2023-03-08T08:57:17.181Z",
+        "name": "C-Piscine-Reloaded",
+        "slug": "c-piscine-reloaded",
+        "kind": "external"
+      }
+    },
+    {
+      "id": 311223,
+      "begin_at": "2025-03-10T08:00:00.000Z",
+      "end_at": null,
+      "grade": "Cadet",
+      "level": 3.24,
+      "skills": [
+        {
+          "id": 1,
+          "name": "Algorithms & AI",
+          "level": 3.2
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 3.02
+        },
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 2.18
+        },
+        {
+          "id": 2,
+          "name": "Imperative programming",
+          "level": 1.9300000000000002
+        },
+        {
+          "id": 5,
+          "name": "Graphics",
+          "level": 1.56
+        },
+        {
+          "id": 10,
+          "name": "Network & system administration",
+          "level": 1.41
+        }
+      ],
+      "cursus_id": 21,
+      "has_coalition": true,
+      "blackholed_at": "2026-01-02T08:00:00.000Z",
+      "created_at": "2025-02-12T20:57:27.954Z",
+      "updated_at": "2025-03-03T14:56:59.640Z",
+      "user": {
+        "id": 211982,
+        "email": "stliu@student.42heilbronn.de",
+        "login": "stliu",
+        "first_name": "Stephan",
+        "last_name": "Liu",
+        "usual_full_name": "Stephan Liu",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/stliu",
+        "phone": "hidden",
+        "displayname": "Stephan Liu",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/a3d67ab3e85250760e74c01b511dd6d3/stliu.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/4520cb4392bac988fff307572494081d/large_stliu.jpg",
+            "medium": "https://cdn.intra.42.fr/users/370e4891880d04f67c7c2cf0a3f715e3/medium_stliu.jpg",
+            "small": "https://cdn.intra.42.fr/users/2b0e4434a36ad8021c72842e58190044/small_stliu.jpg",
+            "micro": "https://cdn.intra.42.fr/users/602edfa1e452d4cab894ed6ef2b555b2/micro_stliu.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 8,
+        "pool_month": "january",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 85,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-01-13T09:27:59.418Z",
+        "updated_at": "2025-10-14T20:21:36.391Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 21,
+        "created_at": "2019-07-29T08:45:17.896Z",
+        "name": "42cursus",
+        "slug": "42cursus",
+        "kind": "main"
+      }
+    },
+    {
+      "id": 306829,
+      "begin_at": "2025-01-13T09:29:00.000Z",
+      "end_at": "2025-02-07T18:00:00.000Z",
+      "grade": "Pisciner",
+      "level": 5.75,
+      "skills": [
+        {
+          "id": 4,
+          "name": "Unix",
+          "level": 6.5
+        },
+        {
+          "id": 1,
+          "name": "Algorithms & AI",
+          "level": 4.91
+        },
+        {
+          "id": 3,
+          "name": "Rigor",
+          "level": 3.96
+        },
+        {
+          "id": 14,
+          "name": "Adaptation & creativity",
+          "level": 2.77
+        }
+      ],
+      "cursus_id": 9,
+      "has_coalition": true,
+      "blackholed_at": null,
+      "created_at": "2025-01-13T09:28:00.390Z",
+      "updated_at": "2025-01-13T09:28:00.390Z",
+      "user": {
+        "id": 211982,
+        "email": "stliu@student.42heilbronn.de",
+        "login": "stliu",
+        "first_name": "Stephan",
+        "last_name": "Liu",
+        "usual_full_name": "Stephan Liu",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/stliu",
+        "phone": "hidden",
+        "displayname": "Stephan Liu",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/a3d67ab3e85250760e74c01b511dd6d3/stliu.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/4520cb4392bac988fff307572494081d/large_stliu.jpg",
+            "medium": "https://cdn.intra.42.fr/users/370e4891880d04f67c7c2cf0a3f715e3/medium_stliu.jpg",
+            "small": "https://cdn.intra.42.fr/users/2b0e4434a36ad8021c72842e58190044/small_stliu.jpg",
+            "micro": "https://cdn.intra.42.fr/users/602edfa1e452d4cab894ed6ef2b555b2/micro_stliu.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 8,
+        "pool_month": "january",
+        "pool_year": "2025",
+        "location": null,
+        "wallet": 85,
+        "anonymize_date": "2028-10-20T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-20T00:00:00.000+02:00",
+        "created_at": "2025-01-13T09:27:59.418Z",
+        "updated_at": "2025-10-14T20:21:36.391Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "cursus": {
+        "id": 9,
+        "created_at": "2015-11-04T10:58:13.979Z",
+        "name": "C Piscine",
+        "slug": "c-piscine",
+        "kind": "piscine"
+      }
+    }
+  ]
+}

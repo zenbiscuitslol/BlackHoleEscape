@@ -1,0 +1,5045 @@
+{
+  "endpoint": "/v2/projects_users",
+  "params": {
+    "filter[user_id]": 207919,
+    "page": 1,
+    "per_page": 100
+  },
+  "timestamp": "20251021_123433",
+  "data": [
+    {
+      "id": 4612738,
+      "occurrence": 0,
+      "final_mark": null,
+      "status": "in_progress",
+      "validated?": null,
+      "current_team_id": 7018988,
+      "project": {
+        "id": 1321,
+        "name": "Exam Rank 03",
+        "slug": "exam-rank-03",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": null,
+      "marked": false,
+      "retriable_at": null,
+      "created_at": "2025-10-16T16:48:09.070Z",
+      "updated_at": "2025-10-16T16:48:09.070Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 7018988,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/7018988",
+          "final_mark": null,
+          "project_id": 1321,
+          "created_at": "2025-10-16T16:48:09.151Z",
+          "updated_at": "2025-10-16T16:48:09.302Z",
+          "status": "in_progress",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4612738
+            }
+          ],
+          "locked?": true,
+          "validated?": null,
+          "closed?": false,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-5fd1a4c3-0ffa-48de-b17d-8f1a88f77ad3-7018988-pprejith",
+          "locked_at": "2025-10-16T16:48:09.198Z",
+          "closed_at": null,
+          "project_session_id": 3307,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4596134,
+      "occurrence": 0,
+      "final_mark": null,
+      "status": "in_progress",
+      "validated?": null,
+      "current_team_id": 6918399,
+      "project": {
+        "id": 1331,
+        "name": "minishell",
+        "slug": "42cursus-minishell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": null,
+      "marked": false,
+      "retriable_at": null,
+      "created_at": "2025-10-07T21:35:34.975Z",
+      "updated_at": "2025-10-10T12:28:07.735Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6918399,
+          "name": "nutshell 🌰",
+          "url": "https://api.intra.42.fr/v2/teams/6918399",
+          "final_mark": null,
+          "project_id": 1331,
+          "created_at": "2025-09-11T20:16:08.548Z",
+          "updated_at": "2025-10-10T12:28:07.713Z",
+          "status": "in_progress",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207911,
+              "login": "fbraune",
+              "url": "https://api.intra.42.fr/v2/users/fbraune",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4541396
+            },
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4596134
+            }
+          ],
+          "locked?": true,
+          "validated?": null,
+          "closed?": false,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-1deccfe8-647c-407e-b36a-a8a9bb9bed38-6918399-fbraune",
+          "repo_uuid": "intra-uuid-1deccfe8-647c-407e-b36a-a8a9bb9bed38-6918399-fbraune",
+          "locked_at": "2025-10-10T12:26:06.976Z",
+          "closed_at": null,
+          "project_session_id": 11975,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/minishell"
+        }
+      ]
+    },
+    {
+      "id": 4312021,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6587308,
+      "project": {
+        "id": 2004,
+        "name": "pipex",
+        "slug": "pipex",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-10-07T20:47:37.902Z",
+      "marked": true,
+      "retriable_at": "2025-10-09T20:47:38.091Z",
+      "created_at": "2025-05-27T19:06:38.944Z",
+      "updated_at": "2025-10-07T20:47:38.104Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6587308,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6587308",
+          "final_mark": 100,
+          "project_id": 2004,
+          "created_at": "2025-05-27T19:06:38.970Z",
+          "updated_at": "2025-10-07T20:47:38.136Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4312021
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-6cda432c-f2e6-4657-b27e-be31cb5ffc7d-6587308-pprejith",
+          "repo_uuid": "intra-uuid-6cda432c-f2e6-4657-b27e-be31cb5ffc7d-6587308-pprejith",
+          "locked_at": "2025-05-27T19:06:39.020Z",
+          "closed_at": "2025-10-07T17:38:27.099Z",
+          "project_session_id": 5990,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/pipex"
+        }
+      ]
+    },
+    {
+      "id": 4352776,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6637499,
+      "project": {
+        "id": 1471,
+        "name": "push_swap",
+        "slug": "42cursus-push_swap",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-10-06T19:40:45.418Z",
+      "marked": true,
+      "retriable_at": "2025-10-08T19:40:45.648Z",
+      "created_at": "2025-06-20T13:02:43.222Z",
+      "updated_at": "2025-10-06T19:40:45.669Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6637499,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6637499",
+          "final_mark": 100,
+          "project_id": 1471,
+          "created_at": "2025-06-20T13:02:43.252Z",
+          "updated_at": "2025-10-06T19:40:45.703Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4352776
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-87b80bb9-ba63-4e3b-9c3a-b40ed5f58831-6637499-pprejith",
+          "repo_uuid": "intra-uuid-87b80bb9-ba63-4e3b-9c3a-b40ed5f58831-6637499-pprejith",
+          "locked_at": "2025-06-20T13:02:43.305Z",
+          "closed_at": "2025-10-06T16:12:42.814Z",
+          "project_session_id": 3513,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/push_swap"
+        }
+      ]
+    },
+    {
+      "id": 4330422,
+      "occurrence": 2,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6973201,
+      "project": {
+        "id": 1320,
+        "name": "Exam Rank 02",
+        "slug": "exam-rank-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-10-02T12:57:38.948Z",
+      "marked": true,
+      "retriable_at": "2025-10-02T12:57:38.983Z",
+      "created_at": "2025-06-11T11:45:36.169Z",
+      "updated_at": "2025-10-02T12:57:49.799Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6611130,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6611130",
+          "final_mark": 50,
+          "project_id": 1320,
+          "created_at": "2025-06-11T11:45:36.280Z",
+          "updated_at": "2025-09-04T13:19:30.532Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4330422
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-fa14fcf1-6007-40c1-bb6f-2e8355bc5490-6611130-pprejith",
+          "locked_at": "2025-06-11T11:45:36.316Z",
+          "closed_at": "2025-09-04T13:19:27.671Z",
+          "project_session_id": 3306,
+          "project_gitlab_path": null
+        },
+        {
+          "id": 6918393,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6918393",
+          "final_mark": 75,
+          "project_id": 1320,
+          "created_at": "2025-09-11T20:12:22.962Z",
+          "updated_at": "2025-09-23T13:51:00.906Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4330422
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-03d09f42-e35d-4121-8a25-fc50b2277983-6918393-pprejith",
+          "locked_at": "2025-09-11T20:12:23.011Z",
+          "closed_at": "2025-09-23T13:51:00.135Z",
+          "project_session_id": 3306,
+          "project_gitlab_path": null
+        },
+        {
+          "id": 6973201,
+          "name": "pprejith's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6973201",
+          "final_mark": 100,
+          "project_id": 1320,
+          "created_at": "2025-09-25T15:47:16.275Z",
+          "updated_at": "2025-10-02T12:57:49.444Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4330422
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-c75e2847-6944-4eb2-a3d3-f6a1c7b40315-6973201-pprejith",
+          "locked_at": "2025-09-25T15:47:16.330Z",
+          "closed_at": "2025-10-02T12:57:49.194Z",
+          "project_session_id": 3306,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4582731,
+      "occurrence": 0,
+      "final_mark": 115,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6975549,
+      "project": {
+        "id": 1476,
+        "name": "fract-ol",
+        "slug": "42cursus-fract-ol",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-09-28T22:31:34.664Z",
+      "marked": true,
+      "retriable_at": "2025-09-30T22:31:34.940Z",
+      "created_at": "2025-09-26T17:20:15.489Z",
+      "updated_at": "2025-09-28T22:31:34.959Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6975549,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6975549",
+          "final_mark": 115,
+          "project_id": 1476,
+          "created_at": "2025-09-26T17:20:15.522Z",
+          "updated_at": "2025-09-28T22:31:34.997Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4582731
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-4b6e54b2-020c-4f56-94a8-2e99f064e69d-6975549-pprejith",
+          "repo_uuid": "intra-uuid-4b6e54b2-020c-4f56-94a8-2e99f064e69d-6975549-pprejith",
+          "locked_at": "2025-09-26T17:20:15.572Z",
+          "closed_at": "2025-09-28T17:33:29.952Z",
+          "project_session_id": 3518,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/fract-ol"
+        }
+      ]
+    },
+    {
+      "id": 4559571,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6941612,
+      "project": {
+        "id": 2034,
+        "name": "Cellule4.0 - Rush",
+        "slug": "cellule4-0-rush",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-19T14:38:54.903Z",
+      "marked": true,
+      "retriable_at": "2025-09-19T14:38:55.031Z",
+      "created_at": "2025-09-17T21:52:20.663Z",
+      "updated_at": "2025-09-19T14:38:55.062Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6941612,
+          "name": "Nutella consumers",
+          "url": "https://api.intra.42.fr/v2/teams/6941612",
+          "final_mark": 100,
+          "project_id": 2034,
+          "created_at": "2025-09-17T15:40:22.537Z",
+          "updated_at": "2025-09-19T14:38:55.094Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207911,
+              "login": "fbraune",
+              "url": "https://api.intra.42.fr/v2/users/fbraune",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4558180
+            },
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559571
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-b55c858f-40d8-4fd2-bd38-c338166b7bca-6941612-fbraune",
+          "locked_at": "2025-09-17T21:56:29.620Z",
+          "closed_at": "2025-09-19T13:00:13.840Z",
+          "project_session_id": 14900,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/rush00"
+        }
+      ]
+    },
+    {
+      "id": 4562305,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6946502,
+      "project": {
+        "id": 2033,
+        "name": "Cellule3.4 - Web",
+        "slug": "cellule3-4-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-18T17:08:50.552Z",
+      "marked": true,
+      "retriable_at": "2025-09-18T17:08:50.680Z",
+      "created_at": "2025-09-18T12:39:01.824Z",
+      "updated_at": "2025-09-18T17:08:50.696Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6946502,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6946502",
+          "final_mark": 100,
+          "project_id": 2033,
+          "created_at": "2025-09-18T12:39:01.843Z",
+          "updated_at": "2025-09-18T17:08:50.736Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4562305
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-19946910-07b6-497e-a7f1-a2a22ec430ec-6946502-pprejith",
+          "locked_at": "2025-09-18T12:39:01.881Z",
+          "closed_at": "2025-09-18T14:48:41.436Z",
+          "project_session_id": 6226,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d03/cellule3.4"
+        }
+      ]
+    },
+    {
+      "id": 4560822,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6944711,
+      "project": {
+        "id": 2032,
+        "name": "Cellule3.3 - Web",
+        "slug": "cellule3-3-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-18T12:35:49.184Z",
+      "marked": true,
+      "retriable_at": "2025-09-18T12:35:49.411Z",
+      "created_at": "2025-09-18T08:26:14.233Z",
+      "updated_at": "2025-09-18T12:35:49.447Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6944711,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6944711",
+          "final_mark": 100,
+          "project_id": 2032,
+          "created_at": "2025-09-18T08:26:14.253Z",
+          "updated_at": "2025-09-18T12:35:49.503Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4560822
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-070f3a8c-3139-4116-869b-ebfc3d74cd40-6944711-pprejith",
+          "locked_at": "2025-09-18T08:26:14.288Z",
+          "closed_at": "2025-09-18T08:26:20.801Z",
+          "project_session_id": 6225,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d03/cellule3.3"
+        }
+      ]
+    },
+    {
+      "id": 4559806,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6943521,
+      "project": {
+        "id": 2028,
+        "name": "Cellule2.3 - Web",
+        "slug": "cellule2-3-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-18T08:40:44.694Z",
+      "marked": true,
+      "retriable_at": "2025-09-18T08:40:44.856Z",
+      "created_at": "2025-09-18T02:27:23.943Z",
+      "updated_at": "2025-09-18T08:40:44.893Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6943521,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6943521",
+          "final_mark": 100,
+          "project_id": 2028,
+          "created_at": "2025-09-18T02:27:23.964Z",
+          "updated_at": "2025-09-18T08:40:44.947Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559806
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-752cfe39-efcd-475a-87dd-a12e5b7e3076-6943521-pprejith",
+          "locked_at": "2025-09-18T02:27:24.003Z",
+          "closed_at": "2025-09-18T02:27:32.362Z",
+          "project_session_id": 6221,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d02/cellule2.3"
+        }
+      ]
+    },
+    {
+      "id": 4559647,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6943338,
+      "project": {
+        "id": 2031,
+        "name": "Cellule3.2 - Web",
+        "slug": "cellule3-2-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-18T08:07:21.579Z",
+      "marked": true,
+      "retriable_at": "2025-09-18T08:07:21.752Z",
+      "created_at": "2025-09-17T23:06:47.097Z",
+      "updated_at": "2025-09-18T08:07:21.766Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6943338,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6943338",
+          "final_mark": 100,
+          "project_id": 2031,
+          "created_at": "2025-09-17T23:06:47.127Z",
+          "updated_at": "2025-09-18T08:07:21.799Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559647
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-2a9a58de-9443-482b-ac29-28d4d213d78d-6943338-pprejith",
+          "locked_at": "2025-09-17T23:06:47.196Z",
+          "closed_at": "2025-09-17T23:07:27.821Z",
+          "project_session_id": 6224,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d03/cellule3.2"
+        }
+      ]
+    },
+    {
+      "id": 4559504,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6943168,
+      "project": {
+        "id": 2027,
+        "name": "Cellule2.2 - Web",
+        "slug": "cellule2-2-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-18T02:26:51.288Z",
+      "marked": true,
+      "retriable_at": "2025-09-18T02:26:51.429Z",
+      "created_at": "2025-09-17T21:07:50.151Z",
+      "updated_at": "2025-09-18T02:26:51.443Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6943168,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6943168",
+          "final_mark": 100,
+          "project_id": 2027,
+          "created_at": "2025-09-17T21:07:50.179Z",
+          "updated_at": "2025-09-18T02:26:51.483Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559504
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-d8325978-68e4-4897-a093-afcf231bd78b-6943168-pprejith",
+          "locked_at": "2025-09-17T21:07:50.220Z",
+          "closed_at": "2025-09-17T21:08:00.749Z",
+          "project_session_id": 6220,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d02/cellule2.2"
+        }
+      ]
+    },
+    {
+      "id": 4559553,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6943227,
+      "project": {
+        "id": 2030,
+        "name": "Cellule3.1 - Web",
+        "slug": "cellule3-1-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T22:56:26.725Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T22:56:26.860Z",
+      "created_at": "2025-09-17T21:39:01.218Z",
+      "updated_at": "2025-09-17T22:56:26.881Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6943227,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6943227",
+          "final_mark": 100,
+          "project_id": 2030,
+          "created_at": "2025-09-17T21:39:01.238Z",
+          "updated_at": "2025-09-17T22:56:26.914Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559553
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-125afd2e-d366-4909-b249-2fa5d084c963-6943227-pprejith",
+          "locked_at": "2025-09-17T21:39:01.279Z",
+          "closed_at": "2025-09-17T21:39:13.098Z",
+          "project_session_id": 6223,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d03/cellule3.1"
+        }
+      ]
+    },
+    {
+      "id": 4559404,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6943036,
+      "project": {
+        "id": 2029,
+        "name": "Cellule3.0 - Web",
+        "slug": "cellule3-0-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T21:38:28.210Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T21:38:28.352Z",
+      "created_at": "2025-09-17T20:09:22.628Z",
+      "updated_at": "2025-09-17T21:38:28.365Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6943036,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6943036",
+          "final_mark": 100,
+          "project_id": 2029,
+          "created_at": "2025-09-17T20:09:22.654Z",
+          "updated_at": "2025-09-17T21:38:28.396Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559404
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-cd5a79db-963d-4b0b-b42c-42dbd4cd7405-6943036-pprejith",
+          "locked_at": "2025-09-17T20:09:22.692Z",
+          "closed_at": "2025-09-17T20:09:29.704Z",
+          "project_session_id": 6222,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d03/cellule3.0"
+        }
+      ]
+    },
+    {
+      "id": 4559340,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6942956,
+      "project": {
+        "id": 2026,
+        "name": "Cellule2.1 - Web",
+        "slug": "cellule2-1-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T21:07:30.982Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T21:07:31.124Z",
+      "created_at": "2025-09-17T19:33:13.649Z",
+      "updated_at": "2025-09-17T21:07:31.142Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6942956,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6942956",
+          "final_mark": 100,
+          "project_id": 2026,
+          "created_at": "2025-09-17T19:33:13.675Z",
+          "updated_at": "2025-09-17T21:07:31.173Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4559340
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-12bf8994-8eff-4da4-96e5-a2bd3e3668bd-6942956-pprejith",
+          "locked_at": "2025-09-17T19:33:13.757Z",
+          "closed_at": "2025-09-17T19:33:21.168Z",
+          "project_session_id": 6219,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d02/cellule2.1"
+        }
+      ]
+    },
+    {
+      "id": 4558890,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6942433,
+      "project": {
+        "id": 2025,
+        "name": "Cellule2.0 - Web",
+        "slug": "cellule2-0-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T19:32:56.558Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T19:32:56.719Z",
+      "created_at": "2025-09-17T17:26:33.617Z",
+      "updated_at": "2025-09-17T19:32:56.733Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6942433,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6942433",
+          "final_mark": 100,
+          "project_id": 2025,
+          "created_at": "2025-09-17T17:26:33.652Z",
+          "updated_at": "2025-09-17T19:32:56.765Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4558890
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-1833cbdc-1a82-438e-a28d-5da214e3b84a-6942433-pprejith",
+          "locked_at": "2025-09-17T17:26:33.698Z",
+          "closed_at": "2025-09-17T17:26:47.227Z",
+          "project_session_id": 6218,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d02/cellule2.0"
+        }
+      ]
+    },
+    {
+      "id": 4558886,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6942427,
+      "project": {
+        "id": 2024,
+        "name": "Cellule1.6 - Web",
+        "slug": "cellule1-6-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T19:11:25.087Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T19:11:25.238Z",
+      "created_at": "2025-09-17T17:25:26.985Z",
+      "updated_at": "2025-09-17T19:11:25.254Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6942427,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6942427",
+          "final_mark": 100,
+          "project_id": 2024,
+          "created_at": "2025-09-17T17:25:27.009Z",
+          "updated_at": "2025-09-17T19:11:25.293Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4558886
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-41adc8cf-aef0-40f5-8620-d37333e49acb-6942427-pprejith",
+          "locked_at": "2025-09-17T17:25:27.049Z",
+          "closed_at": "2025-09-17T17:25:40.324Z",
+          "project_session_id": 6217,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.6"
+        }
+      ]
+    },
+    {
+      "id": 4558540,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6942006,
+      "project": {
+        "id": 2023,
+        "name": "Cellule1.5 - Web",
+        "slug": "cellule1-5-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T17:25:10.077Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T17:25:10.240Z",
+      "created_at": "2025-09-17T16:23:38.290Z",
+      "updated_at": "2025-09-17T17:25:10.255Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6942006,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6942006",
+          "final_mark": 100,
+          "project_id": 2023,
+          "created_at": "2025-09-17T16:23:38.314Z",
+          "updated_at": "2025-09-17T17:25:10.291Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4558540
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-4b2b357e-2e3c-4b10-9ae8-b0c54d6a3320-6942006-pprejith",
+          "locked_at": "2025-09-17T16:23:38.355Z",
+          "closed_at": "2025-09-17T16:23:50.843Z",
+          "project_session_id": 6216,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.5"
+        }
+      ]
+    },
+    {
+      "id": 4557828,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6941191,
+      "project": {
+        "id": 2022,
+        "name": "Cellule1.4 - Web",
+        "slug": "cellule1-4-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T16:23:17.621Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T16:23:17.767Z",
+      "created_at": "2025-09-17T14:58:04.686Z",
+      "updated_at": "2025-09-17T16:23:17.785Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6941191,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6941191",
+          "final_mark": 100,
+          "project_id": 2022,
+          "created_at": "2025-09-17T14:58:04.708Z",
+          "updated_at": "2025-09-17T16:23:17.826Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4557828
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-6cff8ce2-eff2-44e2-8bea-fd885de3ffa4-6941191-pprejith",
+          "locked_at": "2025-09-17T14:58:04.756Z",
+          "closed_at": "2025-09-17T14:58:45.966Z",
+          "project_session_id": 6215,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.4"
+        }
+      ]
+    },
+    {
+      "id": 4556940,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6940110,
+      "project": {
+        "id": 2021,
+        "name": "Cellule1.3 - Web",
+        "slug": "cellule1-3-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T14:56:52.168Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T14:56:52.325Z",
+      "created_at": "2025-09-17T13:10:02.031Z",
+      "updated_at": "2025-09-17T14:56:52.349Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6940110,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6940110",
+          "final_mark": 100,
+          "project_id": 2021,
+          "created_at": "2025-09-17T13:10:02.057Z",
+          "updated_at": "2025-09-17T14:56:52.413Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4556940
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-0cac5e23-d67c-4146-9a21-985153450a80-6940110-pprejith",
+          "locked_at": "2025-09-17T13:10:02.138Z",
+          "closed_at": "2025-09-17T13:10:07.797Z",
+          "project_session_id": 6214,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.3"
+        }
+      ]
+    },
+    {
+      "id": 4556450,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6939494,
+      "project": {
+        "id": 2020,
+        "name": "Cellule1.2 - Web",
+        "slug": "cellule1-2-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T13:09:01.888Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T13:09:02.148Z",
+      "created_at": "2025-09-17T12:00:12.253Z",
+      "updated_at": "2025-09-17T13:09:02.170Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6939494,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6939494",
+          "final_mark": 100,
+          "project_id": 2020,
+          "created_at": "2025-09-17T12:00:12.279Z",
+          "updated_at": "2025-09-17T13:09:02.220Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4556450
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-d5d66f2e-1a02-4681-a6af-d4efb4b3b894-6939494-pprejith",
+          "locked_at": "2025-09-17T12:00:12.388Z",
+          "closed_at": "2025-09-17T12:02:18.085Z",
+          "project_session_id": 6213,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.2"
+        }
+      ]
+    },
+    {
+      "id": 4553341,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6935663,
+      "project": {
+        "id": 2019,
+        "name": "Cellule1.1 - Web",
+        "slug": "cellule1-1-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-17T11:59:28.544Z",
+      "marked": true,
+      "retriable_at": "2025-09-17T11:59:28.785Z",
+      "created_at": "2025-09-16T19:28:01.919Z",
+      "updated_at": "2025-09-17T11:59:28.821Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6935663,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6935663",
+          "final_mark": 100,
+          "project_id": 2019,
+          "created_at": "2025-09-16T19:28:01.942Z",
+          "updated_at": "2025-09-17T11:59:28.903Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4553341
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-955f5c65-b925-4a8b-ad80-47743815eaad-6935663-pprejith",
+          "locked_at": "2025-09-16T19:28:01.978Z",
+          "closed_at": "2025-09-16T19:28:11.862Z",
+          "project_session_id": 6212,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.1"
+        }
+      ]
+    },
+    {
+      "id": 4550130,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6931488,
+      "project": {
+        "id": 2018,
+        "name": "Cellule1.0 - Web",
+        "slug": "cellule1-0-web",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-16T19:19:39.240Z",
+      "marked": true,
+      "retriable_at": "2025-09-16T19:19:39.364Z",
+      "created_at": "2025-09-16T09:43:29.464Z",
+      "updated_at": "2025-09-16T19:19:39.393Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6931488,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6931488",
+          "final_mark": 100,
+          "project_id": 2018,
+          "created_at": "2025-09-16T09:43:29.504Z",
+          "updated_at": "2025-09-16T19:19:39.436Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4550130
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-f3182ea5-657e-4fd5-84a3-3361cd41adaa-6931488-pprejith",
+          "locked_at": "2025-09-16T09:43:29.551Z",
+          "closed_at": "2025-09-16T17:51:51.315Z",
+          "project_session_id": 6211,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-web-d01/cellule1.0"
+        }
+      ]
+    },
+    {
+      "id": 4548270,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6929005,
+      "project": {
+        "id": 2017,
+        "name": "Cellule0.5 - Shell",
+        "slug": "cellule0-5-shell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-16T09:41:58.982Z",
+      "marked": true,
+      "retriable_at": "2025-09-16T09:41:59.154Z",
+      "created_at": "2025-09-15T17:41:23.309Z",
+      "updated_at": "2025-09-16T09:41:59.170Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6929005,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6929005",
+          "final_mark": 100,
+          "project_id": 2017,
+          "created_at": "2025-09-15T17:41:23.336Z",
+          "updated_at": "2025-09-16T09:41:59.213Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4548270
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-5a55d5b9-71c2-4dab-ab11-c9d856ba8ed9-6929005-pprejith",
+          "locked_at": "2025-09-15T17:41:23.394Z",
+          "closed_at": "2025-09-16T08:35:11.021Z",
+          "project_session_id": 6210,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-shell-d00/cellule0.5"
+        }
+      ]
+    },
+    {
+      "id": 4547918,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6928536,
+      "project": {
+        "id": 2016,
+        "name": "Cellule0.4 - Shell",
+        "slug": "cellule0-4-shell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-15T17:28:58.996Z",
+      "marked": true,
+      "retriable_at": "2025-09-15T17:28:59.157Z",
+      "created_at": "2025-09-15T16:04:39.069Z",
+      "updated_at": "2025-09-15T17:28:59.179Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6928536,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6928536",
+          "final_mark": 100,
+          "project_id": 2016,
+          "created_at": "2025-09-15T16:04:39.096Z",
+          "updated_at": "2025-09-15T17:28:59.219Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4547918
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-329f966e-2bd5-48ee-b822-2660b0df928f-6928536-pprejith",
+          "locked_at": "2025-09-15T16:04:39.179Z",
+          "closed_at": "2025-09-15T16:04:53.378Z",
+          "project_session_id": 6209,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-shell-d00/cellule0.4"
+        }
+      ]
+    },
+    {
+      "id": 4547469,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6927928,
+      "project": {
+        "id": 2015,
+        "name": "Cellule0.3 - Shell",
+        "slug": "cellule0-3-shell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-15T15:47:43.312Z",
+      "marked": true,
+      "retriable_at": "2025-09-15T15:47:43.477Z",
+      "created_at": "2025-09-15T14:21:37.567Z",
+      "updated_at": "2025-09-15T15:47:43.547Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6927928,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6927928",
+          "final_mark": 100,
+          "project_id": 2015,
+          "created_at": "2025-09-15T14:21:37.598Z",
+          "updated_at": "2025-09-15T15:47:43.587Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4547469
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-95e3dc18-fb26-4bd7-b6ac-16ad563df269-6927928-pprejith",
+          "locked_at": "2025-09-15T14:21:37.666Z",
+          "closed_at": "2025-09-15T14:21:47.739Z",
+          "project_session_id": 6208,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-shell-d00/cellule0.3"
+        }
+      ]
+    },
+    {
+      "id": 4547134,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6927493,
+      "project": {
+        "id": 2014,
+        "name": "Cellule0.2 - Shell",
+        "slug": "cellule0-2-shell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-15T14:21:18.661Z",
+      "marked": true,
+      "retriable_at": "2025-09-15T14:21:18.826Z",
+      "created_at": "2025-09-15T13:21:06.886Z",
+      "updated_at": "2025-09-15T14:21:18.850Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6927493,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6927493",
+          "final_mark": 100,
+          "project_id": 2014,
+          "created_at": "2025-09-15T13:21:06.910Z",
+          "updated_at": "2025-09-15T14:21:18.885Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4547134
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-3092ee0c-3fed-455b-bd4e-59f9be60c1c6-6927493-pprejith",
+          "locked_at": "2025-09-15T13:21:06.963Z",
+          "closed_at": "2025-09-15T13:24:02.742Z",
+          "project_session_id": 6207,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-shell-d00/cellule0.2"
+        }
+      ]
+    },
+    {
+      "id": 4546655,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6926858,
+      "project": {
+        "id": 2013,
+        "name": "Cellule0.1 - Shell",
+        "slug": "cellule0-1-shell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-15T13:20:42.180Z",
+      "marked": true,
+      "retriable_at": "2025-09-15T13:20:42.299Z",
+      "created_at": "2025-09-15T11:37:24.532Z",
+      "updated_at": "2025-09-15T13:20:42.313Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6926858,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6926858",
+          "final_mark": 100,
+          "project_id": 2013,
+          "created_at": "2025-09-15T11:37:24.559Z",
+          "updated_at": "2025-09-15T13:20:42.347Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4546655
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-a6b0a7ca-3e88-4c0a-9fb0-35d1b77b19eb-6926858-pprejith",
+          "locked_at": "2025-09-15T11:37:24.613Z",
+          "closed_at": "2025-09-15T12:01:50.367Z",
+          "project_session_id": 6206,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-shell-d00/cellule0.1"
+        }
+      ]
+    },
+    {
+      "id": 4546224,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6926300,
+      "project": {
+        "id": 2012,
+        "name": "Cellule0.0 - Shell",
+        "slug": "cellule0-0-shell",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        3
+      ],
+      "marked_at": "2025-09-15T11:36:50.806Z",
+      "marked": true,
+      "retriable_at": "2025-09-15T11:36:50.928Z",
+      "created_at": "2025-09-15T10:14:04.214Z",
+      "updated_at": "2025-09-15T11:36:50.940Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6926300,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6926300",
+          "final_mark": 100,
+          "project_id": 2012,
+          "created_at": "2025-09-15T10:14:04.232Z",
+          "updated_at": "2025-09-15T11:36:50.976Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4546224
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-71ab1d48-3bf8-4625-840b-9c2f9284ba3b-6926300-pprejith",
+          "locked_at": "2025-09-15T10:14:04.288Z",
+          "closed_at": "2025-09-15T10:20:28.534Z",
+          "project_session_id": 6205,
+          "project_gitlab_path": "pedago_world/external/discovery-piscine/inner-circle/cellule-shell-d00/cellule0.0"
+        }
+      ]
+    },
+    {
+      "id": 4275569,
+      "occurrence": 0,
+      "final_mark": 110,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6539339,
+      "project": {
+        "id": 1994,
+        "name": "Born2beroot",
+        "slug": "born2beroot",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-05-27T19:05:42.326Z",
+      "marked": true,
+      "retriable_at": "2025-05-28T19:05:42.572Z",
+      "created_at": "2025-04-30T17:35:00.956Z",
+      "updated_at": "2025-05-27T19:05:42.586Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6539339,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6539339",
+          "final_mark": 110,
+          "project_id": 1994,
+          "created_at": "2025-04-30T17:35:00.988Z",
+          "updated_at": "2025-05-27T19:05:42.618Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4275569
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-6045235c-f029-4ae4-8463-c9edddf2fb1b-6539339-pprejith",
+          "repo_uuid": "intra-uuid-6045235c-f029-4ae4-8463-c9edddf2fb1b-6539339-pprejith",
+          "locked_at": "2025-04-30T17:35:01.034Z",
+          "closed_at": "2025-05-27T17:07:52.959Z",
+          "project_session_id": 5895,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/born2beroot"
+        }
+      ]
+    },
+    {
+      "id": 4265461,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6525467,
+      "project": {
+        "id": 1327,
+        "name": "get_next_line",
+        "slug": "42cursus-get_next_line",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-05-21T17:08:32.946Z",
+      "marked": true,
+      "retriable_at": "2025-05-22T17:08:33.082Z",
+      "created_at": "2025-04-24T11:06:16.142Z",
+      "updated_at": "2025-05-21T17:08:33.095Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6525467,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6525467",
+          "final_mark": 100,
+          "project_id": 1327,
+          "created_at": "2025-04-24T11:06:16.172Z",
+          "updated_at": "2025-05-21T17:08:32.597Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4265461
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-6ab2f6cf-b03e-4f7a-a23f-11dd7e9c7dba-6525467-pprejith",
+          "repo_uuid": "intra-uuid-6ab2f6cf-b03e-4f7a-a23f-11dd7e9c7dba-6525467-pprejith",
+          "locked_at": "2025-04-24T11:06:16.222Z",
+          "closed_at": "2025-05-21T13:39:42.864Z",
+          "project_session_id": 3313,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/get_next_line"
+        }
+      ]
+    },
+    {
+      "id": 4224011,
+      "occurrence": 0,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6467952,
+      "project": {
+        "id": 1316,
+        "name": "ft_printf",
+        "slug": "42cursus-ft_printf",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-05-20T15:28:59.937Z",
+      "marked": true,
+      "retriable_at": "2025-05-21T15:29:00.045Z",
+      "created_at": "2025-03-25T15:04:58.687Z",
+      "updated_at": "2025-05-20T15:29:00.057Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6467952,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6467952",
+          "final_mark": 100,
+          "project_id": 1316,
+          "created_at": "2025-03-25T15:04:58.713Z",
+          "updated_at": "2025-05-20T15:28:59.617Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4224011
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-45971ae7-1ff1-4f8b-b4b5-d01c618d1f94-6467952-pprejith",
+          "repo_uuid": "intra-uuid-45971ae7-1ff1-4f8b-b4b5-d01c618d1f94-6467952-pprejith",
+          "locked_at": "2025-03-25T15:04:58.754Z",
+          "closed_at": "2025-05-20T10:52:11.787Z",
+          "project_session_id": 3302,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/ft_printf"
+        }
+      ]
+    },
+    {
+      "id": 4195052,
+      "occurrence": 0,
+      "final_mark": 125,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6427782,
+      "project": {
+        "id": 1314,
+        "name": "Libft",
+        "slug": "42cursus-libft",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        21
+      ],
+      "marked_at": "2025-03-24T18:50:09.764Z",
+      "marked": true,
+      "retriable_at": "2025-03-25T18:50:09.868Z",
+      "created_at": "2025-03-10T11:11:31.687Z",
+      "updated_at": "2025-03-24T18:50:09.881Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6427782,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6427782",
+          "final_mark": 125,
+          "project_id": 1314,
+          "created_at": "2025-03-10T11:11:31.722Z",
+          "updated_at": "2025-03-24T18:50:09.543Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4195052
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-fd0748ad-3c4c-4fc7-bc8d-325d030c69c8-6427782-pprejith",
+          "repo_uuid": "intra-uuid-fd0748ad-3c4c-4fc7-bc8d-325d030c69c8-6427782-pprejith",
+          "locked_at": "2025-03-10T11:11:31.775Z",
+          "closed_at": "2025-03-24T15:23:01.542Z",
+          "project_session_id": 3300,
+          "project_gitlab_path": "pedago_world/42-cursus/inner-circle/libft"
+        }
+      ]
+    },
+    {
+      "id": 4053268,
+      "occurrence": 0,
+      "final_mark": 0,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6230071,
+      "project": {
+        "id": 1264,
+        "name": "C Piscine C 08",
+        "slug": "c-piscine-c-08",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-12-06T17:02:44.567Z",
+      "marked": true,
+      "retriable_at": "2024-12-06T17:22:45.065Z",
+      "created_at": "2024-12-05T19:36:36.795Z",
+      "updated_at": "2024-12-07T17:02:50.346Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6230071,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6230071",
+          "final_mark": 0,
+          "project_id": 1264,
+          "created_at": "2024-12-05T19:36:36.817Z",
+          "updated_at": "2024-12-07T17:02:50.072Z",
+          "status": "finished",
+          "terminating_at": "2024-12-07T17:02:41.095Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4053268
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-05a86cdd-246f-4069-990c-09233f118b89-6230071-pprejith",
+          "repo_uuid": "intra-uuid-05a86cdd-246f-4069-990c-09233f118b89-6230071-pprejith",
+          "locked_at": "2024-12-05T19:36:36.858Z",
+          "closed_at": "2024-12-06T17:02:41.095Z",
+          "project_session_id": 3030,
+          "project_gitlab_path": "pedago_world/c-piscine/c-08"
+        }
+      ]
+    },
+    {
+      "id": 4046040,
+      "occurrence": 0,
+      "final_mark": 0,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6220393,
+      "project": {
+        "id": 1309,
+        "name": "C Piscine Rush 02",
+        "slug": "c-piscine-rush-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-12-03T11:44:41.516Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-11-29T17:07:08.943Z",
+      "updated_at": "2024-12-06T23:42:42.248Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6220393,
+          "name": "jnagandr's group",
+          "url": "https://api.intra.42.fr/v2/teams/6220393",
+          "final_mark": 0,
+          "project_id": 1309,
+          "created_at": "2024-11-29T17:42:11.093Z",
+          "updated_at": "2024-12-03T11:44:41.758Z",
+          "status": "finished",
+          "terminating_at": "2024-12-06T23:42:11.828Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4046040
+            },
+            {
+              "id": 207920,
+              "login": "jnagandr",
+              "url": "https://api.intra.42.fr/v2/users/jnagandr",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4045658
+            },
+            {
+              "id": 207949,
+              "login": "niniraul",
+              "url": "https://api.intra.42.fr/v2/users/niniraul",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4045947
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-e149ad6f-9d5c-4a03-ae22-aaf1a1fa0173-6220393-jnagandr",
+          "repo_uuid": "intra-uuid-e149ad6f-9d5c-4a03-ae22-aaf1a1fa0173-6220393-jnagandr",
+          "locked_at": "2024-11-29T17:42:11.352Z",
+          "closed_at": "2024-12-01T23:42:11.828Z",
+          "project_session_id": 5084,
+          "project_gitlab_path": "pedago_world/c-piscine/rush-02"
+        }
+      ]
+    },
+    {
+      "id": 4049946,
+      "occurrence": 0,
+      "final_mark": 24,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6225816,
+      "project": {
+        "id": 1304,
+        "name": "C Piscine Final Exam",
+        "slug": "c-piscine-final-exam",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-12-06T09:28:01.438Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-12-03T15:19:25.890Z",
+      "updated_at": "2024-12-06T14:04:00.183Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6225816,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6225816",
+          "final_mark": 24,
+          "project_id": 1304,
+          "created_at": "2024-12-03T15:19:25.920Z",
+          "updated_at": "2024-12-06T14:03:59.721Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4049946
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-c36758d9-67a9-4d76-97ec-19f1484ef19b-6225816-pprejith",
+          "locked_at": "2024-12-03T15:19:25.955Z",
+          "closed_at": "2024-12-06T14:03:59.430Z",
+          "project_session_id": 5089,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4049730,
+      "occurrence": 1,
+      "final_mark": 60,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6229130,
+      "project": {
+        "id": 1270,
+        "name": "C Piscine C 07",
+        "slug": "c-piscine-c-07",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-12-05T14:57:32.465Z",
+      "marked": true,
+      "retriable_at": "2024-12-05T15:37:32.554Z",
+      "created_at": "2024-12-03T13:57:48.101Z",
+      "updated_at": "2024-12-06T13:14:52.937Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6225528,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6225528",
+          "final_mark": 45,
+          "project_id": 1270,
+          "created_at": "2024-12-03T13:57:48.134Z",
+          "updated_at": "2024-12-04T19:45:46.099Z",
+          "status": "finished",
+          "terminating_at": "2024-12-05T17:07:26.732Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4049730
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-1ebc8cec-7532-4aba-9e1d-6af48c46b0ba-6225528-pprejith",
+          "repo_uuid": "intra-uuid-1ebc8cec-7532-4aba-9e1d-6af48c46b0ba-6225528-pprejith",
+          "locked_at": "2024-12-03T13:57:48.224Z",
+          "closed_at": "2024-12-04T17:07:26.732Z",
+          "project_session_id": 3036,
+          "project_gitlab_path": "pedago_world/c-piscine/c-07"
+        },
+        {
+          "id": 6229130,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6229130",
+          "final_mark": 60,
+          "project_id": 1270,
+          "created_at": "2024-12-05T11:46:33.737Z",
+          "updated_at": "2024-12-05T14:57:32.172Z",
+          "status": "finished",
+          "terminating_at": "2024-12-06T13:14:44.265Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4049730
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-4df9b0f6-78eb-4c21-b729-4c67ae03a39f-6229130-pprejith",
+          "repo_uuid": "intra-uuid-4df9b0f6-78eb-4c21-b729-4c67ae03a39f-6229130-pprejith",
+          "locked_at": "2024-12-05T11:46:33.771Z",
+          "closed_at": "2024-12-05T13:14:44.265Z",
+          "project_session_id": 3036,
+          "project_gitlab_path": "pedago_world/c-piscine/c-07"
+        }
+      ]
+    },
+    {
+      "id": 4048720,
+      "occurrence": 3,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6228205,
+      "project": {
+        "id": 1263,
+        "name": "C Piscine C 06",
+        "slug": "c-piscine-c-06",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-12-04T19:50:39.157Z",
+      "marked": true,
+      "retriable_at": "2024-12-04T21:50:39.256Z",
+      "created_at": "2024-12-02T15:56:56.966Z",
+      "updated_at": "2024-12-05T17:38:06.501Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6224105,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6224105",
+          "final_mark": 0,
+          "project_id": 1263,
+          "created_at": "2024-12-02T15:56:56.993Z",
+          "updated_at": "2024-12-02T20:38:54.018Z",
+          "status": "finished",
+          "terminating_at": "2024-12-03T17:14:59.185Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4048720
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-a579838a-3b33-4635-9e14-fd9edfc39368-6224105-pprejith",
+          "repo_uuid": "intra-uuid-a579838a-3b33-4635-9e14-fd9edfc39368-6224105-pprejith",
+          "locked_at": "2024-12-02T15:56:57.043Z",
+          "closed_at": "2024-12-02T17:14:59.185Z",
+          "project_session_id": 3029,
+          "project_gitlab_path": "pedago_world/c-piscine/c-06"
+        },
+        {
+          "id": 6225261,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6225261",
+          "final_mark": 70,
+          "project_id": 1263,
+          "created_at": "2024-12-03T12:19:00.429Z",
+          "updated_at": "2024-12-03T13:55:52.231Z",
+          "status": "finished",
+          "terminating_at": "2024-12-04T12:27:57.810Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4048720
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-fd427b50-8a94-4b7f-812d-34013142a0be-6225261-pprejith",
+          "repo_uuid": "intra-uuid-fd427b50-8a94-4b7f-812d-34013142a0be-6225261-pprejith",
+          "locked_at": "2024-12-03T12:19:00.478Z",
+          "closed_at": "2024-12-03T12:27:57.810Z",
+          "project_session_id": 3029,
+          "project_gitlab_path": "pedago_world/c-piscine/c-06"
+        },
+        {
+          "id": 6227686,
+          "name": "pprejith's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6227686",
+          "final_mark": 85,
+          "project_id": 1263,
+          "created_at": "2024-12-04T14:18:13.701Z",
+          "updated_at": "2024-12-04T16:12:29.776Z",
+          "status": "finished",
+          "terminating_at": "2024-12-05T14:22:33.116Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4048720
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-232cb945-f178-4658-842a-8cc989370ca8-6227686-pprejith",
+          "repo_uuid": "intra-uuid-232cb945-f178-4658-842a-8cc989370ca8-6227686-pprejith",
+          "locked_at": "2024-12-04T14:18:13.747Z",
+          "closed_at": "2024-12-04T14:22:33.116Z",
+          "project_session_id": 3029,
+          "project_gitlab_path": "pedago_world/c-piscine/c-06"
+        },
+        {
+          "id": 6228205,
+          "name": "pprejith's group-3",
+          "url": "https://api.intra.42.fr/v2/teams/6228205",
+          "final_mark": 100,
+          "project_id": 1263,
+          "created_at": "2024-12-04T17:32:39.897Z",
+          "updated_at": "2024-12-04T19:50:38.911Z",
+          "status": "finished",
+          "terminating_at": "2024-12-05T17:37:47.144Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 3,
+              "validated": true,
+              "projects_user_id": 4048720
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-3830b228-551c-4736-ba03-8ea26a082072-6228205-pprejith",
+          "repo_uuid": "intra-uuid-3830b228-551c-4736-ba03-8ea26a082072-6228205-pprejith",
+          "locked_at": "2024-12-04T17:32:39.962Z",
+          "closed_at": "2024-12-04T17:37:47.144Z",
+          "project_session_id": 3029,
+          "project_gitlab_path": "pedago_world/c-piscine/c-06"
+        }
+      ]
+    },
+    {
+      "id": 4043429,
+      "occurrence": 2,
+      "final_mark": 75,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6225796,
+      "project": {
+        "id": 1262,
+        "name": "C Piscine C 05",
+        "slug": "c-piscine-c-05",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-12-03T18:56:18.071Z",
+      "marked": true,
+      "retriable_at": "2024-12-03T19:56:18.163Z",
+      "created_at": "2024-11-27T21:14:27.202Z",
+      "updated_at": "2024-12-04T15:17:47.944Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6216824,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6216824",
+          "final_mark": 40,
+          "project_id": 1262,
+          "created_at": "2024-11-27T21:14:27.222Z",
+          "updated_at": "2024-11-30T21:34:06.475Z",
+          "status": "finished",
+          "terminating_at": "2024-12-01T20:13:56.652Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4043429
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-bd9bf88d-c98e-49c1-915b-63a19a6c3bf9-6216824-pprejith",
+          "repo_uuid": "intra-uuid-bd9bf88d-c98e-49c1-915b-63a19a6c3bf9-6216824-pprejith",
+          "locked_at": "2024-11-27T21:14:27.262Z",
+          "closed_at": "2024-11-30T20:13:56.652Z",
+          "project_session_id": 3028,
+          "project_gitlab_path": "pedago_world/c-piscine/c-05"
+        },
+        {
+          "id": 6224276,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6224276",
+          "final_mark": 40,
+          "project_id": 1262,
+          "created_at": "2024-12-02T17:17:16.605Z",
+          "updated_at": "2024-12-02T21:22:45.984Z",
+          "status": "finished",
+          "terminating_at": "2024-12-03T17:21:28.934Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4043429
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-6f690663-1ec2-4fb8-9205-43e4f6f0890b-6224276-pprejith",
+          "repo_uuid": "intra-uuid-6f690663-1ec2-4fb8-9205-43e4f6f0890b-6224276-pprejith",
+          "locked_at": "2024-12-02T17:17:16.665Z",
+          "closed_at": "2024-12-02T17:21:28.934Z",
+          "project_session_id": 3028,
+          "project_gitlab_path": "pedago_world/c-piscine/c-05"
+        },
+        {
+          "id": 6225796,
+          "name": "pprejith's group-2",
+          "url": "https://api.intra.42.fr/v2/teams/6225796",
+          "final_mark": 75,
+          "project_id": 1262,
+          "created_at": "2024-12-03T15:11:59.081Z",
+          "updated_at": "2024-12-03T18:56:17.831Z",
+          "status": "finished",
+          "terminating_at": "2024-12-04T15:17:38.772Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 2,
+              "validated": true,
+              "projects_user_id": 4043429
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-e7a35c48-e1fd-4922-bdd8-b081408e4064-6225796-pprejith",
+          "repo_uuid": "intra-uuid-e7a35c48-e1fd-4922-bdd8-b081408e4064-6225796-pprejith",
+          "locked_at": "2024-12-03T15:11:59.163Z",
+          "closed_at": "2024-12-03T15:17:38.772Z",
+          "project_session_id": 3028,
+          "project_gitlab_path": "pedago_world/c-piscine/c-05"
+        }
+      ]
+    },
+    {
+      "id": 4034582,
+      "occurrence": 0,
+      "final_mark": 0,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6206673,
+      "project": {
+        "id": 1310,
+        "name": "C Piscine Rush 01",
+        "slug": "c-piscine-rush-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-26T10:18:47.859Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-11-21T22:37:14.561Z",
+      "updated_at": "2024-11-29T23:42:30.109Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6206673,
+          "name": "rmarines's group",
+          "url": "https://api.intra.42.fr/v2/teams/6206673",
+          "final_mark": 0,
+          "project_id": 1310,
+          "created_at": "2024-11-22T17:42:10.126Z",
+          "updated_at": "2024-11-26T10:18:48.080Z",
+          "status": "finished",
+          "terminating_at": "2024-11-29T23:42:21.016Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4034582
+            },
+            {
+              "id": 207947,
+              "login": "rmarines",
+              "url": "https://api.intra.42.fr/v2/users/rmarines",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4029236
+            },
+            {
+              "id": 207970,
+              "login": "awidor",
+              "url": "https://api.intra.42.fr/v2/users/awidor",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4029223
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-0ef50a8d-0e41-438a-9db3-2de3a2ddd9d3-6206673-rmarines",
+          "repo_uuid": "intra-uuid-0ef50a8d-0e41-438a-9db3-2de3a2ddd9d3-6206673-rmarines",
+          "locked_at": "2024-11-22T17:42:10.412Z",
+          "closed_at": "2024-11-24T23:42:21.016Z",
+          "project_session_id": 5083,
+          "project_gitlab_path": "pedago_world/c-piscine/rush-01"
+        }
+      ]
+    },
+    {
+      "id": 4043218,
+      "occurrence": 0,
+      "final_mark": 40,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6216513,
+      "project": {
+        "id": 1303,
+        "name": "C Piscine Exam 02",
+        "slug": "c-piscine-exam-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-29T14:19:44.099Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-11-27T17:46:05.683Z",
+      "updated_at": "2024-11-29T14:33:06.768Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6216513,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6216513",
+          "final_mark": 40,
+          "project_id": 1303,
+          "created_at": "2024-11-27T17:46:05.718Z",
+          "updated_at": "2024-11-29T14:33:06.237Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4043218
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-27b0c9db-29d9-46c1-a5e1-d64ef36407ec-6216513-pprejith",
+          "locked_at": "2024-11-27T17:46:05.750Z",
+          "closed_at": "2024-11-29T14:33:05.985Z",
+          "project_session_id": 5088,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4034517,
+      "occurrence": 0,
+      "final_mark": 70,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6204589,
+      "project": {
+        "id": 1261,
+        "name": "C Piscine C 04",
+        "slug": "c-piscine-c-04",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-27T21:09:56.368Z",
+      "marked": true,
+      "retriable_at": "2024-11-27T21:29:56.456Z",
+      "created_at": "2024-11-21T21:04:37.278Z",
+      "updated_at": "2024-11-28T17:44:10.008Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6204589,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6204589",
+          "final_mark": 70,
+          "project_id": 1261,
+          "created_at": "2024-11-21T21:04:37.297Z",
+          "updated_at": "2024-11-27T21:09:56.112Z",
+          "status": "finished",
+          "terminating_at": "2024-11-28T17:44:04.868Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4034517
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-9a9b19a4-ba73-4e73-b9a4-676641ba11b2-6204589-pprejith",
+          "repo_uuid": "intra-uuid-9a9b19a4-ba73-4e73-b9a4-676641ba11b2-6204589-pprejith",
+          "locked_at": "2024-11-21T21:04:37.328Z",
+          "closed_at": "2024-11-27T17:44:04.868Z",
+          "project_session_id": 3027,
+          "project_gitlab_path": "pedago_world/c-piscine/c-04"
+        }
+      ]
+    },
+    {
+      "id": 4033585,
+      "occurrence": 0,
+      "final_mark": 50,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6203492,
+      "project": {
+        "id": 1260,
+        "name": "C Piscine C 03",
+        "slug": "c-piscine-c-03",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-23T16:26:06.670Z",
+      "marked": true,
+      "retriable_at": "2024-11-23T16:46:06.746Z",
+      "created_at": "2024-11-21T15:05:27.881Z",
+      "updated_at": "2024-11-24T14:28:20.016Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6203492,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6203492",
+          "final_mark": 50,
+          "project_id": 1260,
+          "created_at": "2024-11-21T15:05:27.912Z",
+          "updated_at": "2024-11-23T16:26:06.432Z",
+          "status": "finished",
+          "terminating_at": "2024-11-24T14:27:57.670Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4033585
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-7557e05e-b918-44e5-b452-f6a36dedcfe9-6203492-pprejith",
+          "repo_uuid": "intra-uuid-7557e05e-b918-44e5-b452-f6a36dedcfe9-6203492-pprejith",
+          "locked_at": "2024-11-21T15:05:27.954Z",
+          "closed_at": "2024-11-23T14:27:57.670Z",
+          "project_session_id": 3026,
+          "project_gitlab_path": "pedago_world/c-piscine/c-03"
+        }
+      ]
+    },
+    {
+      "id": 4020256,
+      "occurrence": 0,
+      "final_mark": 10,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6190945,
+      "project": {
+        "id": 1308,
+        "name": "C Piscine Rush 00",
+        "slug": "c-piscine-rush-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-19T15:11:22.442Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-11-13T09:39:01.086Z",
+      "updated_at": "2024-11-22T23:43:42.078Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6190945,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6190945",
+          "final_mark": 10,
+          "project_id": 1308,
+          "created_at": "2024-11-15T17:42:07.481Z",
+          "updated_at": "2024-11-19T15:11:22.756Z",
+          "status": "finished",
+          "terminating_at": "2024-11-22T23:43:28.543Z",
+          "users": [
+            {
+              "id": 207889,
+              "login": "cirebe",
+              "url": "https://api.intra.42.fr/v2/users/cirebe",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4023967
+            },
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4020256
+            },
+            {
+              "id": 207950,
+              "login": "mrazem",
+              "url": "https://api.intra.42.fr/v2/users/mrazem",
+              "leader": false,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4023179
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-5d822db0-2019-402b-b204-23748c503a85-6190945-pprejith",
+          "repo_uuid": "intra-uuid-5d822db0-2019-402b-b204-23748c503a85-6190945-pprejith",
+          "locked_at": "2024-11-15T17:42:07.743Z",
+          "closed_at": "2024-11-17T23:43:28.543Z",
+          "project_session_id": 5082,
+          "project_gitlab_path": "pedago_world/c-piscine/rush-00"
+        }
+      ]
+    },
+    {
+      "id": 4032903,
+      "occurrence": 0,
+      "final_mark": 40,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6202658,
+      "project": {
+        "id": 1302,
+        "name": "C Piscine Exam 01",
+        "slug": "c-piscine-exam-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-22T13:20:26.815Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-11-21T11:34:14.678Z",
+      "updated_at": "2024-11-22T14:06:14.330Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6202658,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6202658",
+          "final_mark": 40,
+          "project_id": 1302,
+          "created_at": "2024-11-21T11:34:14.719Z",
+          "updated_at": "2024-11-22T14:06:13.989Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4032903
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-8a411e00-390d-403c-bfc3-0d1361526cb8-6202658-pprejith",
+          "locked_at": "2024-11-21T11:34:14.752Z",
+          "closed_at": "2024-11-22T14:06:13.726Z",
+          "project_session_id": 5087,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4030446,
+      "occurrence": 0,
+      "final_mark": 55,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6199602,
+      "project": {
+        "id": 1259,
+        "name": "C Piscine C 02",
+        "slug": "c-piscine-c-02",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-21T16:06:52.060Z",
+      "marked": true,
+      "retriable_at": "2024-11-21T16:26:52.175Z",
+      "created_at": "2024-11-20T12:42:51.867Z",
+      "updated_at": "2024-11-22T13:44:34.574Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6199602,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6199602",
+          "final_mark": 55,
+          "project_id": 1259,
+          "created_at": "2024-11-20T12:42:51.893Z",
+          "updated_at": "2024-11-21T16:06:51.771Z",
+          "status": "finished",
+          "terminating_at": "2024-11-22T13:44:07.957Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4030446
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-20603ec5-7a66-4d98-82d7-41438a4deb52-6199602-pprejith",
+          "repo_uuid": "intra-uuid-20603ec5-7a66-4d98-82d7-41438a4deb52-6199602-pprejith",
+          "locked_at": "2024-11-20T12:42:51.936Z",
+          "closed_at": "2024-11-21T13:44:07.957Z",
+          "project_session_id": 3025,
+          "project_gitlab_path": "pedago_world/c-piscine/c-02"
+        }
+      ]
+    },
+    {
+      "id": 4027094,
+      "occurrence": 1,
+      "final_mark": 100,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6199847,
+      "project": {
+        "id": 1258,
+        "name": "C Piscine C 01",
+        "slug": "c-piscine-c-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-20T20:29:41.970Z",
+      "marked": true,
+      "retriable_at": "2024-11-20T21:09:42.046Z",
+      "created_at": "2024-11-18T17:31:04.373Z",
+      "updated_at": "2024-11-21T13:47:43.197Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6195259,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6195259",
+          "final_mark": 50,
+          "project_id": 1258,
+          "created_at": "2024-11-18T17:31:04.403Z",
+          "updated_at": "2024-11-19T23:03:26.557Z",
+          "status": "finished",
+          "terminating_at": "2024-11-20T21:30:45.903Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4027094
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-9c6d5337-aca9-49e4-a322-2b768b844958-6195259-pprejith",
+          "repo_uuid": "intra-uuid-9c6d5337-aca9-49e4-a322-2b768b844958-6195259-pprejith",
+          "locked_at": "2024-11-18T17:31:04.458Z",
+          "closed_at": "2024-11-19T21:30:45.903Z",
+          "project_session_id": 3024,
+          "project_gitlab_path": "pedago_world/c-piscine/c-01"
+        },
+        {
+          "id": 6199847,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6199847",
+          "final_mark": 100,
+          "project_id": 1258,
+          "created_at": "2024-11-20T13:43:43.459Z",
+          "updated_at": "2024-11-20T20:29:41.729Z",
+          "status": "finished",
+          "terminating_at": "2024-11-21T13:47:17.894Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4027094
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-7890fe6b-447a-49ba-9788-0da6148f849e-6199847-pprejith",
+          "repo_uuid": "intra-uuid-7890fe6b-447a-49ba-9788-0da6148f849e-6199847-pprejith",
+          "locked_at": "2024-11-20T13:43:43.533Z",
+          "closed_at": "2024-11-20T13:47:17.894Z",
+          "project_session_id": 3024,
+          "project_gitlab_path": "pedago_world/c-piscine/c-01"
+        }
+      ]
+    },
+    {
+      "id": 4022121,
+      "occurrence": 1,
+      "final_mark": 50,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6192987,
+      "project": {
+        "id": 1257,
+        "name": "C Piscine C 00",
+        "slug": "c-piscine-c-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-17T23:37:05.583Z",
+      "marked": true,
+      "retriable_at": "2024-11-18T00:17:05.669Z",
+      "created_at": "2024-11-14T12:30:05.987Z",
+      "updated_at": "2024-11-18T21:39:12.670Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6188496,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6188496",
+          "final_mark": 10,
+          "project_id": 1257,
+          "created_at": "2024-11-14T12:30:06.018Z",
+          "updated_at": "2024-11-17T17:57:31.307Z",
+          "status": "finished",
+          "terminating_at": "2024-11-18T16:22:46.102Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4022121
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-ea4bcd09-d104-46a9-a2f4-a1a94d775787-6188496-pprejith",
+          "repo_uuid": "intra-uuid-ea4bcd09-d104-46a9-a2f4-a1a94d775787-6188496-pprejith",
+          "locked_at": "2024-11-14T12:30:06.061Z",
+          "closed_at": "2024-11-17T16:22:46.102Z",
+          "project_session_id": 3023,
+          "project_gitlab_path": "pedago_world/c-piscine/c-00"
+        },
+        {
+          "id": 6192987,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6192987",
+          "final_mark": 50,
+          "project_id": 1257,
+          "created_at": "2024-11-17T21:35:10.090Z",
+          "updated_at": "2024-11-17T23:37:05.265Z",
+          "status": "finished",
+          "terminating_at": "2024-11-18T21:38:52.502Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4022121
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-c3315525-69bc-46c7-b514-288f4f7035c1-6192987-pprejith",
+          "repo_uuid": "intra-uuid-c3315525-69bc-46c7-b514-288f4f7035c1-6192987-pprejith",
+          "locked_at": "2024-11-17T21:35:10.158Z",
+          "closed_at": "2024-11-17T21:38:52.502Z",
+          "project_session_id": 3023,
+          "project_gitlab_path": "pedago_world/c-piscine/c-00"
+        }
+      ]
+    },
+    {
+      "id": 4020465,
+      "occurrence": 1,
+      "final_mark": 70,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6189329,
+      "project": {
+        "id": 1256,
+        "name": "C Piscine Shell 01",
+        "slug": "c-piscine-shell-01",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-14T21:43:47.104Z",
+      "marked": true,
+      "retriable_at": "2024-11-14T22:23:47.252Z",
+      "created_at": "2024-11-13T11:30:29.373Z",
+      "updated_at": "2024-11-15T20:21:08.027Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6186296,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6186296",
+          "final_mark": 30,
+          "project_id": 1256,
+          "created_at": "2024-11-13T11:30:29.386Z",
+          "updated_at": "2024-11-14T16:31:49.550Z",
+          "status": "finished",
+          "terminating_at": "2024-11-15T11:58:00.803Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4020465
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-ef9abdfa-675d-4bdf-b504-6b5881ed778c-6186296-pprejith",
+          "repo_uuid": "intra-uuid-ef9abdfa-675d-4bdf-b504-6b5881ed778c-6186296-pprejith",
+          "locked_at": "2024-11-13T11:30:29.437Z",
+          "closed_at": "2024-11-14T11:58:00.803Z",
+          "project_session_id": 3022,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-01"
+        },
+        {
+          "id": 6189329,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6189329",
+          "final_mark": 70,
+          "project_id": 1256,
+          "created_at": "2024-11-14T18:15:19.131Z",
+          "updated_at": "2024-11-14T21:43:46.813Z",
+          "status": "finished",
+          "terminating_at": "2024-11-15T20:20:47.533Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4020465
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-22362c66-f54f-4d3e-9745-206a2c27bfc3-6189329-pprejith",
+          "repo_uuid": "intra-uuid-22362c66-f54f-4d3e-9745-206a2c27bfc3-6189329-pprejith",
+          "locked_at": "2024-11-14T18:15:19.176Z",
+          "closed_at": "2024-11-14T20:20:47.533Z",
+          "project_session_id": 3022,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-01"
+        }
+      ]
+    },
+    {
+      "id": 4019291,
+      "occurrence": 0,
+      "final_mark": 10,
+      "status": "finished",
+      "validated?": false,
+      "current_team_id": 6184698,
+      "project": {
+        "id": 1301,
+        "name": "C Piscine Exam 00",
+        "slug": "c-piscine-exam-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-15T12:36:19.272Z",
+      "marked": true,
+      "retriable_at": null,
+      "created_at": "2024-11-12T14:17:06.054Z",
+      "updated_at": "2024-11-15T13:52:24.648Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6184698,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6184698",
+          "final_mark": 10,
+          "project_id": 1301,
+          "created_at": "2024-11-12T14:17:06.070Z",
+          "updated_at": "2024-11-15T13:52:24.305Z",
+          "status": "finished",
+          "terminating_at": null,
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4019291
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": null,
+          "repo_uuid": "intra-uuid-d0159cec-6c42-49bb-baa9-f094e55d202b-6184698-pprejith",
+          "locked_at": "2024-11-12T14:17:06.123Z",
+          "closed_at": "2024-11-15T13:52:24.052Z",
+          "project_session_id": 5086,
+          "project_gitlab_path": null
+        }
+      ]
+    },
+    {
+      "id": 4017293,
+      "occurrence": 1,
+      "final_mark": 60,
+      "status": "finished",
+      "validated?": true,
+      "current_team_id": 6185382,
+      "project": {
+        "id": 1255,
+        "name": "C Piscine Shell 00",
+        "slug": "c-piscine-shell-00",
+        "parent_id": null
+      },
+      "cursus_ids": [
+        9
+      ],
+      "marked_at": "2024-11-13T11:26:00.155Z",
+      "marked": true,
+      "retriable_at": "2024-11-13T12:06:00.231Z",
+      "created_at": "2024-11-11T11:50:05.686Z",
+      "updated_at": "2024-11-13T20:57:08.144Z",
+      "user": {
+        "id": 207919,
+        "email": "pprejith@student.42heilbronn.de",
+        "login": "pprejith",
+        "first_name": "Pranin Edward",
+        "last_name": "Prejith",
+        "usual_full_name": "Pranin Edward Prejith",
+        "usual_first_name": null,
+        "url": "https://api.intra.42.fr/v2/users/pprejith",
+        "phone": "hidden",
+        "displayname": "Pranin Edward Prejith",
+        "kind": "student",
+        "image": {
+          "link": "https://cdn.intra.42.fr/users/603e5c49c31816bf6f93ad0153429a26/pprejith.jpg",
+          "versions": {
+            "large": "https://cdn.intra.42.fr/users/c8b8a435e35400b0ad08e41315fb5474/large_pprejith.jpg",
+            "medium": "https://cdn.intra.42.fr/users/eaaa6180494d5c491ddf1c481e50f0b8/medium_pprejith.jpg",
+            "small": "https://cdn.intra.42.fr/users/398ef60bb980849fad9c5d40382da238/small_pprejith.jpg",
+            "micro": "https://cdn.intra.42.fr/users/94031b94b415b09b5d004075171018e5/micro_pprejith.jpg"
+          }
+        },
+        "staff?": false,
+        "correction_point": 3,
+        "pool_month": "november",
+        "pool_year": "2024",
+        "location": null,
+        "wallet": 55,
+        "anonymize_date": "2028-10-21T00:00:00.000+02:00",
+        "data_erasure_date": "2028-10-21T00:00:00.000+02:00",
+        "created_at": "2024-11-11T09:12:05.993Z",
+        "updated_at": "2025-10-19T00:07:04.317Z",
+        "alumnized_at": null,
+        "alumni?": false,
+        "active?": true
+      },
+      "teams": [
+        {
+          "id": 6181855,
+          "name": "pprejith's group",
+          "url": "https://api.intra.42.fr/v2/teams/6181855",
+          "final_mark": 10,
+          "project_id": 1255,
+          "created_at": "2024-11-11T11:50:05.698Z",
+          "updated_at": "2024-11-12T17:43:24.723Z",
+          "status": "finished",
+          "terminating_at": "2024-11-13T11:58:50.861Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 0,
+              "validated": true,
+              "projects_user_id": 4017293
+            }
+          ],
+          "locked?": true,
+          "validated?": false,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-a4d0fbb2-5a35-4086-91e2-2a691637ded1-6181855-pprejith",
+          "repo_uuid": "intra-uuid-a4d0fbb2-5a35-4086-91e2-2a691637ded1-6181855-pprejith",
+          "locked_at": "2024-11-11T11:50:05.741Z",
+          "closed_at": "2024-11-12T11:58:50.861Z",
+          "project_session_id": 3021,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-00"
+        },
+        {
+          "id": 6185382,
+          "name": "pprejith's group-1",
+          "url": "https://api.intra.42.fr/v2/teams/6185382",
+          "final_mark": 60,
+          "project_id": 1255,
+          "created_at": "2024-11-12T19:08:35.519Z",
+          "updated_at": "2024-11-13T11:25:59.909Z",
+          "status": "finished",
+          "terminating_at": "2024-11-13T20:57:06.146Z",
+          "users": [
+            {
+              "id": 207919,
+              "login": "pprejith",
+              "url": "https://api.intra.42.fr/v2/users/pprejith",
+              "leader": true,
+              "occurrence": 1,
+              "validated": true,
+              "projects_user_id": 4017293
+            }
+          ],
+          "locked?": true,
+          "validated?": true,
+          "closed?": true,
+          "repo_url": "git@vogsphere.42heilbronn.de:vogsphere/intra-uuid-c239c071-a5bc-487d-b3b9-66442151f9fa-6185382-pprejith",
+          "repo_uuid": "intra-uuid-c239c071-a5bc-487d-b3b9-66442151f9fa-6185382-pprejith",
+          "locked_at": "2024-11-12T19:08:35.561Z",
+          "closed_at": "2024-11-12T20:57:06.146Z",
+          "project_session_id": 3021,
+          "project_gitlab_path": "pedago_world/c-piscine/shell-00"
+        }
+      ]
+    }
+  ]
+}
